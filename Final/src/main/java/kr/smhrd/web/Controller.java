@@ -6,8 +6,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class Controller {
 	
 	@RequestMapping("/")
-	public String startpage() {
-		return "home";
+	public String Loginpage() {
+		return "Login_WEB";
+	}
+	
+	@RequestMapping("/info")
+	public String Infopage() {
+		return "Info_WEB";
 	}
 
+	@RequestMapping("/main")
+	public String Mainpage() {
+		return "Main_WEB";
+	}
+	 
+	@RequestMapping("/reco")
+	public String Recordpage() {
+		return "DriveRecord_WEB";
+	}
 }
