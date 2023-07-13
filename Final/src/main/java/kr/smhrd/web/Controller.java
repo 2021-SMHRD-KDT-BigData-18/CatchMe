@@ -10,9 +10,9 @@ public class Controller {
 		return "Login_WEB";
 	}
 	
-	@RequestMapping("/info")
-	public String Infopage() {
-		return "Info_WEB";
+	@RequestMapping("/regi")
+	public String Registerpage() {
+		return "Regi_WEB";
 	}
 
 	@RequestMapping("/main")
