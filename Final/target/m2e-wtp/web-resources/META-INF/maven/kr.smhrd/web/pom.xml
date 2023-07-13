@@ -116,6 +116,59 @@
 			<version>4.7</version>
 			<scope>test</scope>
 		</dependency>        
+		<!-- lombok 라이브러리 추가하기 -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.24</version>
+			<scope>provided</scope>
+		</dependency>
+
+
+		<!-- DB연결을 위한 라이브러리들 -->
+		<!-- 1) mysql JDBC driver -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.28</version>
+		</dependency>
+		
+		<!-- 2) hikariCP : DBCP을 만들 때 사용하는 라이브러리 -->
+		<dependency>
+		    <groupId>com.zaxxer</groupId>
+		    <artifactId>HikariCP</artifactId>
+		    <version>4.0.3</version>
+		</dependency>
+		
+		<!-- 3) mybatis 라이브러리 -->
+		<dependency>
+		    <groupId>org.mybatis</groupId>
+		    <artifactId>mybatis</artifactId>
+		    <version>3.5.6</version>
+		</dependency>
+		
+		<!-- 4) mybatis-spring 연결 라이브러리 -->
+		<dependency>
+		    <groupId>org.mybatis</groupId>
+		    <artifactId>mybatis-spring</artifactId>
+		    <version>2.0.6</version>
+		</dependency>
+		
+		<!-- 5) Spring-jdbc 연결 라이브러리 -->
+		<!-- Spring과 버전을 맞춰주는게 좋음. 안맞추면 에러가 났을때 에러를 정확하게 캐치 못할 수 있음. -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-jdbc</artifactId>
+		    <version>4.3.20.RELEASE</version>
+		</dependency>
+		
+		
+		<!-- Ajax 비동기 통신으로 요청이 들어왔을때 결과값을 자동으로 json구조로 변환시켜주는 라이브러리 -->
+		<dependency>
+		    <groupId>com.fasterxml.jackson.core</groupId>
+		    <artifactId>jackson-databind</artifactId>
+		    <version>2.14.2</version>
+		</dependency>
 	</dependencies>
     <build>
         <plugins>
