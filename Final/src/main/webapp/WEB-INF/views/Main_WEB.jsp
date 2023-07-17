@@ -133,6 +133,7 @@
         </style>
 </head>
 <body>
+
 <div id="backgroundArea">
         <div id="leftPage">
 
@@ -187,6 +188,15 @@
         // call this function again in 1000ms
         setTimeout(updateClock, 1000);
         } updateClock(); // init function
+        
+        var successMessage = "${successMessage}";
+        if (successMessage) {
+          alert(successMessage);
+        }
+        var failMessage = "${failMessage}";
+        if(failMessage){
+        	alert(failMessage);
+        }
     </script>
 </body>
 </html>

@@ -2,4 +2,19 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="kr.smhrd.mapper.Mapper">
 
+<select id="find_RestArea" resultType="kr.smhrd.entity.RestArea" parameterType="kr.smhrd.entity.RestArea">
+SELECT ra_name, ST_DISTANCE_SPHERE(POINT(#{param1}, #{param2}), POINT(lng, lat)) AS distance
+FROM ccu.restarea_Info
+ORDER BY distance ASC
+LIMIT 2;
+</select>
+
+<insert id="join" parameterType="kr.smhrd.entity.User">
+insert into user_info values(#{id},#{pw},#{email},#{phone}, null, null,sysdate(),1)
+</insert>
+
+<select id="login" parameterType="kr.smhrd.entity.User" resultType="kr.smhrd.entity.User">
+select * from user_info where id = #{id} and pw=#{pw}
+</select>
+
 </mapper>
