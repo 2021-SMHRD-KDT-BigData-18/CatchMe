@@ -10,7 +10,7 @@ public interface Mapper {
 
 	List<RestArea> find_RestArea(BigDecimal lat, BigDecimal lng);
 
-	String login(User dto);
+	User login(User dto);
 
-	String join(User dto);
+	int join(User dto);
 }

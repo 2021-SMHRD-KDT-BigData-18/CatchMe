@@ -272,25 +272,22 @@
     </ul>
   </div>
 
-  <form action="doJoin" method="POST" class="joinForm" onsubmit="DoJoinForm__submit(this); return false;">
+  <form action="join" method="POST" class="joinForm" onsubmit="DoJoinForm__submit(this); return false;">
     <h2>Register</h2>
     <div class="textForm">
-      <input name="loginId" type="text" class="id" placeholder="ID">
+      <input name="id" type="text" class="id" placeholder="ID">
     </div>
     <div class="textForm">
-      <input name="loginPw" type="password" class="pw" placeholder="PW" id="loginPwInput">
+      <input name="pw" type="password" class="pw" placeholder="PW" id="loginPwInput">
     </div>
     <div class="textForm">
-      <input name="loginPwConfirm" type="password" class="pw" placeholder="Confirm PW">
-    </div>
-    <div class="textForm">
-      <input name="name" type="text" class="name" placeholder="Name">
+      <input type="text" class="name" placeholder="Name"><!-- name뺏음 DB로 데이터는 안넘어감 현재. -->
     </div>
     <div class="textForm">
       <input name="email" type="text" class="email" placeholder="Email">
     </div>
     <div class="textForm">
-      <input name="phone" type="number" class="phone" placeholder="Phone">
+      <input name="phone" type="text" class="phone" placeholder="Phone">
     </div>
     <input type="submit" class="btn" value="J O I N"/>
   </form>
