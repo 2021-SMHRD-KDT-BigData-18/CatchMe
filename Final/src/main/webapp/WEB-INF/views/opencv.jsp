@@ -72,7 +72,7 @@
         }
 
         function startSendingFrames() {
-            interval = setInterval(sendFrameToPython, 1000/10); // Send a frame every 100 milliseconds
+            interval = setInterval(sendFrameToPython, 1000/3);
             streaming = true;
             console.log('센딩프레임시작')
             
