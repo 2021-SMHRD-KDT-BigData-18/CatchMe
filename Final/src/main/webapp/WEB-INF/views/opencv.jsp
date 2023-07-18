@@ -72,7 +72,7 @@
         }
 
         function startSendingFrames() {
-            interval = setInterval(sendFrameToPython, 1000/3);
+            interval = setInterval(sendFrameToPython, 1000);
             streaming = true;
             console.log('센딩프레임시작')
             
@@ -89,6 +89,7 @@
         	  console.log('a포인트')
 
         	  const imageData = context.getImageData(0, 0, width, height);
+        	  const dataUrl = canvas.toDataURL('image/jpeg');
 
         	  const url = 'http://localhost:9000/web/receiveimg';
         	  const options = {
@@ -96,14 +97,13 @@
         	    headers: {
         	      'Content-Type': 'application/json',
         	    },
-        	    body: JSON.stringify({ frame: imageData.data }),
+        	    body: JSON.stringify({ frame: dataUrl }),
         	  };
-        	  console.log('b포인트'+options);
+        	  console.log('b포인트');
         	  
         	  fetch(url, options)
         	    .then(response => response.json())
         	    .then(data => {
-        	      console.log(data);
         	      console.log('데이터 넘어감');
         	    })
         	    .catch(error => {

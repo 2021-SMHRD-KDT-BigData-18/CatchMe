@@ -20,18 +20,13 @@
 				navigator.geolocation.getCurrentPosition(function(position) {
 					const lat = position.coords.latitude;
 					const lng = position.coords.longitude;
-					console.log("위도: " + lat);
-					console.log("경도: " + lng);
 
 					const xhr = new XMLHttpRequest();
 					const url = "/web/distance?lat=" + lat
 							+ "&lng=" + lng;
 					xhr.open("GET", url, true);
-					console.log(url)
 					xhr.onreadystatechange = function() {
 						if (xhr.readyState === 4 && xhr.status === 200) {
-							console.log(xhr.readyState);
-							console.log(xhr.status);
 							const response = JSON.parse(xhr.responseText);
 							const firstRestArea =
 								"가까운 쉼터 :  " + response[0].ra_name + "쉼터입니다. 거리 : " + (response[0].distance / 1000).toFixed(1) + "km입니다.";
@@ -39,7 +34,6 @@
 								"가까운 쉼터 :  " + response[1].ra_name + "쉼터입니다. 거리 : " + (response[1].distance / 1000).toFixed(1)+"km입니다.";
 					        const nearestRestAreaElement = document.getElementById("nearestRestArea");
 					        nearestRestAreaElement.textContent = firstRestArea + "  " + secondRestArea
-					        	
 						}
 					};
 					xhr.send();

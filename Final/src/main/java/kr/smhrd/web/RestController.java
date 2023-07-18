@@ -24,14 +24,14 @@ public class RestController {
 
 	@GetMapping("/distance")
 	@ResponseBody
-	public List<RestArea> find_RestArea(@RequestParam("lat") BigDecimal lat,
-			@RequestParam("lng") BigDecimal lng) {
-		System.out.println("lng값 : "+lng);
-		System.out.println("lat값 : "+lat);
+	public List<RestArea> find_RestArea(@RequestParam("lat") BigDecimal lat, @RequestParam("lng") BigDecimal lng) {
+		System.out.println("lng값 : " + lng);
+		System.out.println("lat값 : " + lat);
 		List<RestArea> data = mapper.find_RestArea(lng, lat);
 		System.out.println(data);
 		return data;
-
 	}
+	
+	
 
 }
