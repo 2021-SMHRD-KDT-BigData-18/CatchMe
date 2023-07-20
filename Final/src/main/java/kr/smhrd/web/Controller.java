@@ -4,6 +4,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import kr.smhrd.entity.User;
@@ -39,6 +40,10 @@ public class Controller {
 	public String getLocation() {
 		return "location";
 	}
+	@RequestMapping("/cv")
+	public String cv() {
+		return "opencv";
+	}
 
 	// 회원가입
 	@RequestMapping("/join")
@@ -57,15 +62,15 @@ public class Controller {
 
 	// 로그인
 	@RequestMapping("/login")
-	public String login(User dto, Model model) {
+	public String login(User dto, Model model,HttpSession session) {
 		User user_data = mapper.login(dto);
 		String nextView = null;
 		if (user_data == null) {
 			model.addAttribute("loginFail", "로그인정보를 확인해주세요");
 			nextView = "Login_WEB";
 		} else {
-			model.addAttribute("user_data", user_data);
-			nextView = "redirect:/main";
+			session.setAttribute("user_data", user_data);
+			nextView = "redirect:/cv";
 		}
 		return nextView;
 	}
@@ -74,12 +79,7 @@ public class Controller {
 	@RequestMapping("/logout")
 	public String logout(HttpSession session) {
 		session.invalidate();
-		return "redirect:/home";
-	}
-	
-	@RequestMapping("/cv")
-	public String cv() {
-		return "opencv";
+		return "redirect:/";
 	}
 
 }
