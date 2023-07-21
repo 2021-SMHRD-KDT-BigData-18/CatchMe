@@ -174,7 +174,18 @@
 			<artifactId>jackson-databind</artifactId>
 			<version>2.14.2</version>
 		</dependency>
+
+		<!-- 문자보낼때 쓰는 json라이브러리 -->
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20210307</version>
+		</dependency>
 	</dependencies>
+	
+	
+	
+	
 	<build>
 		<plugins>
 			<plugin>

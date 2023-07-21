@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
 import kr.smhrd.entity.User;
 import kr.smhrd.mapper.Mapper;
@@ -35,13 +36,13 @@ public class Controller {
 		return "DriveRecord_WEB";
 	}
 
-	// 쉼터알려주기 테스트용
+	// 쉼터알려주기 테스트용, 문자보내기 테스트
 	@RequestMapping("/location")
-	public String getLocation() {
+	public String getLocation(@SessionAttribute("user_data") User user_data) {
 		return "location";
 	}
 	@RequestMapping("/cv")
-	public String cv() {
+	public String cv(@SessionAttribute("user_data") User user_data) {
 		return "opencv";
 	}
 

@@ -26,4 +26,6 @@ public interface Mapper {
 	Long getMaxRecSeq(String username);
 
 	int addEvent(Event event);
+
+	User sendSms(String username);
 }

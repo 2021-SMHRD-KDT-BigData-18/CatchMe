@@ -7,10 +7,32 @@
 <title>쉼터거리계산하여알려주기</title>
 </head>
 <body>
+	<a>${user_data.id }</a>
+	<input type = "hidden" value = "${user_data.id }" id = "username">
 	<button onclick="findNearestRestArea()">가까운 휴게소 보기</button>
 	<h3 id="nearestRestArea"></h3>
-
+	<br>
+	<button onclick="sendSms()">문자보내기</button>	
+	
+	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 	<script>
+	let username = document.getElementById('username').value;
+		function sendSms(){
+			$.ajax({
+			    url: "smscontroller",
+			    type: "get",
+			    data: { username: username },
+			    success: function(data) {
+			      console.log("아이디 넘김");
+			    },
+			    error: function() {
+			      console.log("아이디못넘김");
+			    }
+			  });
+			}
+		
+	
+	
 		function showError(error) {
 			console.log("위치모르겠음" + error.message);
 		}
@@ -39,7 +61,7 @@
 					xhr.send();
 				}, showError);
 			} else {
-				console.log("왜 안되냐고");
+				console.log("쉼터알림실패");
 			}
 		}
 	</script>

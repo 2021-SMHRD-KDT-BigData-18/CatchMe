@@ -38,7 +38,11 @@ select max(rec_seq) as max_rec_seq FROM ccu.record_info where id = #{param1}
 
 <insert id="addEvent" parameterType="kr.smhrd.entity.Event">
 insert into ccu.event_info (rec_seq,event_content,event_at,event_img)
-values (#{rec_seq},#{event_content},sysdate(),#{event_img})
+values (#{rec_seq},'졸음운전',sysdate(),#{event_img})
 </insert>
+
+<select id="sendSms" resultType="kr.smhrd.entity.User">
+select * from ccu.user_info where id = #{param1}
+</select>
 
 </mapper>
