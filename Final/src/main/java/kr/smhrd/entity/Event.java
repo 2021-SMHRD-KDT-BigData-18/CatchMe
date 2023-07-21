@@ -5,14 +5,14 @@ import java.util.Date;
 public class Event {
 	
 	public int event_seq;
-	public Long rec_seq;
+	public int rec_seq;
 	public String event_content;
 	public Date event_at;
 	public String event_img;
 	
 	public Event() {}
 	
-	public Event(int event_seq, Long rec_seq, String event_content, Date event_at, String event_img) {
+	public Event(int event_seq, int rec_seq, String event_content, Date event_at, String event_img) {
 		super();
 		this.event_seq = event_seq;
 		this.rec_seq = rec_seq;
@@ -29,11 +29,11 @@ public class Event {
 		this.event_seq = event_seq;
 	}
 
-	public Long getRec_seq() {
+	public int getRec_seq() {
 		return rec_seq;
 	}
 
-	public void setRec_seq(Long rec_seq2) {
+	public void setRec_seq(int rec_seq2) {
 		this.rec_seq = rec_seq2;
 	}
 

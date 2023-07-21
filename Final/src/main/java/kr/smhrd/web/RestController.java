@@ -48,10 +48,9 @@ public class RestController {
 		return ;
 	}
 	
-	//@CrossOrigin(origins = "*")
-	@RequestMapping("/notify_sleep")
+	@PostMapping("/notify_sleep")
 	public void notify_sleep(@RequestParam("username") String username,@RequestParam("img_path") String img_path) {
-		Long rec_seq =mapper.getMaxRecSeq(username);
+		int rec_seq =mapper.getMaxRecSeq(username);
 		System.out.println("이미지경로 : "+img_path);
 		Event event = new Event();
 		event.setRec_seq(rec_seq);
@@ -59,5 +58,7 @@ public class RestController {
 		int row = mapper.addEvent(event);
 		return ;
 	}
+	
+	
 
 }

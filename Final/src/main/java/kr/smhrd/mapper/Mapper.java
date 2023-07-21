@@ -23,7 +23,7 @@ public interface Mapper {
 
 	Long endRec(String username);
 
-	Long getMaxRecSeq(String username);
+	int getMaxRecSeq(String username);
 
 	int addEvent(Event event);
 

@@ -10,7 +10,8 @@ LIMIT 2;
 </select>
 
 <insert id="join" parameterType="kr.smhrd.entity.User">
-insert into user_info values(#{id},#{pw},#{email},#{phone}, null, null,sysdate(),1)
+insert into user_info(id, pw, email, phone, sms_receiver,joindate,user_type) 
+values(#{id},#{pw},#{email},#{phone}, null, sysdate(),1)
 </insert>
 
 <select id="login" parameterType="kr.smhrd.entity.User" resultType="kr.smhrd.entity.User">
