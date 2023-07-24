@@ -5,10 +5,12 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Options;
+import org.apache.ibatis.annotations.Param;
 
 import kr.smhrd.entity.Event;
 import kr.smhrd.entity.Record;
 import kr.smhrd.entity.RestArea;
+import kr.smhrd.entity.Sms;
 import kr.smhrd.entity.User;
 
 public interface Mapper {
@@ -28,4 +30,10 @@ public interface Mapper {
 	int addEvent(Event event);
 
 	User sendSms(String username);
+
+	List<String> search_event_at(int rec_seq);
+
+	void sms_record(Sms sms);
+
+	Event search_event_at(Event event);
 }

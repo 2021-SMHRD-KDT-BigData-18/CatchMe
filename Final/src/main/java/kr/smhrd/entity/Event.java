@@ -33,8 +33,8 @@ public class Event {
 		return rec_seq;
 	}
 
-	public void setRec_seq(int rec_seq2) {
-		this.rec_seq = rec_seq2;
+	public void setRec_seq(int rec_seq) {
+		this.rec_seq = rec_seq;
 	}
 
 	public String getEvent_content() {

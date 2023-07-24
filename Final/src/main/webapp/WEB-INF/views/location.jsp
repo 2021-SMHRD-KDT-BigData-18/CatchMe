@@ -35,6 +35,7 @@
 	  <source src="<%=music_url %>" type="audio/mpeg">
 		군대기상나팔
 	</audio>
+	C:\Users\smhrd\Desktop\web(Server)\express\uploads
 	  	
 
 	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -113,6 +114,18 @@
 				console.log("쉼터알림실패");
 			}
 		}
+		
+		//소켓연결
+		const socket = new WebSocket('ws://localhost:3000');		
+		socket.onopen = () => {
+			console.log('소켓연결완료');
+			};
+		socket.onmessage = (event) => {
+			console.log('소켓확인필요')
+			};
+		socket.onclose = () => {
+			console.log('소켓연결종료');
+			};
 	</script>
 </body>
 </html>

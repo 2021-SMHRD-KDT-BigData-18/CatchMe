@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import kr.smhrd.entity.Event;
+import kr.smhrd.entity.Sms;
 import kr.smhrd.entity.User;
 import kr.smhrd.mapper.Mapper;
 
@@ -35,7 +37,6 @@ public class SmsController {
 		User user = mapper.sendSms(username);
 		String id = user.getId();
 		String receiver = user.getSms_receiver();
-		System.out.println("받는사람 " + receiver);
 	
 		String hostNameUrl = "https://sens.apigw.ntruss.com"; // api 기본 주소
 		String requestUrl = "/sms/v2/services/"; // 추가 주소
@@ -110,7 +111,7 @@ public class SmsController {
 		} catch (Exception e) {
 			System.out.println("오류!! " + e);
 		}
-
+				
 		return "location";
 	}
 

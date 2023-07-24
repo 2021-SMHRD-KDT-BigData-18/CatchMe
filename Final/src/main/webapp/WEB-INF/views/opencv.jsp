@@ -69,7 +69,6 @@
 	function successCallback(mediaStream) {
 	  video.srcObject = mediaStream;
 	  video.play();
-
 	  startSendingFrames();
 	}
 
@@ -100,6 +99,9 @@
 	    streaming = false;
 	    document.getElementById("toggleStream").style.visibility = "visible";
 	    document.getElementById("stopStream").style.visibility = "hidden";
+	    
+	    stopNotifySound();
+	    
 	    console.log("stopStream() 실행됨");
 	  }
 	}
@@ -147,7 +149,8 @@
 	        findNearestRestArea();
 	        callNotifyController(img_path);
 	        playNotifySound();
-//	        sendSms();
+	        //sendSms();
+	        smsRecord();
 	      }
 	    })
 	    .catch(error => {
@@ -222,10 +225,23 @@
 		    type: "get",
 		    data: { username: username },
 		    success: function(data) {
-		      console.log("아이디 넘김");
+		      console.log("sendSms 아이디 넘김");
 		    },
 		    error: function() {
-		      console.log("아이디 못넘김");
+		      console.log("sendSms 아이디 못넘김");
+		    }
+		  });
+		}
+	function smsRecord(){
+		$.ajax({
+			url : "smsRecord",
+			type:"post",
+			data: { username: username },
+		    success: function(data) {
+		      console.log("smsRecord 아이디 넘김");
+		    },
+		    error: function() {
+		      console.log("smsRecord 아이디 못넘김");
 		    }
 		  });
 		}
@@ -245,16 +261,49 @@
 	}
 	// 음악재생 함수
 	function playNotifySound() {
-		  const audioElement = document.getElementById('notifySound');
-		  audioElement.play();
-		  document.getElementById("stopSound").style.visibility = "visible";
+		const audioElement = document.getElementById('notifySound');
+		audioElement.play();
+		document.getElementById("stopSound").style.visibility = "visible";
 		}
 	// 음악종료 함수
 	function stopNotifySound() {
-		  const audioElement = document.getElementById('notifySound');
-		  audioElement.pause();
-		  document.getElementById("stopSound").style.visibility = "hidden";
+		const audioElement = document.getElementById('notifySound');
+		audioElement.pause();
+		document.getElementById("stopSound").style.visibility = "hidden";
 		}
+	  
+	// 소켓연결
+	const serverAddress = 'ws://localhost:3000';
+    let socket = null;
+    let isConnected = false;
+
+    function connectWebSocket() {
+      socket = new WebSocket(serverAddress);
+
+      socket.onopen = () => {
+        console.log('WebSocket 연결 성공');
+        isConnected = true;
+      };
+
+      socket.onmessage = (event) => {
+        console.log('WebSocket 메시지 수신:', event.data);
+      };
+
+      socket.onclose = () => {
+        console.log('WebSocket 연결이 끊어짐');
+        isConnected = false;
+      };
+    }
+
+    function checkWebSocketConnection() {
+      if (!isConnected) {
+        console.log('WebSocket 연결이 끊어져 다시 연결 시도 중...');
+        connectWebSocket();
+      }
+    }
+
+    connectWebSocket();
+    setInterval(checkWebSocketConnection, 5000);
     </script>
 </body>
 </html>

@@ -10,8 +10,8 @@ LIMIT 2;
 </select>
 
 <insert id="join" parameterType="kr.smhrd.entity.User">
-insert into user_info(id, pw, email, phone, sms_receiver,joindate,user_type) 
-values(#{id},#{pw},#{email},#{phone}, null, sysdate(),1)
+insert into user_info(id, pw, email, phone, sms_receiver,joindate,user_type,name) 
+values(#{id},#{pw},#{email},#{phone}, null, sysdate(),1,#{name})
 </insert>
 
 <select id="login" parameterType="kr.smhrd.entity.User" resultType="kr.smhrd.entity.User">
@@ -45,5 +45,13 @@ values (#{rec_seq},'졸음운전',sysdate(),#{event_img})
 <select id="sendSms" resultType="kr.smhrd.entity.User">
 select * from ccu.user_info where id = #{param1}
 </select>
+
+<select id="search_event_at" resultType="kr.smhrd.entity.Event">
+select event_content,event_at from ccu.event_info where rec_seq=#{rec_seq};
+</select>
+
+<insert id="sms_record" parameterType="kr.smhrd.entity.Sms">
+insert into ccu.sms_info(id, sms_content, event_at,sms_at,rec_seq) values(#{id},#{sms_content},#{event_at},sysdate(),#{rec_seq})
+</insert>
 
 </mapper>

@@ -1,7 +1,9 @@
 package kr.smhrd.web;
 
 import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -21,6 +23,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import kr.smhrd.entity.Event;
 import kr.smhrd.entity.Record;
 import kr.smhrd.entity.RestArea;
+import kr.smhrd.entity.Sms;
 import kr.smhrd.entity.User;
 import kr.smhrd.mapper.Mapper;
 
@@ -51,12 +54,22 @@ public class RestController {
 	@PostMapping("/notify_sleep")
 	public void notify_sleep(@RequestParam("username") String username,@RequestParam("img_path") String img_path) {
 		int rec_seq =mapper.getMaxRecSeq(username);
-		System.out.println("이미지경로 : "+img_path);
 		Event event = new Event();
 		event.setRec_seq(rec_seq);
 		event.setEvent_img(img_path);
 		int row = mapper.addEvent(event);
 		return ;
+	}
+	@PostMapping("/smsRecord")
+	public void sms_record(@RequestParam("username")String username) {
+		int rec_seq = mapper.getMaxRecSeq(username);
+		System.out.println("smscon rec_seq: "+rec_seq);
+		List<String> event = mapper.search_event_at(rec_seq);
+		System.out.println("event확인" +event);
+	    Sms sms = new Sms();
+	    sms.setRec_seq(rec_seq);
+	    sms.setId(username);
+	    return;
 	}
 	
 	
