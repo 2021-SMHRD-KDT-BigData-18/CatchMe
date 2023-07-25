@@ -13,9 +13,10 @@ import kr.smhrd.mapper.Mapper;
 
 @org.springframework.stereotype.Controller
 public class Controller {
+	
 	@Autowired
 	private Mapper mapper;
-
+	
 	@RequestMapping("/")
 	public String Loginpage() {
 		return "Login_WEB";

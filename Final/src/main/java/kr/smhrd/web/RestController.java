@@ -43,13 +43,11 @@ public class RestController {
 	@PostMapping("/startRec")
 	public void startRec(HttpSession session, @RequestParam("username") String username) {
 		Long data = mapper.startRec(username);
-		return;
 	}
 
 	@PostMapping("/endRec")
 	public void endRec(@RequestParam("username") String username) {
 		Long date = mapper.endRec(username);
-		return;
 	}
 
 	@PostMapping("/notify_sleep")
@@ -59,20 +57,16 @@ public class RestController {
 		event.setRec_seq(rec_seq);
 		event.setEvent_img(img_path);
 		int row = mapper.addEvent(event);
-		return;
 	}
 
 	@PostMapping("/smsRecord")
 	public void getMaxRecSeq(@RequestParam("username") String username) {
 		int rec_seq = mapper.getMaxRecSeq(username);
-		System.out.println("rec_seq값 : " + rec_seq);
 		List<Event> data = mapper.search_event_at(rec_seq);
 		if (data == null) {
 			System.out.println("데이터 null");
 		} else {
 			for (Event event : data) {
-				System.out.println("event_at: " + event.getEvent_at());
-				System.out.println("event_content: " + event.getEvent_content());
 				Sms sms = new Sms();
 				sms.setId(username);
 				sms.setRec_seq(rec_seq);
@@ -80,9 +74,9 @@ public class RestController {
 				sms.setSms_content(event.getEvent_content());
 				int row = mapper.sms_record(sms);
 				if (row > 0) {
-					System.out.println("저장완료");
+					System.out.println("sms 저장완료");
 				} else {
-					System.out.println("저장실패");
+					System.out.println("sms 저장실패");
 				}
 			}
 
