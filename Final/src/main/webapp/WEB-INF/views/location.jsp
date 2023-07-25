@@ -2,6 +2,7 @@
 <%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,14 +36,15 @@
 	  <source src="<%=music_url %>" type="audio/mpeg">
 		군대기상나팔
 	</audio>
-	C:\Users\smhrd\Desktop\web(Server)\express\uploads
+	 <c:forEach items="${allImg}" var="event">
+        <img src="data:image/jpeg;base64,${event.base64Image}" alt="Image from Database">
+    </c:forEach>
+
 	  	
 
 	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 	<script>
 		let username = document.getElementById('username').value;
-		
-	
 		
 		// 문자발송
 		function sendSms(){

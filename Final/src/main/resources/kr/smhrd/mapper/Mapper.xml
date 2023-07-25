@@ -54,4 +54,12 @@ select event_at,event_content from ccu.event_info where rec_seq=#{rec_seq};
 insert into ccu.sms_info(id, sms_content, event_at,sms_at,rec_seq) values(#{id},#{sms_content},#{event_at},sysdate(),#{rec_seq})
 </insert>
 
+<select id="allImg" resultType="kr.smhrd.entity.Event">
+select ei.event_img
+from ccu.event_info ei
+inner join ccu.record_info ri ON ei.rec_seq = ri.rec_seq
+inner join ccu.user_info ui ON ri.id = ui.id
+where ui.id = #{param1};
+</select>
+
 </mapper>
