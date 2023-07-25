@@ -47,7 +47,7 @@ select * from ccu.user_info where id = #{param1}
 </select>
 
 <select id="search_event_at" resultType="kr.smhrd.entity.Event">
-select event_content,event_at from ccu.event_info where rec_seq=#{rec_seq};
+select event_at,event_content from ccu.event_info where rec_seq=#{rec_seq};
 </select>
 
 <insert id="sms_record" parameterType="kr.smhrd.entity.Sms">

@@ -11,9 +11,12 @@ public class Event {
 	public String event_img;
 	
 	public Event() {}
+    public Event(Date event_at, String event_content) {
+        this.event_at = event_at;
+        this.event_content = event_content;
+    }
 	
 	public Event(int event_seq, int rec_seq, String event_content, Date event_at, String event_img) {
-		super();
 		this.event_seq = event_seq;
 		this.rec_seq = rec_seq;
 		this.event_content = event_content;

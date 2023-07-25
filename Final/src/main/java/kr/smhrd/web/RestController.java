@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
@@ -38,40 +39,54 @@ public class RestController {
 		List<RestArea> data = mapper.find_RestArea(lng, lat);
 		return data;
 	}
-	
+
 	@PostMapping("/startRec")
-	public void startRec(HttpSession session,@RequestParam("username") String username) {
+	public void startRec(HttpSession session, @RequestParam("username") String username) {
 		Long data = mapper.startRec(username);
-		return ;
+		return;
 	}
-	
+
 	@PostMapping("/endRec")
 	public void endRec(@RequestParam("username") String username) {
 		Long date = mapper.endRec(username);
-		return ;
+		return;
 	}
-	
+
 	@PostMapping("/notify_sleep")
-	public void notify_sleep(@RequestParam("username") String username,@RequestParam("img_path") String img_path) {
-		int rec_seq =mapper.getMaxRecSeq(username);
+	public void notify_sleep(@RequestParam("username") String username, @RequestParam("img_path") String img_path) {
+		int rec_seq = mapper.getMaxRecSeq(username);
 		Event event = new Event();
 		event.setRec_seq(rec_seq);
 		event.setEvent_img(img_path);
 		int row = mapper.addEvent(event);
-		return ;
+		return;
 	}
-	@PostMapping("/smsRecord")
-	public void sms_record(@RequestParam("username")String username) {
-		int rec_seq = mapper.getMaxRecSeq(username);
-		System.out.println("smscon rec_seq: "+rec_seq);
-		List<String> event = mapper.search_event_at(rec_seq);
-		System.out.println("event확인" +event);
-	    Sms sms = new Sms();
-	    sms.setRec_seq(rec_seq);
-	    sms.setId(username);
-	    return;
-	}
-	
-	
 
+	@PostMapping("/smsRecord")
+	public void getMaxRecSeq(@RequestParam("username") String username) {
+		int rec_seq = mapper.getMaxRecSeq(username);
+		System.out.println("rec_seq값 : " + rec_seq);
+		List<Event> data = mapper.search_event_at(rec_seq);
+		if (data == null) {
+			System.out.println("데이터 null");
+		} else {
+			for (Event event : data) {
+				System.out.println("event_at: " + event.getEvent_at());
+				System.out.println("event_content: " + event.getEvent_content());
+				Sms sms = new Sms();
+				sms.setId(username);
+				sms.setRec_seq(rec_seq);
+				sms.setEvent_at(event.getEvent_at());
+				sms.setSms_content(event.getEvent_content());
+				int row = mapper.sms_record(sms);
+				if (row > 0) {
+					System.out.println("저장완료");
+				} else {
+					System.out.println("저장실패");
+				}
+			}
+
+		}
+
+	}
 }

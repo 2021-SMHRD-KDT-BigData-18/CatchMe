@@ -76,6 +76,7 @@
 	  console.error("웹캠 연결 실패", error);
 	}
 
+	// 녹화시작 함수
 	function toggleStream() {
 	  if (!streaming) {
 	    sendstartRecRequest("startRec", "startRec 컨트롤러 실행 성공", "startRec 컨트롤러 실행 실패");
@@ -88,7 +89,8 @@
 	    console.log("toggleStream() 실행됨");
 	  }
 	}
-
+	
+	// 녹화종료 함수
 	function stopStream() {
 	  if (streaming) {
 	    sendendRecRequest("endRec", "endRec 컨트롤러 실행 성공", "endRec 컨트롤러 실행 실패");
@@ -105,13 +107,15 @@
 	    console.log("stopStream() 실행됨");
 	  }
 	}
-
+	
+	// 프레임 보내기 시작 함수
 	function startSendingFrames() {
 	  interval = setInterval(sendFrameToPython, 1000);
 	  streaming = true;
 	  console.log('센딩프레임시작');
 	}
-
+	
+	// 플라스크로 프레임보내기
 	function sendFrameToPython() {
 	  if (!streaming) return;
 
@@ -158,6 +162,7 @@
 	    });
 	}
 
+	//녹화시작 기록
 	function sendstartRecRequest(url, successMessage, errorMessage) {
 	  $.ajax({
 	    url: url,
@@ -171,7 +176,8 @@
 	    }
 	  });
 	}
-
+	
+	//녹화종료 기록
 	function sendendRecRequest(url, successMessage, errorMessage) {
 	  $.ajax({
 	    url: url,
@@ -185,11 +191,12 @@
 	    }
 	  });
 	}
-
+	// 위치 에러 함수
 	function showError(error) {
 	  console.log("위치모르겠음" + error.message);
 	}
-
+	
+	//위치기반 졸음쉼터 찾는 함수
 	function findNearestRestArea() {
 	  if (navigator.geolocation) {
 	    navigator.geolocation.getCurrentPosition(function(position) {
@@ -232,6 +239,7 @@
 		    }
 		  });
 		}
+	//문자내역 기록 함수
 	function smsRecord(){
 		$.ajax({
 			url : "smsRecord",
@@ -281,23 +289,23 @@
       socket = new WebSocket(serverAddress);
 
       socket.onopen = () => {
-        console.log('WebSocket 연결 성공');
+        console.log('소켓 연결됨');
         isConnected = true;
       };
 
       socket.onmessage = (event) => {
-        console.log('WebSocket 메시지 수신:', event.data);
+        console.log('소켓메세지:', event.data);
       };
 
       socket.onclose = () => {
-        console.log('WebSocket 연결이 끊어짐');
+        console.log('소켓 끊김');
         isConnected = false;
       };
     }
 
     function checkWebSocketConnection() {
       if (!isConnected) {
-        console.log('WebSocket 연결이 끊어져 다시 연결 시도 중...');
+        console.log('소켓 다시연결 중....');
         connectWebSocket();
       }
     }

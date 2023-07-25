@@ -2,6 +2,7 @@ package kr.smhrd.mapper;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Options;
@@ -31,9 +32,7 @@ public interface Mapper {
 
 	User sendSms(String username);
 
-	List<String> search_event_at(int rec_seq);
+	List<Event> search_event_at(int rec_seq);
 
-	void sms_record(Sms sms);
-
-	Event search_event_at(Event event);
+	int sms_record(Sms sms);
 }
