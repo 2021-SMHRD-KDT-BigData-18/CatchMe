@@ -245,13 +245,13 @@ a {
 		
 	</div>
 	<script type="text/javascript">
-	var successMessage = decodeURIComponent('<%= request.getParameter("successMessage") %>');
-	var failMessage = decodeURIComponent('<%= request.getParameter("failMessage") %>');
-	  if (successMessage) {
-	    alert(successMessage);
-	  }else{
-		  alert(failMessage);
-	  }
+	var successMessage = decodeURIComponent('<%=request.getParameter("successMessage")%>');
+	var failMessage = decodeURIComponent('<%=request.getParameter("failMessage")%>');
+		if (successMessage && successMessage.trim() !== ""&& document.referrer.includes("regi")) {
+			alert(successMessage);
+		} else if (failMessage && failMessage.trim() !== ""&& document.referrer.includes("regi")) {
+			alert(failMessage);
+		}
 	</script>
 </body>
 </html>

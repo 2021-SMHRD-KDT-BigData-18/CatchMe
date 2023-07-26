@@ -4,8 +4,9 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
 import kr.smhrd.entity.User;
 import kr.smhrd.mapper.Mapper;
@@ -35,10 +36,14 @@ public class Controller {
 		return "DriveRecord_WEB";
 	}
 
-	// 쉼터알려주기 테스트용
+	// 쉼터알려주기 테스트용, 문자보내기 테스트
 	@RequestMapping("/location")
-	public String getLocation() {
+	public String getLocation(@SessionAttribute("user_data") User user_data) {
 		return "location";
+	}
+	@RequestMapping("/cv")
+	public String cv(@SessionAttribute("user_data") User user_data) {
+		return "opencv";
 	}
 
 	// 회원가입
@@ -58,15 +63,15 @@ public class Controller {
 
 	// 로그인
 	@RequestMapping("/login")
-	public String login(User dto, Model model) {
+	public String login(User dto, Model model,HttpSession session) {
 		User user_data = mapper.login(dto);
 		String nextView = null;
 		if (user_data == null) {
 			model.addAttribute("loginFail", "로그인정보를 확인해주세요");
 			nextView = "Login_WEB";
 		} else {
-			model.addAttribute("user_data", user_data);
-			nextView = "redirect:/main";
+			session.setAttribute("user_data", user_data);
+			nextView = "redirect:/cv";
 		}
 		return nextView;
 	}
@@ -75,12 +80,7 @@ public class Controller {
 	@RequestMapping("/logout")
 	public String logout(HttpSession session) {
 		session.invalidate();
-		return "redirect:/home";
-	}
-	
-	@RequestMapping("/cv")
-	public String cv() {
-		return "opencv";
+		return "redirect:/";
 	}
 
 }

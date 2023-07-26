@@ -10,11 +10,48 @@ LIMIT 2;
 </select>
 
 <insert id="join" parameterType="kr.smhrd.entity.User">
-insert into user_info values(#{id},#{pw},#{email},#{phone}, null, null,sysdate(),1)
+insert into user_info(id, pw, email, phone, sms_receiver,joindate,user_type,name) 
+values(#{id},#{pw},#{email},#{phone}, null, sysdate(),1,#{name})
 </insert>
 
 <select id="login" parameterType="kr.smhrd.entity.User" resultType="kr.smhrd.entity.User">
 select * from user_info where id = #{id} and pw=#{pw}
 </select>
+
+<insert id="startRec">
+insert into record_info (id,start_at) values(#{param1}, sysdate())
+</insert>
+
+<update id="endRec">
+update ccu.record_info AS t1
+inner join (
+    select max(rec_seq) as max_rec_seq
+    from ccu.record_info
+    where id = #{param1}
+) as t2 on t1.rec_seq = t2.max_rec_seq
+set t1.end_at = sysdate()
+where t1.id = #{param1};
+</update>
+
+<select id="getMaxRecSeq" resultType="int">
+select max(rec_seq) as max_rec_seq FROM ccu.record_info where id = #{param1}
+</select>
+
+<insert id="addEvent" parameterType="kr.smhrd.entity.Event">
+insert into ccu.event_info (rec_seq,event_content,event_at,event_img)
+values (#{rec_seq},'졸음운전',sysdate(),#{event_img})
+</insert>
+
+<select id="sendSms" resultType="kr.smhrd.entity.User">
+select * from ccu.user_info where id = #{param1}
+</select>
+
+<select id="search_event_at" resultType="kr.smhrd.entity.Event">
+select event_at,event_content from ccu.event_info where rec_seq=#{rec_seq};
+</select>
+
+<insert id="sms_record" parameterType="kr.smhrd.entity.Sms">
+insert into ccu.sms_info(id, sms_content, event_at,sms_at,rec_seq) values(#{id},#{sms_content},#{event_at},sysdate(),#{rec_seq})
+</insert>
 
 </mapper>
