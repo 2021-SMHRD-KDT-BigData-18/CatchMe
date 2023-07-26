@@ -44,10 +44,10 @@
 	<br>	
 	
 	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-	<script src="resources/restarea.js"></script>
-	<script src="resources/alarm.js"></script>
-	<script src="resources/webcam.js"></script>
-	<script src="resources/socket.js"></script>
+	<script src="resources/js/restarea.js"></script>
+	<script src="resources/js/alarm.js"></script>
+	<script src="resources/js/webcam.js"></script>
+	<script src="resources/js/socket.js"></script>
 	<script>
 	let width, height;
 	let video;
@@ -67,6 +67,8 @@
 		video.width = width;
 		video.height = height;
 	}
+	
+
 
 
     </script>

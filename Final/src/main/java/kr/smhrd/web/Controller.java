@@ -47,7 +47,7 @@ public class Controller {
 		return "DriveRecord_WEB";
 	}
 
-	// 쉼터알려주기 테스트용, 문자보내기 테스트
+	// 쉼터알려주기 테스트용, 문자보내기 테스트, 이미지 쭉 보여주는거.
 	@RequestMapping("/location")
 	public String getLocation(@SessionAttribute("user_data") User user_data, Model model) {
 		List<Event> allImg = mapper.allImg(user_data.getId());

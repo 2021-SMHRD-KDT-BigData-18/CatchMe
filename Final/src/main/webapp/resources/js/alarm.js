@@ -26,7 +26,7 @@ function smsRecord() {
 		}
 	});
 }
-// notify호출 함수
+// notify호출 함수 --> 졸음운전 이벤트 db추가
 function callNotifyController(img_path) {
 	$.ajax({
 		url: "notify_sleep",
@@ -37,6 +37,20 @@ function callNotifyController(img_path) {
 		},
 		error: function() {
 			console.log("notify호출 실패")
+		}
+	})
+}
+// nolook호출 함수 --> 주시테만 이벤트 db추가
+function noLookController(img_path) {
+	$.ajax({
+		url: "noLook",
+		type: "post",
+		data: { "img_path": img_path, "username": username },
+		success: function(data) {
+			console.log("noLook호출 성공")
+		},
+		error: function() {
+			console.log("noLook호출 실패")
 		}
 	})
 }
