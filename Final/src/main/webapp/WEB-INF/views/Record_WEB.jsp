@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-	<link rel="stylesheet" type="text/css" href = "recordcss.css">
+	<link rel="stylesheet" type="text/css" href="resources/css/recordcss.css"/>
 </head>
 <body>
 	<div id="center">
