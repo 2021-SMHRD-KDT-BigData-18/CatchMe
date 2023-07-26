@@ -42,7 +42,7 @@ function stopStream() {
 }
 // 프레임 보내기 시작 함수
 function startSendingFrames() {
-	interval = setInterval(async () => { await Promise.all([sendFrameToPython(), sendFrameToRobo()]); }, 1000);
+	interval = setInterval(async () => { await Promise.all([sendFrameToPython()]); }, 1000);
 	streaming = true;
 	console.log('센딩프레임시작');
 }
