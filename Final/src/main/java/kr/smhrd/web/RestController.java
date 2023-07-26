@@ -66,6 +66,10 @@ public class RestController {
 		event.setEvent_img(img_path);
 		int row = mapper.addEvent(event);
 	}
+	@PostMapping("/noLook")
+	public void noLook(@RequestParam("username") String username) {
+		
+	}
 
 	@PostMapping("/smsRecord")
 	public void getMaxRecSeq(@RequestParam("username") String username) {

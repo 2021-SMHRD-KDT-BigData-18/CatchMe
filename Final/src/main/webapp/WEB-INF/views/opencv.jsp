@@ -29,8 +29,8 @@
 	<h3 id="nearestRestArea"></h3>
 	<br>
 	<button id="toggleStream" class="start-rec-button" onclick="toggleStream()">Play</button>
-	<button id="stopStream" class='end-rec-button' onclick="stopStream()"
-		style="visibility: hidden;">Stop</button>
+	<!-- 	<button id="stopStream" class='end-rec-button' onclick="stopStream()"
+		style="visibility: hidden;">Stop</button> -->
 	<br>
 	<br>
 	<video id="video"></video>
@@ -42,10 +42,6 @@
 	</audio>
 	<button id = "stopSound" onclick="stopNotifySound()" style="visibility: hidden;">음악 종료</button>
 	<br>	
-    <% String imgPath = "C:\\Users\\smhrd\\A_Final\\data\\20230720_163924_1.jpg";%>
-	<% byte[] imageData = java.nio.file.Files.readAllBytes(java.nio.file.Paths.get(imgPath)); %>
-    <% String base64Image = java.util.Base64.getEncoder().encodeToString(imageData); %>
-    <img src="data:image/jpeg;base64,<%= base64Image %>" alt="Image from Database">	
 	
 	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 	<script src="resources/restarea.js"></script>
@@ -58,8 +54,21 @@
 	let streaming = false;
 	let stream, interval;
 	let username = document.getElementById('username').value;
-	
-	
+	function setSize() {
+		if (window.orientation === 0) {
+			width = 480;
+			height = 640;
+		} else {
+			width = 640;
+			height = 480;
+		}
+
+		video = document.getElementById("video");
+		video.width = width;
+		video.height = height;
+	}
+
+
     </script>
 </body>
 </html>

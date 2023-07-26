@@ -54,7 +54,6 @@ public class Controller {
 		for (Event event : allImg) {
 			String base64Image = encodeImageToBase64(event.getEvent_img());
 			event.setBase64Image(base64Image);
-			System.out.println("base64완성");
 		}
 		model.addAttribute("allImg", allImg);
 		return "location";

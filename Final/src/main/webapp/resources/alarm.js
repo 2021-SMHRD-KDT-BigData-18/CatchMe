@@ -52,3 +52,11 @@ function stopNotifySound() {
 	audioElement.pause();
 	document.getElementById("stopSound").style.visibility = "hidden";
 }
+
+// 화면 클릭하면 음악종료
+document.addEventListener("click", function(event) {
+	const audioElement = document.getElementById('notifySound');
+	if (!audioElement.paused) {
+		stopNotifySound();
+	}
+});
