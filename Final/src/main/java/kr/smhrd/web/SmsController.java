@@ -35,7 +35,7 @@ public class SmsController {
 	@RequestMapping("/smscontroller") // urlMapping
 	public String list(@RequestParam("username")String username) {
 		User user = mapper.sendSms(username);
-		String id = user.getId();
+		String name = user.getName();
 		String receiver = user.getSms_receiver();
 	
 		String hostNameUrl = "https://sens.apigw.ntruss.com"; // api 기본 주소
@@ -54,7 +54,7 @@ public class SmsController {
 		JSONArray toArr = new JSONArray(); // JSON
 
 		// JSON으로 객체 데이터 저장
-		toJson.put("content", id+"님이 졸음운전 중입니다."); //보내는 내용
+		toJson.put("content", name+"님이 졸음운전 중입니다."); //보내는 내용
 		toJson.put("to", receiver); // 받는 사람
 		toArr.put(toJson);
 

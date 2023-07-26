@@ -1,6 +1,9 @@
 package kr.smhrd.web;
 
+import java.io.File;
+import java.io.IOException;
 import java.math.BigDecimal;
+import java.nio.file.Files;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -11,8 +14,12 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.ui.Model;
+import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -20,6 +27,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import kr.smhrd.entity.Event;
 import kr.smhrd.entity.Record;
@@ -43,13 +51,11 @@ public class RestController {
 	@PostMapping("/startRec")
 	public void startRec(HttpSession session, @RequestParam("username") String username) {
 		Long data = mapper.startRec(username);
-		return;
 	}
 
 	@PostMapping("/endRec")
 	public void endRec(@RequestParam("username") String username) {
 		Long date = mapper.endRec(username);
-		return;
 	}
 
 	@PostMapping("/notify_sleep")
@@ -59,20 +65,16 @@ public class RestController {
 		event.setRec_seq(rec_seq);
 		event.setEvent_img(img_path);
 		int row = mapper.addEvent(event);
-		return;
 	}
 
 	@PostMapping("/smsRecord")
 	public void getMaxRecSeq(@RequestParam("username") String username) {
 		int rec_seq = mapper.getMaxRecSeq(username);
-		System.out.println("rec_seq값 : " + rec_seq);
 		List<Event> data = mapper.search_event_at(rec_seq);
 		if (data == null) {
 			System.out.println("데이터 null");
 		} else {
 			for (Event event : data) {
-				System.out.println("event_at: " + event.getEvent_at());
-				System.out.println("event_content: " + event.getEvent_content());
 				Sms sms = new Sms();
 				sms.setId(username);
 				sms.setRec_seq(rec_seq);
@@ -80,13 +82,11 @@ public class RestController {
 				sms.setSms_content(event.getEvent_content());
 				int row = mapper.sms_record(sms);
 				if (row > 0) {
-					System.out.println("저장완료");
+					System.out.println("sms 저장완료");
 				} else {
-					System.out.println("저장실패");
+					System.out.println("sms 저장실패");
 				}
 			}
-
 		}
-
 	}
 }

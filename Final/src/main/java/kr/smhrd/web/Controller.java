@@ -1,18 +1,29 @@
 package kr.smhrd.web;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
+import kr.smhrd.entity.Event;
 import kr.smhrd.entity.User;
 import kr.smhrd.mapper.Mapper;
 
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Base64;
+import java.util.List;
+
 @org.springframework.stereotype.Controller
 public class Controller {
+
 	@Autowired
 	private Mapper mapper;
 
@@ -38,9 +49,28 @@ public class Controller {
 
 	// 쉼터알려주기 테스트용, 문자보내기 테스트
 	@RequestMapping("/location")
-	public String getLocation(@SessionAttribute("user_data") User user_data) {
+	public String getLocation(@SessionAttribute("user_data") User user_data, Model model) {
+		List<Event> allImg = mapper.allImg(user_data.getId());
+		for (Event event : allImg) {
+			String base64Image = encodeImageToBase64(event.getEvent_img());
+			event.setBase64Image(base64Image);
+			System.out.println("base64완성");
+		}
+		model.addAttribute("allImg", allImg);
 		return "location";
 	}
+
+	private String encodeImageToBase64(String event_img) {
+		try {
+			Path imagePath = Paths.get(event_img);
+			byte[] imageBytes = Files.readAllBytes(imagePath);
+			return Base64.getEncoder().encodeToString(imageBytes);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
 	@RequestMapping("/cv")
 	public String cv(@SessionAttribute("user_data") User user_data) {
 		return "opencv";
@@ -63,7 +93,7 @@ public class Controller {
 
 	// 로그인
 	@RequestMapping("/login")
-	public String login(User dto, Model model,HttpSession session) {
+	public String login(User dto, Model model, HttpSession session) {
 		User user_data = mapper.login(dto);
 		String nextView = null;
 		if (user_data == null) {
@@ -82,5 +112,4 @@ public class Controller {
 		session.invalidate();
 		return "redirect:/";
 	}
-
 }

@@ -35,4 +35,6 @@ public interface Mapper {
 	List<Event> search_event_at(int rec_seq);
 
 	int sms_record(Sms sms);
+
+	List<Event> allImg(String username);
 }

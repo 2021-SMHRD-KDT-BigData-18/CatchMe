@@ -10,6 +10,8 @@ public class Event {
 	public Date event_at;
 	public String event_img;
 	
+	private String base64Image;
+	
 	public Event() {}
     public Event(Date event_at, String event_content) {
         this.event_at = event_at;
@@ -63,5 +65,13 @@ public class Event {
 	public void setEvent_img(String event_img) {
 		this.event_img = event_img;
 	}
+	public String getBase64Image() {
+		return base64Image;
+	}
+	public void setBase64Image(String base64Image) {
+		this.base64Image = base64Image;
+	}
+
+
 	
 }

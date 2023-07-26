@@ -2,6 +2,7 @@
 <%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,38 +36,16 @@
 	  <source src="<%=music_url %>" type="audio/mpeg">
 		군대기상나팔
 	</audio>
-	C:\Users\smhrd\Desktop\web(Server)\express\uploads
+	 <c:forEach items="${allImg}" var="event">
+        <img src="data:image/jpeg;base64,${event.base64Image}" alt="Image from Database">
+    </c:forEach>
+
 	  	
 
 	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 	<script>
 		let username = document.getElementById('username').value;
 		
-	
-		function uploadFile() {
-		    const fileInput = document.getElementById('fileInput');
-		    const file = fileInput.files[0];
-
-		    if (!file) {
-		        alert('파일을 선택해주세요.');
-		        return;
-		    }
-
-		    const formData = new FormData();
-		    formData.append('id', username);
-		    formData.append('file', file);
-
-		    fetch('http://localhost:3000/upload', {
-		        method: 'POST',
-		        body: formData
-		    })
-		    .then(response => response.json())
-		    .then(data => {
-		        console.log('app.js로 넘어감');
-		        console.log('서버에서 받은 응답 데이터:', data);
-		    })
-		    .catch(error => console.error('업로드 에러:', error));
-		}
 		// 문자발송
 		function sendSms(){
 			$.ajax({
