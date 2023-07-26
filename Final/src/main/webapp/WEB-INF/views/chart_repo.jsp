@@ -544,7 +544,7 @@
                                 }
                                 
                             });
-                            
+                             
 
                             let tableRoot = tooltipEl.querySelector('table');
                             tableRoot.innerHTML = innerHtml;
