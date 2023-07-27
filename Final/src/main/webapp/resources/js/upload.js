@@ -1,6 +1,8 @@
 function uploadFile() {
 	const fileInput = document.getElementById('fileInput');
 	const file = fileInput.files[0];
+	console.log(file);
+	
 
 	if (!file) {
 		alert('파일을 선택해주세요.');

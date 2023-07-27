@@ -20,6 +20,7 @@ function smsRecord() {
 		data: { username: username },
 		success: function(data) {
 			console.log("smsRecord 아이디 넘김");
+			displaySmsHistory();
 		},
 		error: function() {
 			console.log("smsRecord 아이디 못넘김");
@@ -58,13 +59,11 @@ function noLookController(img_path) {
 function playNotifySound() {
 	const audioElement = document.getElementById('notifySound');
 	audioElement.play();
-	document.getElementById("stopSound").style.visibility = "visible";
 }
 // 음악종료 함수
 function stopNotifySound() {
 	const audioElement = document.getElementById('notifySound');
 	audioElement.pause();
-	document.getElementById("stopSound").style.visibility = "hidden";
 }
 
 // 화면 클릭하면 음악종료

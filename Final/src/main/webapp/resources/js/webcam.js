@@ -17,7 +17,7 @@ function toggleStream() {
 			.then(successCallback)
 			.catch(errorCallback);
 
-		document.getElementById("toggleStream").innerText = "Stop";
+		document.getElementById("record_img").href = "resources/img/video.png";
 		streaming = true;
 		console.log("toggleStream() 실행됨");
 	} else {
@@ -34,7 +34,7 @@ function stopStream() {
 		clearInterval(interval);
 
 		streaming = false;
-		document.getElementById("toggleStream").innerText = "Play";
+		document.getElementById("record_img").href = "resources/img/video.png";
 		stopNotifySound();
 
 		console.log("stopStream() 실행됨");
@@ -84,6 +84,7 @@ function sendFrameToPython() {
 				console.log('졸음 img_path', img_path)
 				findNearestRestArea();
 				callNotifyController(img_path);
+				content_area(1);
 				playNotifySound();
 				//sendSms();
 				smsRecord();
@@ -129,6 +130,7 @@ function sendFrameToRobo() {
 				var img_path = data.img_path;
 				console.log('주시태만 img_path', img_path)
 				noLookController(img_path);
+				content_area(2);
 				}
 		})
 		.catch(error => {
