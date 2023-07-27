@@ -74,7 +74,7 @@ public class RestController {
 		Event event = new Event();
 		event.setRec_seq(rec_seq);
 		event.setEvent_img(img_path);
-		int row = mapper.addnolook(event);
+		Integer row = mapper.addnolook(event);
 		
 	}
 
