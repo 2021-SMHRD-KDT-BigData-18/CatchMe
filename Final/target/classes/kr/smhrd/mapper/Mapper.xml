@@ -37,7 +37,7 @@ where t1.id = #{param1};
 select max(rec_seq) as max_rec_seq FROM ccu.record_info where id = #{param1}
 </select>
 
-<insert id="addEvent" parameterType="kr.smhrd.entity.Event">
+<insert id="addnotify_sleep" parameterType="kr.smhrd.entity.Event">
 insert into ccu.event_info (rec_seq,event_content,event_at,event_img)
 values (#{rec_seq},'졸음운전',sysdate(),#{event_img})
 </insert>
@@ -60,6 +60,11 @@ from ccu.event_info ei
 inner join ccu.record_info ri ON ei.rec_seq = ri.rec_seq
 inner join ccu.user_info ui ON ri.id = ui.id
 where ui.id = #{param1};
+</select>
+
+<select id="addnolook" parameterType="kr.smhrd.entity.Event">
+insert into ccu.event_info (rec_seq,event_content,event_at,event_img)
+values (#{rec_seq},'주시태만',sysdate(),#{event_img})
 </select>
 
 </mapper>

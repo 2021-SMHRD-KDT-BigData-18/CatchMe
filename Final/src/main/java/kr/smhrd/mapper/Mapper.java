@@ -28,7 +28,7 @@ public interface Mapper {
 
 	int getMaxRecSeq(String username);
 
-	int addEvent(Event event);
+	int addnotify_sleep(Event event);
 
 	User sendSms(String username);
 
@@ -37,4 +37,7 @@ public interface Mapper {
 	int sms_record(Sms sms);
 
 	List<Event> allImg(String username);
+
+	int addnolook(Event event);
+
 }

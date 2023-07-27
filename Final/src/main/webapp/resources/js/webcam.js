@@ -42,7 +42,7 @@ function stopStream() {
 }
 // 프레임 보내기 시작 함수
 function startSendingFrames() {
-	interval = setInterval(async () => { await Promise.all([sendFrameToPython()]); }, 1000);
+	interval = setInterval(async () => { await Promise.all([sendFrameToPython(),sendFrameToRobo()]); }, 1000);
 	streaming = true;
 	console.log('센딩프레임시작');
 }
@@ -81,7 +81,7 @@ function sendFrameToPython() {
 			} else {
 				console.log('졸음데이터넘어옴', data.img_path);
 				var img_path = data.img_path;
-				console.log('img_path', img_path)
+				console.log('졸음 img_path', img_path)
 				findNearestRestArea();
 				callNotifyController(img_path);
 				playNotifySound();
@@ -124,9 +124,11 @@ function sendFrameToRobo() {
 		.then(response => response.json())
 		.then(data => {
 			if (data.img_path == null) {
-				console.log("robo img_path 빔");
-			} else {
-				console.log("robo img_path 있음");
+				console.log("주시태만 이미지없음",data.message);
+			} else {			
+				var img_path = data.img_path;
+				console.log('주시태만 img_path', img_path)
+				noLookController(img_path);
 				}
 		})
 		.catch(error => {

@@ -41,7 +41,7 @@
     </c:forEach>
 
 	  	
-
+	<script src="resources/js/upload.js"></script>
 	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 	<script>
 		let username = document.getElementById('username').value;
