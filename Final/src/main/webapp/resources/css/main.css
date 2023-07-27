@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+.main_area {
+	height: 72vh;
+	display: flex;
+	justify-content: space-around;
+	margin-right: 5%;
+	padding-left: 100px;
+}
+
+.main_area a img {
+	width: 280px;
+	height: 280px;
+	filter: drop-shadow(10px 7px 5px #c3c3c3);
+	margin-top: 70%;
+}
+
+#logo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 50px;
+	margin-left: 33%;
+	float: left;
+	margin-top: 2%;
+	letter-spacing: 7px;
+	color: #212A3E;
+}
