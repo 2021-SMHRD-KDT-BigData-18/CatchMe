@@ -59,12 +59,23 @@ public class RestController {
 	}
 
 	@PostMapping("/notify_sleep")
-	public void notify_sleep(@RequestParam("username") String username, @RequestParam("img_path") String img_path) {
+	public void notify_sleep(@RequestParam("username") String username,
+			@RequestParam("img_path") String img_path) {
 		int rec_seq = mapper.getMaxRecSeq(username);
 		Event event = new Event();
 		event.setRec_seq(rec_seq);
 		event.setEvent_img(img_path);
-		int row = mapper.addEvent(event);
+		int row = mapper.addnotify_sleep(event);
+	}
+	@PostMapping("/noLook")
+	public void noLook(@RequestParam("username") String username,
+			@RequestParam("img_path") String img_path) {
+		int rec_seq = mapper.getMaxRecSeq(username);
+		Event event = new Event();
+		event.setRec_seq(rec_seq);
+		event.setEvent_img(img_path);
+		int row = mapper.addnolook(event);
+		
 	}
 
 	@PostMapping("/smsRecord")

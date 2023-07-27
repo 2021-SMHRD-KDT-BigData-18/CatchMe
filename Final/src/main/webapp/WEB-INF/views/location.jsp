@@ -37,11 +37,11 @@
 		군대기상나팔
 	</audio>
 	 <c:forEach items="${allImg}" var="event">
-        <img src="data:image/jpeg;base64,${event.base64Image}" alt="Image from Database">
+        <img src="data:image/jpeg;base64,${event.base64Image}" alt="이미지없다야">
     </c:forEach>
 
 	  	
-
+	<script src="resources/js/upload.js"></script>
 	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 	<script>
 		let username = document.getElementById('username').value;

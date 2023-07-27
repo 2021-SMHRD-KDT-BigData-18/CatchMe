@@ -47,14 +47,13 @@ public class Controller {
 		return "DriveRecord_WEB";
 	}
 
-	// 쉼터알려주기 테스트용, 문자보내기 테스트
+	// 쉼터알려주기 테스트용, 문자보내기 테스트, 이미지 쭉 보여주는거.
 	@RequestMapping("/location")
 	public String getLocation(@SessionAttribute("user_data") User user_data, Model model) {
 		List<Event> allImg = mapper.allImg(user_data.getId());
 		for (Event event : allImg) {
 			String base64Image = encodeImageToBase64(event.getEvent_img());
 			event.setBase64Image(base64Image);
-			System.out.println("base64완성");
 		}
 		model.addAttribute("allImg", allImg);
 		return "location";
