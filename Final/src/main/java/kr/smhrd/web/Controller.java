@@ -26,12 +26,12 @@ public class Controller {
 
 	@Autowired
 	private Mapper mapper;
-
+	//첫페이지 컨트롤러
 	@RequestMapping("/")
 	public String Loginpage() {
 		return "Login_WEB";
 	}
-
+	//회원가입 컨트롤러
 	@RequestMapping("/regi")
 	public String Registerpage() {
 		return "Regi_WEB";
@@ -41,8 +41,13 @@ public class Controller {
 	public String Mainpage() {
 		return "Main_WEB";
 	}
+	
+	@RequestMapping("/record")
+	public String record() {
+		return "Record_WEB";
+	}
 
-	@RequestMapping("/reco")
+	@RequestMapping("/chart")
 	public String Recordpage() {
 		return "chart_repo";
 	}
