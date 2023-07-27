@@ -557,7 +557,7 @@
                                     innerHtml += '<td>'+'<span style="' + style + '">' + reason_name + '</span>'+'</td>';
                                     innerHtml += '</tr>';
                                 }
-                                
+                                 
                             });
                              
 
