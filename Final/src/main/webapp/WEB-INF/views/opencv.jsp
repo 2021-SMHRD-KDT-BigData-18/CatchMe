@@ -23,7 +23,7 @@
 	<a><%=alarm_select_path %></a>
 	<input type = "hidden" value = "${user_data.id }" id = "username">
 	<input type = "hidden" value = "${user_data.alarm }" id = "alarm_info">
-	<a href='logout'>logout</a>
+	<a href='record'>녹화페이지</a>
 	<a href='location'>문자보내기test</a>
 	<br>
 	<h3 id="nearestRestArea"></h3>
