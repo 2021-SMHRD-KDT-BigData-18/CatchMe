@@ -548,7 +548,7 @@
                                 var regex = /[^0-9]/g;            // 숫자가 아닌 문자열을 선택하는 정규식
                                 var result = body[0].replace(regex, "");
                                 
-                                for(var j=1; j<=result; j++){ // j=순번
+                                for(var j=1; j<=result; j++){ // j=순번  
                                     innerHtml += '<tr>';
                                     innerHtml += '<td>'+'<span style="' + style + '">' + j + '</span>'+'</td>';
                                     innerHtml += '<td>'+'<span style="' + style + '">' + start_time + '</span>'+'</td>';
