@@ -44,7 +44,7 @@ public class Controller {
 
 	@RequestMapping("/reco")
 	public String Recordpage() {
-		return "DriveRecord_WEB";
+		return "chart_repo";
 	}
 
 	// 쉼터알려주기 테스트용, 문자보내기 테스트, 이미지 쭉 보여주는거.
