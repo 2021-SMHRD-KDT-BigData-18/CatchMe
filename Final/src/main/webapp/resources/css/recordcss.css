@@ -21,8 +21,8 @@
 }
 
 .record_area { /*녹화 화면*/
-	height: 64vh;
-	width: 45vw;
+	height: 620px;
+	width: 800px;
 	/* height: 480px;
             width: 640px; */
 	float: left;
