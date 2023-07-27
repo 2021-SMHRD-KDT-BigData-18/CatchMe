@@ -12,14 +12,14 @@
 		<div id="header">
 	    	<div class="dropdown" style="float: left;">
 	        	<button class="dropbtn">
-	            	<img class="homeicon" src="./image/free-icon-home-1828864.png">
+	            	<img class="homeicon" src="resources/image/house.svg">
 	            </button>
 	            <!-- <div class="dropdown-content" style="left: 0;">
 	                <a href="#">링크#1</a>
 	            </div> -->
 	        </div>
 	       	<div class="dropdown" style="float: right;">
-	        	<button class="dropbtn"><img class="myicon" src="./image/free-icon-user-5264565.png"></button>
+	        	<button class="dropbtn"><img class="myicon" src="resources/image/user.svg"></button>
 	            <div class="dropdown-content">
 	            	<a href="#">문자 발송 내역</a>
 	                <a href="#">로그아웃</a>
@@ -32,7 +32,7 @@
 	    <div id="main_area">
 	    	<div class="record_area">녹화</div>
 	        	<div class="record_button">
-	            	<a href="#"><img src="./image/free-icon-video-recording-4912738.png"></a>
+	            	<a href="#"><img src="resources/image/video.png"></a>
 	                <!-- <button>end</button> -->
 	            </div>
 	            <div class="content_area">
