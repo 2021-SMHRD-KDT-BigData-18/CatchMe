@@ -38,7 +38,6 @@
 	<br>
 	<audio id = "notifySound" controls>
 	  <source src="<%=music_url %>" type="audio/mpeg">
-		군대기상나팔
 	</audio>
 	<button id = "stopSound" onclick="stopNotifySound()" style="visibility: hidden;">음악 종료</button>
 	<br>	

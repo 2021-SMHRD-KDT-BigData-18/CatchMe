@@ -320,65 +320,65 @@
             <button id="prev-button" class="arrow-button">◄ </button>
     
             <!-- 느낌 상, 05,06 버튼도 추가해야함(아니면 1월, 2월, 3월 ... 로 가는 방법도 고려) -->
-            <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen">1월 01</a>
-            <a href="" title="Button push lightblue" class="button btnPush btnLightBlue">1월 02</a>
-            <a href="" title="Button push orange" class="button btnPush btnOrange">1월 03</a>
-            <a href="" title="Button push purple" class="button btnPush btnPurple">1월 04</a>
+            <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen" onclick=mon_week(1,1)>1월 1주차</a>
+            <a href="" title="Button push lightblue" class="button btnPush btnLightBlue" onclick=mon_week(1,2)>1월 2주차</a>
+            <a href="" title="Button push orange" class="button btnPush btnOrange" onclick=mon_week(1,3)>1월 3주차</a>
+            <a href="" title="Button push purple" class="button btnPush btnPurple" onclick=mon_week(1,1)>1월 4주차</a>
             
-            <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen">2월 01</a>
-            <a href="" title="Button push lightblue" class="button btnPush btnLightBlue">2월 02</a>
-            <a href="" title="Button push orange" class="button btnPush btnOrange">2월 03</a>
-            <a href="" title="Button push purple" class="button btnPush btnPurple">2월 04</a>
+            <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen" onclick=mon_week(2,1)>2월 1주차</a>
+            <a href="" title="Button push lightblue" class="button btnPush btnLightBlue" onclick=mon_week(2,2)>2월 2주차</a>
+            <a href="" title="Button push orange" class="button btnPush btnOrange" onclick=mon_week(2,3)>2월 3주차</a>
+            <a href="" title="Button push purple" class="button btnPush btnPurple" onclick=mon_week(2,4)>2월 4주차</a>
             
-            <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen">3월 01</a>
-            <a href="" title="Button push lightblue" class="button btnPush btnLightBlue">3월 02</a>
-            <a href="" title="Button push orange" class="button btnPush btnOrange">3월 03</a>
-            <a href="" title="Button push purple" class="button btnPush btnPurple">3월 04</a>
+            <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen" onclick=mon_week(3,1)>3월 1주차</a>
+            <a href="" title="Button push lightblue" class="button btnPush btnLightBlue" onclick=mon_week(3,2)>3월 2주차</a>
+            <a href="" title="Button push orange" class="button btnPush btnOrange" onclick=mon_week(3,3)>3월 3주차</a>
+            <a href="" title="Button push purple" class="button btnPush btnPurple" onclick=mon_week(3,4)>3월 4주차</a>
             
-            <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen">4월 01</a>
-            <a href="" title="Button push lightblue" class="button btnPush btnLightBlue">4월 02</a>
-            <a href="" title="Button push orange" class="button btnPush btnOrange">4월 03</a>
-            <a href="" title="Button push purple" class="button btnPush btnPurple">4월 04</a>
+            <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen" onclick=mon_week(4,1)>4월 1주차</a>
+            <a href="" title="Button push lightblue" class="button btnPush btnLightBlue" onclick=mon_week(4,2)>4월 2주차</a>
+            <a href="" title="Button push orange" class="button btnPush btnOrange" onclick=mon_week(4,3)>4월 3주차</a>
+            <a href="" title="Button push purple" class="button btnPush btnPurple" onclick=mon_week(4,4)>4월 4주차</a>
             
-            <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen">5월 01</a>
-            <a href="" title="Button push lightblue" class="button btnPush btnLightBlue">5월 02</a>
-            <a href="" title="Button push orange" class="button btnPush btnOrange">5월 03</a>
-            <a href="" title="Button push purple" class="button btnPush btnPurple">5월 04</a>
+            <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen" onclick=mon_week(5,1)>5월 1주차</a>
+            <a href="" title="Button push lightblue" class="button btnPush btnLightBlue" onclick=mon_week(5,2)>5월 2주차</a>
+            <a href="" title="Button push orange" class="button btnPush btnOrange" onclick=mon_week(5,3)>5월 3주차</a>
+            <a href="" title="Button push purple" class="button btnPush btnPurple" onclick=mon_week(5,4)>5월 4주차</a>
             
-            <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen">6월 01</a>
-            <a href="" title="Button push lightblue" class="button btnPush btnLightBlue">6월 02</a>
-            <a href="" title="Button push orange" class="button btnPush btnOrange">6월 03</a>
-            <a href="" title="Button push purple" class="button btnPush btnPurple">6월 04</a>
+            <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen" onclick=mon_week(6,1)>6월 1주차</a>
+            <a href="" title="Button push lightblue" class="button btnPush btnLightBlue" onclick=mon_week(6,2)>6월 2주차</a>
+            <a href="" title="Button push orange" class="button btnPush btnOrange" onclick=mon_week(6,3)>6월 3주차</a>
+            <a href="" title="Button push purple" class="button btnPush btnPurple" onclick=mon_week(6,4)>6월 4주차</a>
             
-            <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen">7월 01</a>
-            <a href="" title="Button push lightblue" class="button btnPush btnLightBlue">7월 02</a>
-            <a href="" title="Button push orange" class="button btnPush btnOrange">7월 03</a>
-            <a href="" title="Button push purple" class="button btnPush btnPurple">7월 04</a>
+            <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen" onclick=mon_week(7,1)>7월 1주차</a>
+            <a href="" title="Button push lightblue" class="button btnPush btnLightBlue" onclick=mon_week(7,2)>7월 2주차</a>
+            <a href="" title="Button push orange" class="button btnPush btnOrange" onclick=mon_week(7,3)>7월 3주차</a>
+            <a href="" title="Button push purple" class="button btnPush btnPurple" onclick=mon_week(7,4)>7월 4주차</a>
             
-            <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen">8월 01</a>
-            <a href="" title="Button push lightblue" class="button btnPush btnLightBlue">8월 02</a>
-            <a href="" title="Button push orange" class="button btnPush btnOrange">8월 03</a>
-            <a href="" title="Button push purple" class="button btnPush btnPurple">8월 04</a>
+            <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen" onclick=mon_week(8,1)>8월 1주차</a>
+            <a href="" title="Button push lightblue" class="button btnPush btnLightBlue" onclick=mon_week(8,2)>8월 2주차</a>
+            <a href="" title="Button push orange" class="button btnPush btnOrange" onclick=mon_week(8,3)>8월 3주차</a>
+            <a href="" title="Button push purple" class="button btnPush btnPurple" onclick=mon_week(8,4)>8월 4주차</a>
             
-            <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen">9월 01</a>
-            <a href="" title="Button push lightblue" class="button btnPush btnLightBlue">9월 02</a>
-            <a href="" title="Button push orange" class="button btnPush btnOrange">9월 03</a>
-            <a href="" title="Button push purple" class="button btnPush btnPurple">9월 04</a>
+            <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen" onclick=mon_week(9,1)>9월 1주차</a>
+            <a href="" title="Button push lightblue" class="button btnPush btnLightBlue" onclick=mon_week(9,2)>9월 2주차</a>
+            <a href="" title="Button push orange" class="button btnPush btnOrange" onclick=mon_week(9,3)>9월 3주차</a>
+            <a href="" title="Button push purple" class="button btnPush btnPurple" onclick=mon_week(9,4)>9월 4주차</a>
             
-            <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen">10월 01</a>
-            <a href="" title="Button push lightblue" class="button btnPush btnLightBlue">10월 02</a>
-            <a href="" title="Button push orange" class="button btnPush btnOrange">10월 03</a>
-            <a href="" title="Button push purple" class="button btnPush btnPurple">10월 04</a>
+            <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen" onclick=mon_week(10,1)>10월 1주차</a>
+            <a href="" title="Button push lightblue" class="button btnPush btnLightBlue" onclick=mon_week(10,2)>10월 2주차</a>
+            <a href="" title="Button push orange" class="button btnPush btnOrange" onclick=mon_week(10,3)>10월 3주차</a>
+            <a href="" title="Button push purple" class="button btnPush btnPurple" onclick=mon_week(10,4)>10월 4주차</a>
             
-            <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen">11월 01</a>
-            <a href="" title="Button push lightblue" class="button btnPush btnLightBlue">11월 02</a>
-            <a href="" title="Button push orange" class="button btnPush btnOrange">11월 03</a>
-            <a href="" title="Button push purple" class="button btnPush btnPurple">11월 04</a>
+            <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen" onclick=mon_week(11,1)>11월 1주차</a>
+            <a href="" title="Button push lightblue" class="button btnPush btnLightBlue" onclick=mon_week(11,2)>11월 2주차</a>
+            <a href="" title="Button push orange" class="button btnPush btnOrange" onclick=mon_week(11,3)>11월 3주차</a>
+            <a href="" title="Button push purple" class="button btnPush btnPurple" onclick=mon_week(11,4)>11월 4주차</a>
             
-            <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen">12월 01</a>
-            <a href="" title="Button push lightblue" class="button btnPush btnLightBlue">12월 02</a>
-            <a href="" title="Button push orange" class="button btnPush btnOrange">12월 03</a>
-            <a href="" title="Button push purple" class="button btnPush btnPurple">12월 04</a>
+            <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen" onclick=mon_week(12,1)>12월 1주차</a>
+            <a href="" title="Button push lightblue" class="button btnPush btnLightBlue" onclick=mon_week(12,2)>12월 2주차</a>
+            <a href="" title="Button push orange" class="button btnPush btnOrange" onclick=mon_week(12,3)>12월 3주차</a>
+            <a href="" title="Button push purple" class="button btnPush btnPurple" onclick=mon_week(12,4)>12월 4주차</a>
     
             <button id="next-button" class="arrow-button">►</button>
         </div>
@@ -392,12 +392,27 @@
     </form>
     
     <script>
+    
+    function mon_week(month, week) {
+    	console.error("버튼이 클릭되었습니다! 정보:", month, week);
+    	$.ajax({
+    		url : "mon_week",
+    		type: "post",
+    		data:{month:month,week:week},
+    		success:function(){
+    			
+    		}, error : function(){
+    			
+    		}
+    	});
+    }
+        
     // 화살표 누르면 버튼이 넘어가는 기능을 가진 script 코드
     const buttonContainer = document.querySelectorAll(".button");
     //alert("test: " + buttonContainer.length);
     
     let currentMonthIndex = 0;
-    const buttonsPerSet = 4;
+    const buttonsPerSet = 5;
     
     function showCurrentSetButtons() {
     buttonContainer.forEach((ind, index) => {
@@ -425,7 +440,7 @@
     
     document.getElementById('prev-button').addEventListener('click', showPreviousButtons);
     document.getElementById('next-button').addEventListener('click', showNextButtons);
-    </script>
+    
     
     <!-- ----------------------------------------------------------------------------------------------- -->
     
@@ -434,7 +449,7 @@
         <canvas id="myChart"></canvas>
       </div>-->
       
-      <script>
+      
         const ctx = document.getElementById('myChart');
 
         var week_label = new Array('Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat');
@@ -515,7 +530,7 @@
                         if (tooltipModel.body) {
                             const titleLines = tooltipModel.title || [];
                             const bodyLines = tooltipModel.body.map(getBody);
-
+							// 툴팁 관련 정의된 변수들 있는 위치
                             let innerHtml = '';
                             titleLines.forEach(function(title) {
                                 innerHtml += '<tr><th colspan=5>'+ week_day + ' (' + title + ')' + '</th></tr>';
