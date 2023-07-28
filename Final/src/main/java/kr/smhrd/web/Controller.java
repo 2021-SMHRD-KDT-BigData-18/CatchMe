@@ -45,7 +45,7 @@ public class Controller {
 	// 설정 이동
 	@RequestMapping("/setting")
 	public String MoveMypg() {
-		return "Setting";
+		return "Setting_WEB";
 	}
 
 	@RequestMapping("/main")
@@ -62,7 +62,7 @@ public class Controller {
 	// 주행 기록 페이지
 	@RequestMapping("/chart")
 	public String Recordpage() {
-		return "chart_repo";
+		return "Chart_WEB";
 	}
 
 	// 쉼터알려주기 테스트용, 문자보내기 테스트, 이미지 쭉 보여주는거.
