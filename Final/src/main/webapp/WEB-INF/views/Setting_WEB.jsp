@@ -471,11 +471,11 @@
         <div id="header">
             <div class="dropdown" style="float: left;">
                 <button class="dropbtn" id="gomain" onclick="GoMain()">
-                    <img class="homeicon" src="./image/free-icon-home-1828864.png">
+                    <img class="homeicon" src="resources/img/home (2).png">
                 </button>
             </div>
             <div class="dropdown" style="float: right;">
-                <button class="dropbtn"><img class="myicon" src="./image/free-icon-user-5264565.png"></button>
+                <button class="dropbtn"><img class="myicon" src="resources/img/user (2).png"></button>
                 <div class="dropdown-content">
                     <a href="photo">사진</a>
                     <a href="logout">로그아웃</a>
@@ -494,18 +494,10 @@
 <body>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <aside class="side-bar">
-        <section class="side-bar__icon-box">
-            <section class="side-bar__icon-1">
-                <div></div>
-                <div></div>
-                <div></div>
-            </section>
-        </section>
+
         <ul>
             <li>
-                <a href="#" class="classi" id="settingBtn"></a> <!-- 절대 지우지 마세요 팝업 관련해서 넣어놨습니다 (23/07/28) -->
-
+                <!-- <a href="#" class="classi" id="settingBtn"></a> <!-- 절대 지우지 마세요 팝업 관련해서 넣어놨습니다 (23/07/28) -->
             </li>
             <li>
                 <a href="#" class="classi" id="alarmBtn">
@@ -515,10 +507,6 @@
 
                     알림음 설정</a>
                 <ul>
-                    <li><a href="#">text1</a></li>
-                    <li><a href="#">text2</a></li>
-                    <li><a href="#">text3</a></li>
-                    <li><a href="#">text4</a></li>
                 </ul>
             </li>
             <li>
@@ -531,10 +519,6 @@
 
                     개인정보수정</a>
                 <ul>
-                    <li><a href="#">text1</a></li>
-                    <li><a href="#">text2</a></li>
-                    <li><a href="#">text3</a></li>
-                    <li><a href="#">text4</a></li>
                 </ul>
             </li>
 

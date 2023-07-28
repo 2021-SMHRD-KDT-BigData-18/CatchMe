@@ -207,11 +207,11 @@
         <div id="header">
             <div class="dropdown" style="float: left;" id="gomain" onclick="GoMain()">
                 <button class="dropbtn">
-                    <img class="homeicon" src="./image/free-icon-home-1828864.png">
+                    <img class="homeicon" src="resources/img/home (2).png">
                 </button>
             </div>
             <div class="dropdown" style="float: right;">
-                <button class="dropbtn"><img class="myicon" src="./image/free-icon-user-5264565.png"></button>
+                <button class="dropbtn"><img class="myicon" src="resources/img/user (2).png"></button>
                 <div class="dropdown-content">
                     <a href="#">문자 발송 내역</a>
                     <a href="logout">로그아웃</a>
