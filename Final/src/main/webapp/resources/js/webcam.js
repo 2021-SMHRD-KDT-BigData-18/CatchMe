@@ -17,7 +17,7 @@ function toggleStream() {
 			.then(successCallback)
 			.catch(errorCallback);
 
-		document.getElementById("record_img").href = "resources/img/stop-button.png";
+		document.getElementById("record_img").src = "resources/img/stop-button.png";
 		streaming = true;
 		console.log("toggleStream() 실행됨");
 	} else {
@@ -34,7 +34,7 @@ function stopStream() {
 		clearInterval(interval);
 
 		streaming = false;
-		document.getElementById("record_img").href = "resources/img/video.png";
+		document.getElementById("record_img").src = "resources/img/video.png";
 		stopNotifySound();
 
 		console.log("stopStream() 실행됨");
