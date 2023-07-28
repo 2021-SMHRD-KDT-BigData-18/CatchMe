@@ -28,7 +28,7 @@ public class Controller {
 	private Mapper mapper;
 	//첫페이지 컨트롤러
 	@RequestMapping("/")
-	public String Loginpage() {
+	public String Movemain() {
 		return "Main_WEB_DB";
 	}
 	//회원가입 컨트롤러
@@ -37,6 +37,11 @@ public class Controller {
 		return "Regi_WEB";
 	}
 	
+	// 로그인페이지 이동
+	@RequestMapping("/movelogin")
+	public String Loginpage() {
+		return "Login_WEB";
+	}
 	// 설정 이동
 	@RequestMapping("/setting")
 	public String MoveMypg() {

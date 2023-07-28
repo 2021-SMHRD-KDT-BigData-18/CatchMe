@@ -28,7 +28,11 @@
             <div class="dropdown" style="float: right;">
                 <button class="dropbtn"><img class="myicon" src="resources/img/user.svg"></button>
                 <div class="dropdown-content">
-
+					
+					<% if (secheck == null) { %>
+						<a href="movelogin">로그인</a>
+					<% } %>
+					<% else %>
                     <% if (secheck != null) { %>
 					 	<a href="#">문자 발송 내역</a>
 					<% } else { %>
