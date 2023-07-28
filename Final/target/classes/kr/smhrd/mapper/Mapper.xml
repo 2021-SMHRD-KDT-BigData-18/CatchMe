@@ -67,4 +67,24 @@ insert into ccu.event_info (rec_seq,event_content,event_at,event_img)
 values (#{rec_seq},'주시태만',sysdate(),#{event_img})
 </select>
 
+<select id="confrim" parameterType="kr.smhrd.entity.User" resultType="kr.smhrd.entity.User">
+select id from ccu.user_info where id = #{id}
+</select>
+
+<select id="searchPw" parameterType="kr.smhrd.entity.User" resultType="kr.smhrd.entity.User">
+select * from user_info where id = #{id} and email = #{email}
+</select>
+
+<update id="changePw" parameterType="kr.smhrd.entity.User">
+update user_info set pw = #{pw} where id = #{id}
+</update>
+
+<update id="changeMy" parameterType="kr.smhrd.entity.User">
+update user_info set name = #{name}, phone = #{phone} where id = #{id}
+</update>
+
+<update id="chrephonw" parameterType="kr.smhrd.entity.User">
+update user_info set sms_receiver = #{sms_receiver} where id = #{id}
+</update>
+
 </mapper>

@@ -5,6 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<% User user = (User)session.getAttribute("user_data");
+   String secheck = (user != null) ? user.getName() : null; %>
 <link rel="stylesheet" type="text/css" href="resources/css/navicover.css"/>
 <link rel="stylesheet" type="text/css" href="resources/css/main.css"/>
 </head>
@@ -25,9 +27,24 @@
             <div class="dropdown" style="float: right;">
                 <button class="dropbtn"><img class="myicon" src="resources/img/user.svg"></button>
                 <div class="dropdown-content">
-                    <a href="#">문자 발송 내역</a>
-                    <a href='logout'>로그아웃</a>
-                    <a href="#">회원탈퇴</a>
+
+                    <% if (secheck != null) { %>
+					 	<a href="#">문자 발송 내역</a>
+					<% } else { %>
+						<a href="movelogin">문자 발송 내역</a>
+					<% } %>
+					
+					<% if (secheck != null) { %>
+						<a href="logout">로그아웃</a>
+					<% } else { %>
+						<a href="movelogin">로그인</a>
+					<% } %>
+					
+					<% if (secheck != null) { %>
+						<a href="#">회원탈퇴</a>
+					<% } else { %>
+						<a href="movelogin">회원탈퇴</a>
+					<% } %> 
                 </div>
             </div>    
         </div>
@@ -35,8 +52,11 @@
         <!-- 여기서 작업하면됨 -->
         <div class="main_area">
             <div class="record_btn">
-                <a href="#"><img src="resources/img/video-projector.png" onmouseover="this.src='resources/img/video-projector-unscreen.gif'" onmouseout="this.src='resources/img/video-projector.png'"></a>
-            </div>
+	            <% if (secheck == null) { %>
+					<a href="movelogin"><img src="resources/img/video-projector.png" onmouseover="this.src='resources/img/video-projector-unscreen.gif'" onmouseout="this.src='resources/img/video-projector.png'"></a>
+				<% } else { %>
+					<a href="main"><img src="resources/img/video-projector.png" onmouseover="this.src='resources/img/video-projector-unscreen.gif'" onmouseout="this.src='resources/img/video-projector.png'"></a><!-- 녹화 -->
+				<% } %></div>
             <p style="border-left: 1px solid #eae7e4; box-shadow:0 0 15px rgba(159, 151, 151, 0.326);"></p>
             <div class="drive_record_btn">
                 <a href="#"><img src="resources/img/bar-chart.png" onmouseover="this.src='resources/img/bar-chart-1--unscreen.gif'" onmouseout="this.src='resources/img/bar-chart.png'"></a>
