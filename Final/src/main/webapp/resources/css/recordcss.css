@@ -46,10 +46,6 @@
 	position: relative;
 }
 
-.record_button .content_up span {
-	font-size: 35px;
-}
-
 .content_area { /*이상현상 감지를 나타내는 화면*/
 	height: 42vh;
 	width: 34vw;
