@@ -40,7 +40,7 @@
 	       	<div class="dropdown">
 	        	<button class="dropbtn"><img class="myicon" src="resources/img/user (2).png"></button>
 	            <div class="dropdown-content">
-	            	<a href='#'>문자 발송 내역</a>
+	            	<a href='photo'>사진</a>
 	                <a href='logout'>로그아웃</a>
 	                <a href='#'>회원탈퇴</a>
 	            </div>
