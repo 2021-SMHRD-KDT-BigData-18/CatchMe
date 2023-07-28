@@ -516,11 +516,14 @@
         <!-- 여기서 작업하면됨 -->
   </head>
   <body>
+  
 
    
 
    <!-- ----------------------------------------------------------------------------------------------- -->
-   <h1 class="articleTitle">WEEK-REPORT</h1> 
+   <h1 class="articleTitle">WEEK-REPORT</h1>
+   <input type = "hidden" value = "${user_data.id }" id = "username">
+    <a>${user_data.id }</a> 
    
    <div class="chart-container">
        
@@ -611,7 +614,7 @@
             <canvas id="myChart"></canvas>
         </div>
     </form>
-    <input type = "hidden" value = "${user_data.id }" id = "username">
+    
     
     
     
@@ -621,15 +624,15 @@
     
     let username = document.getElementById('username').value;
     
-    function mon_week(month, week) {
-        console.error("버튼이 클릭되었습니다! 정보:", month, week);
+    function mon_week(mon, week) {
+        console.error("버튼이 클릭되었습니다! 정보:", mon, week);
         $.ajax({
            url : "mon_week",
            type: "post",
-           data:{month:month,week:week,username:username},
+           data:{"mon":mon,"week":week,"username":username},
            success:function(data){
               console.log("차트데이터불러오기성공")
-              console.log(data);
+              console.dir(data);
            }, error : function(){
         	   console.log("차트데이터불러오기실패")
            }
