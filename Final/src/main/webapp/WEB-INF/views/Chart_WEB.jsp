@@ -669,7 +669,7 @@
        
          const ctx = document.getElementById('myChart');
 
-         var week_label = new Array(1, 2, 3, 4, 5, 6, 7);
+         var week_label = new Array("일요일", "월요일", "화요일", "수요일", "목요일", "금요일", "토요일");
          //알림 명
          var event_label = '금일 알림 수';
          //알림 수
@@ -692,27 +692,27 @@
          var reason_label = 'Reason';
          //발생 이유
          var reason_name = '졸음'
-
-
-         new Chart(ctx, {
-           type: 'bar',
-           data: {
-             labels: week_label,
-             datasets: [
-                 {
-                     label: event_label,
-                     data: event_count,
-                    backgroundColor: [
-                         '#BE81F7',
-                         '#F3F781',
-                         '#FF8000',
-                         '#2ECCFA',
-                         '#00FF40',
-                         '#FA5858',
-                         '#FF8000'
-                    
-                    ], borderWidth: 1
-                   
+         
+       	
+         // X축 레이블에 요일명 사용하기
+        	 new Chart(ctx, {
+        	   type: 'bar',
+        	   data: {
+        	     labels: week_label.map(getWeekDayFromNumber), // 숫자를 요일명으로 변환하여 사용
+        	     datasets: [
+        	       {
+        	         label: event_label,
+        	         data: event_count,
+        	         backgroundColor: [
+        	           '#BE81F7',
+        	           '#F3F781',
+        	           '#FF8000',
+        	           '#2ECCFA',
+        	           '#00FF40',
+        	           '#FA5858',
+        	           '#FF8000'
+        	         ],
+        	         borderWidth: 1
                  },
              ],
            },

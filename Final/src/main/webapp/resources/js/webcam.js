@@ -5,6 +5,7 @@ function successCallback(mediaStream) {
 }
 
 function errorCallback(error) {
+	alert("웹캠 연결 실패");
 	console.error("웹캠 연결 실패", error);
 }
 
