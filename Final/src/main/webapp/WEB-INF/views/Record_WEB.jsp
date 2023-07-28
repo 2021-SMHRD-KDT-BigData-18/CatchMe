@@ -60,20 +60,32 @@
                 </div>
 			</div>
 			<div class="content_area" style="overflow:auto;">
-				 <p></p>
+				 <!-- <p></p> -->
+				<p>07. 졸음운전 감지(2023.07.25 09:20)</p><hr>
+                <p>06. 졸음운전 감지(2023.07.25 09:20)</p><hr>
+                <p>05. 졸음운전 감지(2023.07.25 09:20)</p><hr>
+                <p>04. 졸음운전 감지(2023.07.25 09:20)</p><hr>
+                <p>03. 졸음운전 감지(2023.07.25 09:20)</p><hr>
+                <p>02. 졸음운전 감지(2023.07.25 09:20)</p><hr>
+                <p>01. 졸음운전 감지(2023.07.25 09:16)</p><hr>
 			</div>
 		</div>
 	</div>
 		
 	<!-- 졸음감지시 졸음쉼터 알려주는 알림 문구창 -->
-    <div id="nearestRestArea">
+    <!--<div id="nearestRestArea">
     	<span>00m 앞에 졸음쉼터가 있습니다.</span>
     </div>
+    -->
+     
 
 	<!-- 문자발송완료 알림문구창 -->
 	<div class="notification-container" id="notification-container">
+		<p>이상행동이 감지되어 010-1234-5678님에게 문자 발송을 완료했습니다!</p>
 		<p></p>
+		
 	</div>
+	
 
 	<script src="resources/js/restarea.js"></script>
 	<script src="resources/js/alarm.js"></script>
@@ -91,10 +103,11 @@
 	function setSize() {
 		if (window.orientation === 0) {
 			width = 800;
-			height = 620;
+			height = 570;
 		} else {
 			width = 800;
-			height = 620;
+			height = 570;
+			/*height = 620;*/
 		}
 
 		video = document.getElementById("video");
