@@ -40,7 +40,7 @@
                 </div>
             </div>    
         </div>
-        <hr>
+        <br><hr>
         <!-- 여기서 작업하면됨 -->
         <div class="main_area">
             <div class="record_btn">

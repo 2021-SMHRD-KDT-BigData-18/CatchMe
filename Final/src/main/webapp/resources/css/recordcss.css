@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+/*녹화 페이지 틀 깨져서 내비 큰틀 가져온거*/
 #center { /*안에 클 틀*/
 	height: 88vh;
 	width: 94vw;
@@ -22,8 +23,7 @@
 
 .record_button { /*녹화에 대한 버튼*/
 	margin-top: 35px;
-	margin-left: 890px;
-	/* margin-left: 1630px; */
+	margin-left: 910px;
 	position: absolute;
 }
 
@@ -34,12 +34,12 @@
 }
 
 .record_area { /*녹화 화면*/
-	height: 570px;
+	height: 530px;
 	width: 800px;
 	/* height: 480px;
             width: 640px; */
 	float: left;
-	margin: 30px auto;
+	margin: 40px auto;
 	margin-right: 0;
 	background-color: rgba(255, 255, 255, 0.979);
 	box-shadow: 0 0 10px rgba(129, 127, 127, 0.548);
@@ -49,11 +49,10 @@
 .record_button .content_up span {
 	font-family: 'Cafe24Ssurround';
 	font-size: 35px;
-	/* margin-left: 500px; */
 }
 
 .content_area { /*이상현상 감지를 나타내는 화면*/
-	height: 45vh;
+	height: 42vh;
 	width: 34vw;
 	margin: 1px auto;
 	background-color: rgba(243, 243, 229, 0.353);
