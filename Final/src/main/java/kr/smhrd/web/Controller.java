@@ -125,5 +125,16 @@ public class Controller {
 		return "redirect:/";
 	}
 	
+	// 비밀번호 찾기 페이지 이동
+	@RequestMapping("/findPw")
+	public String findPw() {
+		return "findPassword";
+	}
 	
+	// 비밀번호 변경 페이지 이동
+	@RequestMapping("/ModifyPw")
+	public String modifyPw() {
+		return "ModifyPassword";
+	}
+
 }

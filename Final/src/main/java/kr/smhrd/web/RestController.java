@@ -100,4 +100,100 @@ public class RestController {
 			}
 		}
 	}
+	
+	// 아이디 중복 확인
+	@PostMapping("/idcheck")
+	@ResponseBody
+	public int idcheck(@RequestParam("userId") String id) {
+		String confid = id;
+		User user = mapper.confrim(confid);
+		int row = 0;
+
+		if (user != null) {
+			row = 1;
+		}
+
+		return row;
+	}
+	
+	// 비밀번호 정보 확인
+	@PostMapping("/SearchPw")
+	@ResponseBody
+	public int searchPw(@RequestParam("finId") String id, @RequestParam("finemail") String email) {
+
+		User dto = new User();
+		dto.setId(id);
+		dto.setEmail(email);
+
+		User user = mapper.searchPw(dto);
+
+		int row = 0;
+
+		if (user != null) {
+			row = 1;
+		}
+
+		return row;
+	}
+	
+	// 비밀번호 변경
+	@PostMapping("/ChangePw")
+	@ResponseBody
+	public int changePw(@RequestParam("modpw") String pw, @RequestParam("userId") String id) {
+
+		User dto = new User();
+		dto.setId(id);
+		dto.setPw(pw);
+
+		int user = mapper.changePw(dto);
+
+		int row = 0;
+
+		if (user != 0) {
+			row = 1;
+		}
+
+		return row;
+	}
+	
+	// 이름, 전화번호 변경
+	@PostMapping("/changeMy")
+	@ResponseBody
+	public int ChangeMy(@RequestParam("userId") String id, @RequestParam("UName") String name, @RequestParam("userPhon") String phone) {
+		
+		User dto = new User();
+		dto.setId(id);
+		dto.setName(name);
+		dto.setPhone(phone);
+		
+		int user = mapper.changeMy(dto);
+		
+		int row = 0;
+		
+		if (user != 0) {
+			row = 1;
+		}
+		
+		return row;
+	}
+	
+	// 문자 받는 번호 바꾸기
+	@PostMapping("/chrephonw")
+	@ResponseBody
+	public int chrephonw(@RequestParam("userId") String id, @RequestParam("recPhon") String rephon) {
+		
+		User dto = new User();
+		dto.setId(id);
+		dto.setSms_receiver(rephon);
+		
+		int user = mapper.chrephonw(dto);
+		
+		int row = 0;
+		
+		if (user != 0) {
+			row = 1;
+		}
+		
+		return row;
+	}
 }
