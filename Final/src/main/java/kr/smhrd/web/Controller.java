@@ -39,7 +39,7 @@ public class Controller {
 
 	@RequestMapping("/main")
 	public String Mainpage() {
-		return "Main_WEB";
+		return "Main_WEB_DB";
 	}
 	
 	@RequestMapping("/record")

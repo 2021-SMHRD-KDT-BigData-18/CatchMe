@@ -26,7 +26,7 @@
                 <button class="dropbtn"><img class="myicon" src="resources/img/user.svg"></button>
                 <div class="dropdown-content">
                     <a href="#">문자 발송 내역</a>
-                    <a href="#">로그아웃</a>
+                    <a href='logout'>로그아웃</a>
                     <a href="#">회원탈퇴</a>
                 </div>
             </div>    

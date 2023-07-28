@@ -13,7 +13,7 @@ function uploadFile() {
 	formData.append('id', username);
 	formData.append('file', file);
 
-	fetch('http://localhost:3000/upload', {
+	fetch('http://121.179.7.41:3000/upload', {
 		method: 'POST',
 		body: formData
 	})
