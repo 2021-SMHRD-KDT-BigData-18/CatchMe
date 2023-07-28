@@ -139,13 +139,13 @@ public class Controller {
 	// 비밀번호 찾기 페이지 이동
 	@RequestMapping("/findPw")
 	public String findPw() {
-		return "findPassword";
+		return "FindPassword";
 	}
 	
 	// 비밀번호 변경 페이지 이동
 	@RequestMapping("/ModifyPw")
 	public String modifyPw() {
-		return "ModifyPassword";
+		return "ModiPw";
 	}
 
 }

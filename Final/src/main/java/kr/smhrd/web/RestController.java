@@ -117,10 +117,11 @@ public class RestController {
 	// 비밀번호 정보 확인
 	@PostMapping("/SearchPw")
 	@ResponseBody
-	public int searchPw(@RequestParam("finId") String id, @RequestParam("finemail") String email) {
+	public int searchPw(@RequestParam("finId") String id, @RequestParam("finname") String name, @RequestParam("finemail") String email) {
 
 		User dto = new User();
 		dto.setId(id);
+		dto.setName(name);
 		dto.setEmail(email);
 
 		User user = mapper.searchPw(dto);

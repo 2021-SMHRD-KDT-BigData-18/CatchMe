@@ -239,7 +239,7 @@ a {
 				<button type="submit" class="submit" style="margin-left: 0.1cm">로그인</button>
 			</div>
 			<p class="forgot">
-				<a href="#"> 비밀번호를 잃어버렸습니까? </a>
+				<a href="findPw"> 비밀번호를 잃어버렸습니까? </a>
 			</p>
 		</form>
 		

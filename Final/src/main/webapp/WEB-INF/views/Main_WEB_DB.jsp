@@ -32,7 +32,7 @@
 					<% if (secheck == null) { %>
 						<a href="movelogin">로그인</a>
 					<% } else { %>
-						<a href="#">문자 발송 내역</a>
+						<a href="photo">사진</a>
 						<a href="logout">로그아웃</a>
 						<a href="#">회원탈퇴</a>
 					<% } %>

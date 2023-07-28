@@ -7,9 +7,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>최종본(은지꺼)</title>
+    <title>Setting</title>
 <% User user = (User)session.getAttribute("user_data");
    String userId = user.getId();
+   String userrePhone = user.getSms_receiver();
 %> 
     <style>
         /* 노멀라이즈 시작 */
@@ -207,7 +208,7 @@
             width: 100%;
             height: 100%;
             max-width: 500px;
-            max-height: 230px;
+            max-height: 285px;
             padding: 30px;
             background-color: #FFFFFF;
             text-align: center;
@@ -230,7 +231,7 @@
         }
 
         .submit-btn {
-            margin-bottom: 40px;
+            margin-bottom: 20px;
             margin-top: 20px;
             width: 80%;
             height: 40px;
@@ -441,6 +442,22 @@
             float: right;
 
         }
+        .btnbtn {
+            width: 90px;
+            height: 20px;
+            box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+            background: linear-gradient(to right, #9C27B0, #E040FB);
+            background-position: left;
+            background-size: 200%;
+            color: white;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: 0.4s;
+            display: inline;
+            border-radius: 5em;
+            float: right;
+        }
 
         .left-align-label {
             display: block;
@@ -454,13 +471,13 @@
         <div id="header">
             <div class="dropdown" style="float: left;">
                 <button class="dropbtn" id="gomain" onclick="GoMain()">
-                    <img class="homeicon" src="./image/free-icon-home-1828864.png">
+                    <img class="homeicon" src="resources/img/home (2).png">
                 </button>
             </div>
             <div class="dropdown" style="float: right;">
-                <button class="dropbtn"><img class="myicon" src="./image/free-icon-user-5264565.png"></button>
+                <button class="dropbtn"><img class="myicon" src="resources/img/user (2).png"></button>
                 <div class="dropdown-content">
-                    <a href="#">문자 발송 내역</a>
+                    <a href="photo">사진</a>
                     <a href="logout">로그아웃</a>
                     <a href="#">회원탈퇴</a>
                 </div>
@@ -477,18 +494,10 @@
 <body>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <aside class="side-bar">
-        <section class="side-bar__icon-box">
-            <section class="side-bar__icon-1">
-                <div></div>
-                <div></div>
-                <div></div>
-            </section>
-        </section>
+
         <ul>
             <li>
-                <a href="#" class="classi" id="settingBtn"></a> <!-- 절대 지우지 마세요 팝업 관련해서 넣어놨습니다 (23/07/28) -->
-
+                <!-- <a href="#" class="classi" id="settingBtn"></a> <!-- 절대 지우지 마세요 팝업 관련해서 넣어놨습니다 (23/07/28) -->
             </li>
             <li>
                 <a href="#" class="classi" id="alarmBtn">
@@ -498,10 +507,6 @@
 
                     알림음 설정</a>
                 <ul>
-                    <li><a href="#">text1</a></li>
-                    <li><a href="#">text2</a></li>
-                    <li><a href="#">text3</a></li>
-                    <li><a href="#">text4</a></li>
                 </ul>
             </li>
             <li>
@@ -514,10 +519,6 @@
 
                     개인정보수정</a>
                 <ul>
-                    <li><a href="#">text1</a></li>
-                    <li><a href="#">text2</a></li>
-                    <li><a href="#">text3</a></li>
-                    <li><a href="#">text4</a></li>
                 </ul>
             </li>
 
@@ -569,6 +570,10 @@
     <form class="joinForm3">
 
         <div class="settings">
+        	<div class="setting-item">
+        		<label class="setting-label" for="recipient" id="settingBtn">기존 수신인:</label>
+        		<p><%=userrePhone %></p>
+        	</div>
             <div class="setting-item">
                 <label class="setting-label" for="recipient" id="settingBtn">문자 수신인 설정:</label>
                 <input class="setting-input" type="text" id="recipient" name="recipient"
@@ -579,6 +584,7 @@
         <div>
             <label for="setting-label" class="bold-label">업로드:</label>
             <input type="file" id="fileInput">
+            <button type="button" onclick="uploadFile" class="btnbtn">파일 저장</button>
             <!--    <button onclick="uploadFile()" class="submit-btn123123">Upload</button> -->
         </div>
             <style>
@@ -588,7 +594,7 @@
                 }
             </style>
 
-            <button class="submit-btn" onclick="chanrecephon()">저장</button>
+            <input type="button" class="submit-btn" onclick="chanrecephon()" value="저장"></input>
         </div>
     </form>
 
@@ -596,6 +602,7 @@
 
 
     <!-- script가 2개로 나뉘어져 있는데 나누시지 마세요 -->
+	<script src="resources/js/upload.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script>
 		function chanPw() {
