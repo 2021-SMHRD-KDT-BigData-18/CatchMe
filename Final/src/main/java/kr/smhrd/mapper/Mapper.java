@@ -38,7 +38,7 @@ public interface Mapper {
 
 	List<Event> allImg(String username);
 
-	int addnolook(Event event);
+	
 
 	User confrim(String confid);
 
@@ -49,4 +49,7 @@ public interface Mapper {
 	int changeMy(User dto);
 
 	int chrephonw(User dto);
+
+	void addnolook(Event event);
+
 }
