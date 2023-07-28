@@ -40,4 +40,13 @@ public interface Mapper {
 
 	int addnolook(Event event);
 
+	User confrim(String confid);
+
+	User searchPw(User dto);
+	
+	int changePw(User dto);
+	
+	int changeMy(User dto);
+
+	int chrephonw(User dto);
 }

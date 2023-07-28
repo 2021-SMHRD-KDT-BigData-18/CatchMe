@@ -17,7 +17,7 @@
 		User user_data = (User) session.getAttribute("user_data");
 		String alarm_full_path = user_data.getAlarm();
 		String alarm_select_path = alarm_full_path.substring(alarm_full_path.lastIndexOf("\\") + 1);
-		String music_url = "http://localhost:3000/music/" + alarm_select_path;
+		String music_url = "http://121.179.7.41:3000/music/" + alarm_select_path;
 		%>
 		<source src="<%=music_url%>" type="audio/mpeg">
 	</audio>
@@ -51,6 +51,7 @@
 			<div class="record_button">
 				<a id="toggleStream" class="start-rec-button"
 				onclick="toggleStream()"><img src="resources/img/video.png" id="record_img"></a>
+				<a id = "stopSound" onclick="stopNotifySound()" style="visibility: hidden;">음악 종료</a>
 				<!-- <button>end</button> -->
 			</div>
 			<div class="content_area">
@@ -107,53 +108,27 @@
 		  return dateTimeString;
 		}
 	
-	const notification = document.getElementById('notification-container')
-	
-	const showNotification = () => {
-		notification.classList.add('show');
-		setTimeout(() => {
-			notification.classList.remove('show');
-			}, 3000);
 		
-		const record_end_show_remove = document.getElementById('toggleStream');
-		record_end_show_remove.addEventListener('click', () => {
-			notification.classList.remove('show');
-			});
-		};
-	
-	    //keydown letter press
-	    window.addEventListener('keydown', (e) => {
-		    // only want alphabet keys to get into the eventlistener
-		    if (e.keyCode >= 65 && e.keyCode <= 90) {
-		        const letter = e.key
-		        //we want only letters that are not already pressed
-		        if (selectedWord.includes(letter)) {
-		            if (!correctLetters.includes(letter)) {
-		                correctLetters.push(letter)
-		                displayWord()
-		            } else {
-		            //if same correct key pressed
-		            showNotification()
-		            }
-		            
-		        }
-		        else {
-		        	if (!wrongLetters.includes(letter)) {
-		            	wrongLetters.push(letter)
-		                updateWrongLettersEl()
-		            } else {
-		                //if same wrong key pressed
-		                showNotification()
-		            }
-		        }
-		    }
-	    })
 	    
-	    function displaySmsHistory(data) {
-	    	var notificationContainer = document.getElementById("notification-container");
-	    	var sms_history_show = "<p>이상행동이 감지되어 " + sms_receiver + "님에게 문자 발송을 완료했습니다!</p>";
-	    	notificationContainer.innerHTML = sms_history_show;
-	    	}
+	function displaySmsHistory(data) {
+		  var notificationContainer = document.getElementById("notification-container");
+		  var sms_history_show = "<p>이상행동이 감지되어 " + sms_receiver + "님에게 문자 발송을 완료했습니다!</p>";
+
+		  var notificationMessage = document.createElement("div");
+		  notificationMessage.classList.add("notification-message");
+		  notificationMessage.innerHTML = sms_history_show;
+
+		  notificationContainer.appendChild(notificationMessage);
+
+		  notificationMessage.classList.add("show");
+
+		  setTimeout(() => {
+		    notificationMessage.classList.add("hide");
+		    setTimeout(() => {
+		      notificationContainer.removeChild(notificationMessage); 
+		    }, 500); 
+		  }, 3000); 
+		}
 	    
 	    function content_area(type) {
 	    	  const contentArea = document.querySelector(".content_area");
