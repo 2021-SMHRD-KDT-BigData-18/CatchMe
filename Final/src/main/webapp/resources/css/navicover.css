@@ -23,7 +23,6 @@ span, a, p {
 	font: bold 20px "Cafe24SsurroundAir";
 }
 
-/*로고*/
 #logo {
 	font-family: 'Cafe24Ssurround';
 	display: flex;
@@ -35,8 +34,9 @@ span, a, p {
 	margin-top: 80px;
 	letter-spacing: 10px;
 	color: #212A3E;
+	filter: drop-shadow(5px 5px 5px #c3c3c3);
 }
-/*로고 아래 슬로건*/
+
 #logo_un {
 	display: flex;
 	justify-content: center;
@@ -47,6 +47,7 @@ span, a, p {
 	margin-top: 15px;
 	letter-spacing: 8px;
 	color: #487070;
+	filter: drop-shadow(5px 5px 5px #c3c3c3);
 }
 
 body { /*큰 틀의 색상*/
@@ -87,6 +88,7 @@ hr {
             margin-bottom: 20px; */
 	filter: brightness(1);
 	transition: 0.5s;
+	filter: drop-shadow(3px 3px 3px #c3c3c3);
 }
 
 .homeicon:hover {
@@ -102,6 +104,7 @@ hr {
 	margin-left: 490px;
 	filter: brightness(1);
 	transition: 0.5s;
+	filter: drop-shadow(3px 3px 3px #c3c3c3);
 }
 
 .myicon:hover {
@@ -134,25 +137,28 @@ hr {
 	z-index: 1;
 	right: 0;
 	/* text-align: center; */
-	/* margin-top: 1.5%; */
-	margin-top: -4%;
 	/* font:bold 20px "malgun gothic"; */
 	font: bold 20px "Cafe24SsurroundAir";
 }
 
 .dropdown-content a {
 	color: black;
-	padding: 17px 18px;
+	padding: 18px 22px;
 	text-decoration: none;
 	display: block;
+	filter: drop-shadow(1px 1px 1px #c3c3c3);
 }
 
 .dropdown-content a:hover {
 	/* background-color: #f1f1f1; */
-	/* background-color: #ebebeb; */
-	background-color: #dee1ea;
+	/* background-color: #dee1ea; */
+	background-color: #e5e5e5;
+	filter: drop-shadow(3px 3px 3px #c3c3c3);
 }
 
 .dropdown:hover .dropdown-content {
 	display: block;
 }
+/* .dropdown:hover .dropbtn{
+            background-color: #3e8e41;
+        } */
