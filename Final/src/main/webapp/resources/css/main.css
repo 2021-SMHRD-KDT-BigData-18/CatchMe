@@ -6,7 +6,7 @@
             justify-content: space-around;
             margin-right: 90px;
             padding-left: 100px;
-            margin-top: -28px;
+            margin-top: -25px;
         }
         .main_area a img{
             width: 280px;
@@ -17,7 +17,8 @@
         .main_area .button{
             position: absolute;
             opacity: 0;
-            font-size: 40px;
+            font: bold 40px "SUIT-Regular";
+            color: #212A3E;
         }
         .record_btn:hover .button{
             opacity: 1;

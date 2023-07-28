@@ -55,19 +55,19 @@
 				onclick="toggleStream()"><img src="resources/img/video.png" id="record_img" style="float: left;"></a>
 				<a id = "stopSound" onclick="stopNotifySound()" style="visibility: hidden;">음악 종료</a>
 				<!-- <button>end</button> -->
-				<div class="content_up" style="margin-top: 40px; margin-left: 120px;">
+				<div class="content_up" style=" font: bold 35px 'SUIT-Regular'; margin-top: 40px; margin-left: 120px;">
                     <span>지금 뭐해 이상행동 감지되었잖아!</span>
                 </div>
 			</div>
 			<div class="content_area" style="overflow:auto;">
 				<p></p>
-				<!-- <p>07. 졸음운전 감지(2023.07.25 09:20)</p><hr>
+				<p>07. 졸음운전 감지(2023.07.25 09:20)</p><hr>
                 <p>06. 졸음운전 감지(2023.07.25 09:20)</p><hr>
                 <p>05. 졸음운전 감지(2023.07.25 09:20)</p><hr>
                 <p>04. 졸음운전 감지(2023.07.25 09:20)</p><hr>
                 <p>03. 졸음운전 감지(2023.07.25 09:20)</p><hr>
                 <p>02. 졸음운전 감지(2023.07.25 09:20)</p><hr>
-                <p>01. 졸음운전 감지(2023.07.25 09:16)</p><hr> -->
+                <p>01. 졸음운전 감지(2023.07.25 09:16)</p><hr>
 			</div>
 		</div>
 	</div>
