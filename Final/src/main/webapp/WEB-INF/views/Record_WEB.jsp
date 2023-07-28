@@ -29,7 +29,7 @@
 		<div id="header">
 	    	<div class="dropdown" style="float: left;">
 	        	<button class="dropbtn">
-	            	<a href="/"><img class="homeicon" src="resources/img/house.svg"></a>
+	            	<a href="/web"><img class="homeicon" src="resources/img/house.svg"></a>
 	            </button>
 	            <!-- <div class="dropdown-content" style="left: 0;">
 	                <a href="#">링크#1</a>
