@@ -1,11 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page import="kr.smhrd.entity.User" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>최종본</title>
+<% User user = (User)session.getAttribute("user_data");
+   String userId = user.getId();
+%>
     <style>
       
 /* 노멀라이즈 시작 */
@@ -475,16 +479,15 @@ a.classi{
 <div id="center">
     <div id="header">
         <div class="dropdown" style="float: left;">
-            <button class="dropbtn">
+            <button class="dropbtn" id="gomain" onclick="GoMain()">
                 <img class="homeicon" src="./image/free-icon-home-1828864.png">
             </button>
         </div>
         <div class="dropdown" style="float: right;">
             <button class="dropbtn"><img class="myicon" src="./image/free-icon-user-5264565.png"></button>
             <div class="dropdown-content">
-                <a href="#">개인정보수정</a>
                 <a href="#">문자 발송 내역</a>
-                <a href="#">로그아웃</a>
+                <a href="logout">로그아웃</a>
                 <a href="#">회원탈퇴</a>
             </div>
         </div>    
@@ -555,24 +558,24 @@ a.classi{
 <form action="doJoin" method="POST" class="joinForm"  onsubmit="showConfirmation(); return false;">  <!--onsubmit="DoJoinForm__submit(this); return false;"-->
     <h2>Modify</h2>
     <div class="textForm">
-      <input name="loginId" type="text" class="id" placeholder="smhrd666">
+      <input name="loginId" type="text" class="id" id="userId" value="<%=userId %>">
     </div>
     <div class="textForm">
-      <input name="loginPw" type="password" class="pw" placeholder="*****" id="loginPwInput">
+      <input name="loginPw" type="password" class="pw" id="modpw" placeholder="*****">
     </div>
     <div class="textForm">
-      <input name="loginPwConfirm" type="password" class="pw2" placeholder="비밀번호 변경란"> 
+      <input name="loginPwConfirm" type="password" class="pw2" id="userPwch" placeholder="비밀번호 확인"> 
     </div>
     
-    <input type="submit" class="btn2" value="Confirm"/>
+    <input type="button" onclick="chanPw()" class="btn2" value="Confirm"/>
     
     <div class="textForm">
-      <input name="name" type="text" class="name" placeholder="김은영">
+      <input name="name" type="text" class="name" id="UName" placeholder="홍길동">
     </div>
     <div class="textForm">
-      <input name="phone" type="number" class="phone" placeholder="010-1111-2222">
+      <input name="phone" type="text" class="phone" id="userPhon" placeholder="010-1111-2222">
     </div>
-      <input type="submit" class="btn" value="Complete"/>
+      <input type="button" id="changeMy" onclick="chanMy()" class="btn" value="Complete"/>
   </form>
 
 <form action="" class="joinForm2" onsubmit="showConfirmation2(); return false;">
@@ -585,7 +588,7 @@ a.classi{
         </div>
         <div id="errorMessage" style="display: none; color: red;">올바른 전화번호를 입력해주세요.</div>
 
-        <button class="submit-btn" type="submit">저장</button>
+        <button class="submit-btn" onclick="chanrecephon()">저장</button>
     </div>
 
     <script>
@@ -632,7 +635,96 @@ a.classi{
 </form>
 
     <script src="resources/js/upload.js"></script>
-
+	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+	<script>
+		function chanPw() {
+			if (confirm("변경하시겠습니까?")) {
+				let userId = $("#userId").val();
+				let modpw = $("#modpw").val();
+				let userPwch = $("#userPwch").val();	
+				if (modpw == userPwch) {
+					$.ajax({ 
+						url : "ChangePw",
+						method : "post",
+						data : {
+							userId : userId,
+							modpw : modpw
+						},
+						success : function(data) {
+							if (data == 1) {
+								alert("변경하였습니다.")
+							}
+							else {
+								alert("변경되지 않았습니다")
+							}
+						},
+						error : function() {
+							console.log("오류!오류!")
+						}
+					});
+				}
+				else {
+					alert("일치하지 않습니다.")
+				}
+			}
+		}
+		function chanMy() {
+			if (confirm("변경하시겠습니까?")) {
+				let userId = $("#userId").val();
+				let UName = $("#UName").val();
+				let userPhon = $("#userPhon").val();
+				$.ajax({
+					url : "changeMy",
+					method : "post",
+					data : {
+						userId : userId,
+						UName : UName,
+						userPhon : userPhon
+					},
+					success : function(data) {
+						if (data == 1) {
+							alert("변경하였습니다.")
+						}
+						else {
+							alert("변경되지 않았습니다")
+						}
+					},
+					error : function() {
+						console.log("오류!오류!")
+					}
+				});
+			}
+		}
+		function GoMain() {
+			location.href="/web";
+		}
+		function chanrecephon() {
+			if (confirm("저장하시겠습니까?")) {
+				let userId = $("#userId").val();
+				let recPhon = $("#recipient").val();
+				console.log(userId, recPhon)
+				$.ajax({
+					url : "chrephonw",
+					method : "post",
+					data : {
+						userId : userId,
+						recPhon : recPhon
+					},
+					success : function(data) {
+						if (data != 0) {
+							alert("저장되었습니다.")
+						}
+						else {
+							console.log("변경되지 않았습니다")
+						}
+					},
+					error : function() {
+						console.log("오류!오류!")
+					}
+				});
+			}
+		}
+	</script>
     <script>
         function showConfirmation() {
           // Show the confirmation dialog and get the user's choice
