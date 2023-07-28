@@ -47,14 +47,14 @@
 	            <% if (secheck == null) { %>
 					<a href="movelogin"><img src="resources/img/video-projector.png" onmouseover="this.src='resources/img/video-projector-unscreen.gif'" onmouseout="this.src='resources/img/video-projector.png'"></a>
 				<% } else { %>
-					<a href="main"><img src="resources/img/video-projector.png" onmouseover="this.src='resources/img/video-projector-unscreen.gif'" onmouseout="this.src='resources/img/video-projector.png'"></a><!-- 녹화 -->
+					<a href="record"><img src="resources/img/video-projector.png" onmouseover="this.src='resources/img/video-projector-unscreen.gif'" onmouseout="this.src='resources/img/video-projector.png'"></a><!-- 녹화 -->
 				<% } %></div>
             <p style="border-left: 1px solid #eae7e4; box-shadow:0 0 15px rgba(159, 151, 151, 0.326);"></p>
             <div class="drive_record_btn">
             	<% if (secheck == null) { %><!-- 주행기록 -->
 					<a href="movelogin"><img src="resources/img/bar-chart.png" onmouseover="this.src='resources/img/bar-chart-1--unscreen.gif'" onmouseout="this.src='resources/img/bar-chart.png'"></a>
 				<% } else { %>
-					<a href="reco"><img src="resources/img/bar-chart.png" onmouseover="this.src='resources/img/bar-chart-1--unscreen.gif'" onmouseout="this.src='resources/img/bar-chart.png'"></a>
+					<a href="chart"><img src="resources/img/bar-chart.png" onmouseover="this.src='resources/img/bar-chart-1--unscreen.gif'" onmouseout="this.src='resources/img/bar-chart.png'"></a>
 				<% } %>
             </div>
             <p style="border-left: 1px solid #eae7e4;"></p>
