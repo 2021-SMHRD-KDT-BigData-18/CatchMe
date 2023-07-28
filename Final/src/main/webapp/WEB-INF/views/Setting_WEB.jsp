@@ -10,6 +10,7 @@
     <title>Setting</title>
 <% User user = (User)session.getAttribute("user_data");
    String userId = user.getId();
+   String userrePhone = user.getSms_receiver();
 %> 
     <style>
         /* 노멀라이즈 시작 */
@@ -207,7 +208,7 @@
             width: 100%;
             height: 100%;
             max-width: 500px;
-            max-height: 230px;
+            max-height: 285px;
             padding: 30px;
             background-color: #FFFFFF;
             text-align: center;
@@ -230,7 +231,7 @@
         }
 
         .submit-btn {
-            margin-bottom: 40px;
+            margin-bottom: 20px;
             margin-top: 20px;
             width: 80%;
             height: 40px;
@@ -441,6 +442,22 @@
             float: right;
 
         }
+        .btnbtn {
+            width: 90px;
+            height: 20px;
+            box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+            background: linear-gradient(to right, #9C27B0, #E040FB);
+            background-position: left;
+            background-size: 200%;
+            color: white;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: 0.4s;
+            display: inline;
+            border-radius: 5em;
+            float: right;
+        }
 
         .left-align-label {
             display: block;
@@ -569,6 +586,10 @@
     <form class="joinForm3">
 
         <div class="settings">
+        	<div class="setting-item">
+        		<label class="setting-label" for="recipient" id="settingBtn">기존 수신인:</label>
+        		<p><%=userrePhone %></p>
+        	</div>
             <div class="setting-item">
                 <label class="setting-label" for="recipient" id="settingBtn">문자 수신인 설정:</label>
                 <input class="setting-input" type="text" id="recipient" name="recipient"
@@ -579,6 +600,7 @@
         <div>
             <label for="setting-label" class="bold-label">업로드:</label>
             <input type="file" id="fileInput">
+            <button type="button" onclick="uploadFile" class="btnbtn">파일 저장</button>
             <!--    <button onclick="uploadFile()" class="submit-btn123123">Upload</button> -->
         </div>
             <style>
@@ -596,6 +618,7 @@
 
 
     <!-- script가 2개로 나뉘어져 있는데 나누시지 마세요 -->
+	<script src="resources/js/upload.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script>
 		function chanPw() {
