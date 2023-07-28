@@ -88,21 +88,56 @@ update user_info set sms_receiver = #{sms_receiver} where id = #{id}
 </update>
 
 <select id="mon_week" resultType="kr.smhrd.entity.Event">
-select
-sum(case when dayofweek(event_info.event_at) = 1 then 1 else 0 end) as '1',
-sum(case when dayofweek(event_info.event_at) = 2 then 1 else 0 end) as '2',
-sum(case when dayofweek(event_info.event_at) = 3 then 1 else 0 end) as '3',
-sum(case when dayofweek(event_info.event_at) = 4 then 1 else 0 end) as '4',
-sum(case when dayofweek(event_info.event_at) = 5 then 1 else 0 end) as '5',
-sum(case when dayofweek(event_info.event_at) = 6 then 1 else 0 end) as '6',
-sum(case when dayofweek(event_info.event_at) = 7 then 1 else 0 end) as '7'
-from ccu.user_info
-inner join ccu.record_info ON user_info.id = record_info.id
-inner join ccu.event_info ON record_info.rec_seq = event_info.rec_seq
-where
-month(event_info.event_at) = #{param1}
-and week(event_info.event_at, 1) - week(date_format(event_info.event_at, '%Y-%m-01'), 1) + 1 = #{param2}
-and user_info.id = #{param3};
+SELECT
+  SUM(CASE WHEN DAYOFWEEK(ccu.event_info.event_at) = 1 THEN 1 ELSE 0 END) AS 'sun',
+  SUM(CASE WHEN DAYOFWEEK(ccu.event_info.event_at) = 2 THEN 1 ELSE 0 END) AS 'mon',
+  SUM(CASE WHEN DAYOFWEEK(ccu.event_info.event_at) = 3 THEN 1 ELSE 0 END) AS 'tue',
+  SUM(CASE WHEN DAYOFWEEK(ccu.event_info.event_at) = 4 THEN 1 ELSE 0 END) AS 'wed',
+  SUM(CASE WHEN DAYOFWEEK(ccu.event_info.event_at) = 5 THEN 1 ELSE 0 END) AS 'thu',
+  SUM(CASE WHEN DAYOFWEEK(ccu.event_info.event_at) = 6 THEN 1 ELSE 0 END) AS 'fri',
+  SUM(CASE WHEN DAYOFWEEK(ccu.event_info.event_at) = 7 THEN 1 ELSE 0 END) AS 'sat',
+  GROUP_CONCAT(CASE WHEN DAYOFWEEK(ccu.event_info.event_at) = 1 THEN ccu.event_info.event_content ELSE NULL END) AS 'sun_event_content',
+  GROUP_CONCAT(CASE WHEN DAYOFWEEK(ccu.event_info.event_at) = 2 THEN ccu.event_info.event_content ELSE NULL END) AS 'mon_event_content',
+  GROUP_CONCAT(CASE WHEN DAYOFWEEK(ccu.event_info.event_at) = 3 THEN ccu.event_info.event_content ELSE NULL END) AS 'tue_event_content',
+  GROUP_CONCAT(CASE WHEN DAYOFWEEK(ccu.event_info.event_at) = 4 THEN ccu.event_info.event_content ELSE NULL END) AS 'wed_event_content',
+  GROUP_CONCAT(CASE WHEN DAYOFWEEK(ccu.event_info.event_at) = 5 THEN ccu.event_info.event_content ELSE NULL END) AS 'thu_event_content',
+  GROUP_CONCAT(CASE WHEN DAYOFWEEK(ccu.event_info.event_at) = 6 THEN ccu.event_info.event_content ELSE NULL END) AS 'fri_event_content',
+  GROUP_CONCAT(CASE WHEN DAYOFWEEK(ccu.event_info.event_at) = 7 THEN ccu.event_info.event_content ELSE NULL END) AS 'sat_event_content',
+  (LENGTH(GROUP_CONCAT(CASE WHEN DAYOFWEEK(ccu.event_info.event_at) = 1 THEN ccu.event_info.event_content ELSE NULL END)) - 
+   LENGTH(REPLACE(GROUP_CONCAT(CASE WHEN DAYOFWEEK(ccu.event_info.event_at) = 1 THEN ccu.event_info.event_content ELSE NULL END), '졸음운전', ''))) / LENGTH('졸음운전') AS 'sun_sleep',
+  (LENGTH(GROUP_CONCAT(CASE WHEN DAYOFWEEK(ccu.event_info.event_at) = 1 THEN ccu.event_info.event_content ELSE NULL END)) - 
+   LENGTH(REPLACE(GROUP_CONCAT(CASE WHEN DAYOFWEEK(ccu.event_info.event_at) = 1 THEN ccu.event_info.event_content ELSE NULL END), '주시태만', ''))) / LENGTH('주시태만') AS 'sun_nolook',
+  (LENGTH(GROUP_CONCAT(CASE WHEN DAYOFWEEK(ccu.event_info.event_at) = 2 THEN ccu.event_info.event_content ELSE NULL END)) - 
+   LENGTH(REPLACE(GROUP_CONCAT(CASE WHEN DAYOFWEEK(ccu.event_info.event_at) = 2 THEN ccu.event_info.event_content ELSE NULL END), '졸음운전', ''))) / LENGTH('졸음운전') AS 'mon_sleep',
+  (LENGTH(GROUP_CONCAT(CASE WHEN DAYOFWEEK(ccu.event_info.event_at) = 2 THEN ccu.event_info.event_content ELSE NULL END)) - 
+   LENGTH(REPLACE(GROUP_CONCAT(CASE WHEN DAYOFWEEK(ccu.event_info.event_at) = 2 THEN ccu.event_info.event_content ELSE NULL END), '주시운전', ''))) / LENGTH('주시운전') AS 'mon_nolook',
+  (LENGTH(GROUP_CONCAT(CASE WHEN DAYOFWEEK(ccu.event_info.event_at) = 3 THEN ccu.event_info.event_content ELSE NULL END)) - 
+   LENGTH(REPLACE(GROUP_CONCAT(CASE WHEN DAYOFWEEK(ccu.event_info.event_at) = 3 THEN ccu.event_info.event_content ELSE NULL END), '졸음운전', ''))) / LENGTH('졸음운전') AS 'tue_sleep',
+  (LENGTH(GROUP_CONCAT(CASE WHEN DAYOFWEEK(ccu.event_info.event_at) = 3 THEN ccu.event_info.event_content ELSE NULL END)) - 
+   LENGTH(REPLACE(GROUP_CONCAT(CASE WHEN DAYOFWEEK(ccu.event_info.event_at) = 3 THEN ccu.event_info.event_content else null end), '주시태만',''))) / length('주시태만') as 'tue_nolook',
+    (LENGTH(GROUP_CONCAT(CASE WHEN DAYOFWEEK(ccu.event_info.event_at) = 4 THEN ccu.event_info.event_content ELSE NULL END)) - 
+   LENGTH(REPLACE(GROUP_CONCAT(CASE WHEN DAYOFWEEK(ccu.event_info.event_at) = 4 THEN ccu.event_info.event_content ELSE NULL END), '졸음운전', ''))) / LENGTH('졸음운전') AS 'wed_sleep',
+  (LENGTH(GROUP_CONCAT(CASE WHEN DAYOFWEEK(ccu.event_info.event_at) = 4 THEN ccu.event_info.event_content ELSE NULL END)) - 
+   LENGTH(REPLACE(GROUP_CONCAT(CASE WHEN DAYOFWEEK(ccu.event_info.event_at) = 4 THEN ccu.event_info.event_content ELSE NULL END), '주시태만', ''))) / LENGTH('주시운전') AS 'wed_nolook',
+  (LENGTH(GROUP_CONCAT(CASE WHEN DAYOFWEEK(ccu.event_info.event_at) = 5 THEN ccu.event_info.event_content ELSE NULL END)) - 
+   LENGTH(REPLACE(GROUP_CONCAT(CASE WHEN DAYOFWEEK(ccu.event_info.event_at) = 5 THEN ccu.event_info.event_content ELSE NULL END), '졸음운전', ''))) / LENGTH('졸음운전') AS 'thu_sleep',
+  (LENGTH(GROUP_CONCAT(CASE WHEN DAYOFWEEK(ccu.event_info.event_at) = 5 THEN ccu.event_info.event_content ELSE NULL END)) - 
+   LENGTH(REPLACE(GROUP_CONCAT(CASE WHEN DAYOFWEEK(ccu.event_info.event_at) = 5 THEN ccu.event_info.event_content ELSE NULL END), '주시태만', ''))) / LENGTH('주시운전') AS 'thu_nolook',
+  (LENGTH(GROUP_CONCAT(CASE WHEN DAYOFWEEK(ccu.event_info.event_at) = 6 THEN ccu.event_info.event_content ELSE NULL END)) - 
+   LENGTH(REPLACE(GROUP_CONCAT(CASE WHEN DAYOFWEEK(ccu.event_info.event_at) = 6 THEN ccu.event_info.event_content ELSE NULL END), '졸음운전', ''))) / LENGTH('졸음운전') AS 'fri_sleep',
+  (LENGTH(GROUP_CONCAT(CASE WHEN DAYOFWEEK(ccu.event_info.event_at) = 6 THEN ccu.event_info.event_content ELSE NULL END)) - 
+   LENGTH(REPLACE(GROUP_CONCAT(CASE WHEN DAYOFWEEK(ccu.event_info.event_at) = 6 THEN ccu.event_info.event_content ELSE NULL END), '주시태만', ''))) / LENGTH('주시운전') AS 'fri_nolook',
+  (LENGTH(GROUP_CONCAT(CASE WHEN DAYOFWEEK(ccu.event_info.event_at) = 7 THEN ccu.event_info.event_content ELSE NULL END)) - 
+   LENGTH(REPLACE(GROUP_CONCAT(CASE WHEN DAYOFWEEK(ccu.event_info.event_at) = 7 THEN ccu.event_info.event_content ELSE NULL END), '졸음운전', ''))) / LENGTH('졸음운전') AS 'sat_sleep',
+  (LENGTH(GROUP_CONCAT(CASE WHEN DAYOFWEEK(ccu.event_info.event_at) = 7 THEN ccu.event_info.event_content ELSE NULL END)) - 
+   LENGTH(REPLACE(GROUP_CONCAT(CASE WHEN DAYOFWEEK(ccu.event_info.event_at) = 7 THEN ccu.event_info.event_content ELSE NULL END), '주시태만', ''))) / LENGTH('주시운전') AS 'sat_nolook'
+FROM ccu.user_info
+INNER JOIN ccu.record_info ON user_info.id = record_info.id
+INNER JOIN ccu.event_info ON record_info.rec_seq = event_info.rec_seq
+WHERE
+  MONTH(ccu.event_info.event_at) = #{param1}
+  AND WEEK(ccu.event_info.event_at, 1) - WEEK(DATE_FORMAT(ccu.event_info.event_at, '%Y-%m-01'), 1) + 1 = #{param2}
+  AND user_info.id = #{param3};
 </select>
 
 </mapper>

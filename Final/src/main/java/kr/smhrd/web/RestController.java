@@ -197,12 +197,9 @@ public class RestController {
 	}
 
 	@PostMapping("/mon_week")
-	public void mon_week(@RequestParam("mon")int mon, @RequestParam("week") int week,
-			@RequestParam("username")String username){
-		System.out.println("mon"+ mon);
-		System.out.println("week"+ week);
-		System.out.println("username"+ username);
-		String data = mapper.mon_week(mon,week,username);
-		
+	public Event mon_week(@RequestParam("mon")int mon, @RequestParam("week") int week,
+			@RequestParam("username")String username, Model model){
+		Event data = mapper.mon_week(mon, week, username);
+		return data;
 	}
 }

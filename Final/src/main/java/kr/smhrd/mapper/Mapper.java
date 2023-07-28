@@ -52,6 +52,6 @@ public interface Mapper {
 
 	void addnolook(Event event);
 
-	String mon_week(int mon, int week, String username);
+	Event mon_week(int mon, int week, String username);
 
 }
