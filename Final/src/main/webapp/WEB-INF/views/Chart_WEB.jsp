@@ -611,21 +611,29 @@
             <canvas id="myChart"></canvas>
         </div>
     </form>
+    <input type = "hidden" value = "${user_data.id }" id = "username">
     
+    
+    
+    
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script>
+    
+    let username = document.getElementById('username').value;
+    
     function mon_week(month, week) {
         console.error("버튼이 클릭되었습니다! 정보:", month, week);
         $.ajax({
            url : "mon_week",
            type: "post",
-           data:{month:month,week:week},
-           success:function(){
-              
+           data:{month:month,week:week,username:username},
+           success:function(data){
+              console.log("차트데이터불러오기성공")
+              console.log(data);
            }, error : function(){
-              
+        	   console.log("차트데이터불러오기실패")
            }
         });
-       
      }
          
      // 화살표 누르면 버튼이 넘어가는 기능을 가진 script 코드
@@ -698,7 +706,7 @@
         	 new Chart(ctx, {
         	   type: 'bar',
         	   data: {
-        	     labels: week_label.map(getWeekDayFromNumber), // 숫자를 요일명으로 변환하여 사용
+        	     labels: week_label, // 숫자를 요일명으로 변환하여 사용
         	     datasets: [
         	       {
         	         label: event_label,
