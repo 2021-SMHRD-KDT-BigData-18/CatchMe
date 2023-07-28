@@ -17,7 +17,7 @@ function toggleStream() {
 			.then(successCallback)
 			.catch(errorCallback);
 
-		document.getElementById("record_img").href = "resources/img/video.png";
+		document.getElementById("record_img").href = "resources/img/stop-button.png";
 		streaming = true;
 		console.log("toggleStream() 실행됨");
 	} else {
@@ -61,7 +61,7 @@ function sendFrameToPython() {
 	const imageData = context.getImageData(0, 0, width, height);
 	const dataUrl = canvas.toDataURL('image/jpeg');
 
-	const url = 'http://121.179.7.41:9000/web/receiveimg';
+	const url = 'http://localhost:9000/web/receiveimg';
 	const options = {
 		method: 'post',
 		headers: {
@@ -109,7 +109,7 @@ function sendFrameToRobo() {
 	const imageData = context.getImageData(0, 0, width, height);
 	const dataUrl = canvas.toDataURL('image/jpeg');
 
-	const url = 'http://121.179.7.41:9000/web/robo';
+	const url = 'http://localhost:9000/web/robo';
 	const options = {
 		method: 'post',
 		headers: {
