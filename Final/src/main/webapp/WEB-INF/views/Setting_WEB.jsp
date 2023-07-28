@@ -588,7 +588,7 @@
                 }
             </style>
 
-            <button class="submit-btn" onclick="chanrecephon()">저장</button>
+            <input type="button" class="submit-btn" onclick="chanrecephon()" value="저장"></input>
         </div>
     </form>
 
