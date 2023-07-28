@@ -1,4 +1,4 @@
-const serverAddress = 'ws://localhost:3000';
+const serverAddress = 'ws://121.179.7.41:3000';
 let socket = null;
 let isConnected = false;
 connectWebSocket();
