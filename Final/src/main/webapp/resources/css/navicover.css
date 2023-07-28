@@ -1,5 +1,54 @@
 @charset "UTF-8";
 
+/* 글꼴 얇은거(카페24 써라운드에어) */
+@font-face {
+	font-family: 'Cafe24SsurroundAir';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24SsurroundAir.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+/* 두꺼운거(카페24 써라운드) */
+@font-face {
+	font-family: 'Cafe24Ssurround';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+span, a, p {
+	font: bold 20px "Cafe24SsurroundAir";
+}
+
+/*로고*/
+#logo {
+	font-family: 'Cafe24Ssurround';
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 50px;
+	margin-left: 27.4%;
+	float: left;
+	margin-top: 80px;
+	letter-spacing: 10px;
+	color: #212A3E;
+}
+/*로고 아래 슬로건*/
+#logo_un {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 25px;
+	margin-left: 455px;
+	float: left;
+	margin-top: 15px;
+	letter-spacing: 8px;
+	color: #487070;
+}
+
 body { /*큰 틀의 색상*/
 	/* background-color: rgb(13, 13, 14); */
 	background-color: #212A3E;
@@ -27,19 +76,38 @@ hr {
 	border: 0;
 	/* box-shadow:0 0 5px rgba(33, 31, 31, 0.326); */
 	box-shadow: 0 0 15px rgba(159, 151, 151, 0.326);
-	margin-top: 9px;
+	margin-top: 10px;
 }
 
 .homeicon { /*홈 아이콘*/
-	width: 95px;
-	height: 95px;
-	margin: 28px;
+	width: 160px;
+	height: 160px;
+	margin: 20px 35px;
+	/* margin-left:35px;
+            margin-bottom: 20px; */
+	filter: brightness(1);
+	transition: 0.5s;
+}
+
+.homeicon:hover {
+	/* transition: 0.5s ease-out;
+            opacity : 0.5; */
+	filter: brightness(0.2);
 }
 
 .myicon { /*마이 아이콘*/
-	width: 95px;
-	height: 95px;
-	margin: 28px;
+	width: 170px;
+	height: 170px;
+	margin-top: 20px;
+	margin-left: 490px;
+	filter: brightness(1);
+	transition: 0.5s;
+}
+
+.myicon:hover {
+	/* transition: 0.5s ease-out;
+            opacity : 0.5; */
+	filter: brightness(0.2);
 }
 
 /*드롭다운*/
@@ -68,7 +136,8 @@ hr {
 	/* text-align: center; */
 	/* margin-top: 1.5%; */
 	margin-top: -4%;
-	font: bold 20px "malgun gothic";
+	/* font:bold 20px "malgun gothic"; */
+	font: bold 20px "Cafe24SsurroundAir";
 }
 
 .dropdown-content a {
@@ -87,6 +156,3 @@ hr {
 .dropdown:hover .dropdown-content {
 	display: block;
 }
-/* .dropdown:hover .dropbtn{
-            background-color: #3e8e41;
-        } */

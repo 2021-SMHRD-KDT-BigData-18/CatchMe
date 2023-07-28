@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 .main_area {
-	height: 72vh;
+	height: 67vh;
 	display: flex;
 	justify-content: space-around;
 	margin-right: 5%;
@@ -12,17 +12,29 @@
 	width: 280px;
 	height: 280px;
 	filter: drop-shadow(10px 7px 5px #c3c3c3);
-	margin-top: 70%;
+	margin-top: 65%;
 }
 
-#logo {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-size: 50px;
-	margin-left: 33%;
-	float: left;
-	margin-top: 2%;
-	letter-spacing: 7px;
-	color: #212A3E;
+.main_area .button {
+	position: absolute;
+	opacity: 0;
+	font-size: 40px;
+}
+
+.record_btn:hover .button {
+	opacity: 1;
+	margin-left: 5%;
+	letter-spacing: 5px;
+}
+
+.drive_record_btn:hover .button {
+	opacity: 1;
+	margin-left: 3%;
+	letter-spacing: 5px;
+}
+
+.setting_btn:hover .button {
+	opacity: 1;
+	margin-left: 5.3%;
+	letter-spacing: 5px;
 }
