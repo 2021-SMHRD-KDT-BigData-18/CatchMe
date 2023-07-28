@@ -29,12 +29,18 @@ public class Controller {
 	//첫페이지 컨트롤러
 	@RequestMapping("/")
 	public String Loginpage() {
-		return "Login_WEB";
+		return "Main_WEB_DB";
 	}
 	//회원가입 컨트롤러
 	@RequestMapping("/regi")
 	public String Registerpage() {
 		return "Regi_WEB";
+	}
+	
+	// 설정 이동
+	@RequestMapping("/setting")
+	public String MoveMypg() {
+		return "Setting";
 	}
 
 	@RequestMapping("/main")
@@ -42,11 +48,13 @@ public class Controller {
 		return "Main_WEB";
 	}
 	
+	// 녹화 페이지
 	@RequestMapping("/record")
 	public String record() {
 		return "Record_WEB";
 	}
 
+	// 주행 기록 페이지
 	@RequestMapping("/chart")
 	public String Recordpage() {
 		return "chart_repo";
@@ -105,7 +113,7 @@ public class Controller {
 			nextView = "Login_WEB";
 		} else {
 			session.setAttribute("user_data", user_data);
-			nextView = "redirect:/cv";
+			nextView = "redirect:/";
 		}
 		return nextView;
 	}
@@ -116,4 +124,6 @@ public class Controller {
 		session.invalidate();
 		return "redirect:/";
 	}
+	
+	
 }
