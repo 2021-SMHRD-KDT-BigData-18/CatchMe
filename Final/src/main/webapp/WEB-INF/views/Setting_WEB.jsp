@@ -579,7 +579,7 @@ a.classi{
   </form>
 
 <form action="" class="joinForm2" onsubmit="showConfirmation2(); return false;">
-
+ 
     <h2>Receiver Page</h2>
     <div class="settings">
         <div class="setting-item">
