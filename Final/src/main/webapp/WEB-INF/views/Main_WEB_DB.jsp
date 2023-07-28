@@ -16,7 +16,7 @@
         <div id="header">
             <div class="dropdown" style="float: left;">
                 <button class="dropbtn" id="gomain" onclick="GoMain()">
-                    <img class="homeicon" src="resources/image/home (2).png">
+                    <img class="homeicon" src="resources/img/home (2).png">
                 </button>
                 <!-- <div class="dropdown-content" style="left: 0;">
                     <a href="#">링크#1</a>
@@ -26,6 +26,7 @@
             <span id="logo_un">Whenever, Wherever </span>
             <div class="dropdown">
                 <button class="dropbtn"><img class="myicon" src="resources/img/user (2).png"></button>
+                
                 <div class="dropdown-content">
 					
 					<% if (secheck == null) { %>
@@ -39,7 +40,7 @@
                 </div>
             </div>    
         </div>
-        <br><br><br><br><br><br><br><hr>
+        <hr>
         <!-- 여기서 작업하면됨 -->
         <div class="main_area">
             <div class="record_btn">
