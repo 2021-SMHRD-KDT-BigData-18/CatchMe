@@ -494,7 +494,14 @@
 <body>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-
+    <aside class="side-bar">
+        <section class="side-bar__icon-box">
+            <section class="side-bar__icon-1">
+                <div></div>
+                <div></div>
+                <div></div>
+            </section>
+        </section>
         <ul>
             <li>
                 <!-- <a href="#" class="classi" id="settingBtn"></a> <!-- 절대 지우지 마세요 팝업 관련해서 넣어놨습니다 (23/07/28) -->
