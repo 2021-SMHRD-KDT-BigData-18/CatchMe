@@ -31,25 +31,12 @@
 					
 					<% if (secheck == null) { %>
 						<a href="movelogin">로그인</a>
-					<% } %>
-					<% else %>
-                    <% if (secheck != null) { %>
-					 	<a href="#">문자 발송 내역</a>
 					<% } else { %>
-						<a href="movelogin">문자 발송 내역</a>
-					<% } %>
-					
-					<% if (secheck != null) { %>
+						<a href="#">문자 발송 내역</a>
 						<a href="logout">로그아웃</a>
-					<% } else { %>
-						<a href="movelogin">로그인</a>
-					<% } %>
-					
-					<% if (secheck != null) { %>
 						<a href="#">회원탈퇴</a>
-					<% } else { %>
-						<a href="movelogin">회원탈퇴</a>
-					<% } %> 
+					<% } %>
+                    
                 </div>
             </div>    
         </div>
