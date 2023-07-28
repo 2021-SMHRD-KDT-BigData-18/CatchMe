@@ -1,40 +1,35 @@
 @charset "UTF-8";
 
-.main_area {
-	height: 67vh;
-	display: flex;
-	justify-content: space-around;
-	margin-right: 5%;
-	padding-left: 100px;
-}
-
-.main_area a img {
-	width: 280px;
-	height: 280px;
-	filter: drop-shadow(10px 7px 5px #c3c3c3);
-	margin-top: 65%;
-}
-
-.main_area .button {
-	position: absolute;
-	opacity: 0;
-	font-size: 40px;
-}
-
-.record_btn:hover .button {
-	opacity: 1;
-	margin-left: 5%;
-	letter-spacing: 5px;
-}
-
-.drive_record_btn:hover .button {
-	opacity: 1;
-	margin-left: 3%;
-	letter-spacing: 5px;
-}
-
-.setting_btn:hover .button {
-	opacity: 1;
-	margin-left: 5.3%;
-	letter-spacing: 5px;
-}
+.main_area{
+            height: 67vh;
+            display: flex;
+            justify-content: space-around;
+            margin-right: 90px;
+            padding-left: 100px;
+        }
+        .main_area a img{
+            width: 280px;
+            height: 280px;
+            filter: drop-shadow(10px 7px 5px #c3c3c3);
+            margin-top: 182px;
+        }
+        .main_area .button{
+            position: absolute;
+            opacity: 0;
+            font-size: 40px;
+        }
+        .record_btn:hover .button{
+            opacity: 1;
+            margin-left: 90px;
+            letter-spacing:5px;
+        }
+        .drive_record_btn:hover .button{
+            opacity: 1;
+            margin-left: 60px;
+            letter-spacing:5px;
+        }
+        .setting_btn:hover .button{
+            opacity: 1;
+            margin-left: 100px;
+            letter-spacing:5px;
+        }
