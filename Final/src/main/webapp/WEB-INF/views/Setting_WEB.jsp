@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>최종본(은지꺼)</title>
+    <title>Setting</title>
 <% User user = (User)session.getAttribute("user_data");
    String userId = user.getId();
 %> 
