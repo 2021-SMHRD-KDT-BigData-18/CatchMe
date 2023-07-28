@@ -46,7 +46,7 @@
 	            </div>
 	        </div>    
 	    </div>
-	    <hr>
+	    <br><hr>
 
 		<div id="main_area">
 			<div class="record_area" width=><video id="video"></video></div>
@@ -55,8 +55,8 @@
 				onclick="toggleStream()"><img src="resources/img/video.png" id="record_img" style="float: left;"></a>
 				<a id = "stopSound" onclick="stopNotifySound()" style="visibility: hidden;">음악 종료</a>
 				<!-- <button>end</button> -->
-				<div class="content_up" style="margin-top: 70px; margin-left: 20px;">
-                    <span>이상행동 감지</span>
+				<div class="content_up" style="margin-top: 40px; margin-left: 120px;">
+                    <span>지금 뭐해 이상행동 감지되었잖아!</span>
                 </div>
 			</div>
 			<div class="content_area" style="overflow:auto;">

@@ -1,11 +1,12 @@
 @charset "UTF-8";
 
 .main_area{
-            height: 67vh;
+            height: 68vh;
             display: flex;
             justify-content: space-around;
             margin-right: 90px;
             padding-left: 100px;
+            margin-top: -28px;
         }
         .main_area a img{
             width: 280px;
