@@ -496,14 +496,14 @@
         <div id="header">
             <div class="dropdown" style="float: left;">
                 <button class="dropbtn">
-                    <img class="homeicon" src="./image/free-icon-home-1828864.png">
+                    <a href="/web"><img class="homeicon" src="resources/img/house.svg"></a>
                 </button>
                 <!-- <div class="dropdown-content" style="left: 0;">
                     <a href="#">링크#1</a>
                 </div> -->
             </div>
             <div class="dropdown" style="float: right;">
-                <button class="dropbtn"><img class="myicon" src="./image/free-icon-user-5264565.png"></button>
+                <button class="dropbtn"><img class="myicon" src="resources/img/user.svg"></button>
                 <div class="dropdown-content"> <!-- 우측 상단 메뉴바 -->
                     <a href="#">개인정보수정</a>
                     <a href="#">문자 발송 내역</a>
@@ -669,7 +669,7 @@
        
          const ctx = document.getElementById('myChart');
 
-         var week_label = new Array('Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat');
+         var week_label = new Array(1, 2, 3, 4, 5, 6, 7);
          //알림 명
          var event_label = '금일 알림 수';
          //알림 수

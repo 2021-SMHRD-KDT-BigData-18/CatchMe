@@ -21,6 +21,7 @@ function uploadFile() {
 		.then(data => {
 			console.log('app.js로 넘어감');
 			console.log('서버에서 받은 응답 데이터:', data);
+			alert('알림음 변경 완료!');
 		})
 		.catch(error => console.error('업로드 에러:', error));
 }
