@@ -87,4 +87,22 @@ update user_info set name = #{name}, phone = #{phone} where id = #{id}
 update user_info set sms_receiver = #{sms_receiver} where id = #{id}
 </update>
 
+<select id="mon_week" resultType="int">
+select
+sum(case when dayofweek(event_info.event_at) = 1 then 1 else 0 end) as '1',
+sum(case when dayofweek(event_info.event_at) = 2 then 1 else 0 end) as '2',
+sum(case when dayofweek(event_info.event_at) = 3 then 1 else 0 end) as '3',
+sum(case when dayofweek(event_info.event_at) = 4 then 1 else 0 end) as '4',
+sum(case when dayofweek(event_info.event_at) = 5 then 1 else 0 end) as '5',
+sum(case when dayofweek(event_info.event_at) = 6 then 1 else 0 end) as '6',
+sum(case when dayofweek(event_info.event_at) = 7 then 1 else 0 end) as '7'
+from ccu.user_info
+inner join ccu.record_info ON user_info.id = record_info.id
+inner join ccu.event_info ON record_info.rec_seq = event_info.rec_seq
+where
+month(event_info.event_at) = #{param1}
+and week(event_info.event_at, 1) - week(date_format(event_info.event_at, '%Y-%m-01'), 1) + 1 = #{param2}
+and user_info.id = #{param3};
+</select>
+
 </mapper>
