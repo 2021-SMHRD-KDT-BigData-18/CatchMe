@@ -64,7 +64,13 @@ public class Controller {
 	public String Recordpage() {
 		return "Chart_WEB";
 	}
-
+	
+	// photo 페이지
+	@RequestMapping("/photo")
+	public String Photo() {
+		return "Photo";
+	}
+	
 	// 쉼터알려주기 테스트용, 문자보내기 테스트, 이미지 쭉 보여주는거.
 	@RequestMapping("/location")
 	public String getLocation(@SessionAttribute("user_data") User user_data, Model model) {
