@@ -62,7 +62,7 @@
 	padding: 15px 40px;
 	position: absolute;
 	/* bottom: -50px; */
-	top: -100px;
+	top: -50px;
 	transition: transform 0.3s ease-in-out;
 	font: bold 25px "malgun gothic";
 	margin-left: 28%;
@@ -72,7 +72,7 @@
 	transform: translateY(-50px);
 }
 /* 졸음쉼터 알림문구창 */
-.resrest_spott {
+#nearestRestArea {
 	opacity: 0;
 	position: absolute;
 	background-color: #6a7da5ad;
