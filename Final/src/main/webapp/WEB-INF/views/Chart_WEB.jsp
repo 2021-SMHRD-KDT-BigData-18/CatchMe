@@ -669,7 +669,7 @@
        
          const ctx = document.getElementById('myChart');
 
-         var week_label = new Array('Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat');
+         var week_label = new Array(1, 2, 3, 4, 5, 6, 7);
          //알림 명
          var event_label = '금일 알림 수';
          //알림 수
