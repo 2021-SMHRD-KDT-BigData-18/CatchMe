@@ -14,7 +14,7 @@
     <div id="center">
         <div id="header">
             <div class="dropdown" style="float: left;">
-                <button class="dropbtn">
+                <button class="dropbtn" id="gomain" onclick="GoMain()">
                     <img class="homeicon" src="resources/img/house.svg">
                 </button>
                 <!-- <div class="dropdown-content" style="left: 0;">
@@ -59,14 +59,27 @@
 				<% } %></div>
             <p style="border-left: 1px solid #eae7e4; box-shadow:0 0 15px rgba(159, 151, 151, 0.326);"></p>
             <div class="drive_record_btn">
-                <a href="#"><img src="resources/img/bar-chart.png" onmouseover="this.src='resources/img/bar-chart-1--unscreen.gif'" onmouseout="this.src='resources/img/bar-chart.png'"></a>
+            	<% if (secheck == null) { %><!-- 주행기록 -->
+					<a href="movelogin"><img src="resources/img/bar-chart.png" onmouseover="this.src='resources/img/bar-chart-1--unscreen.gif'" onmouseout="this.src='resources/img/bar-chart.png'"></a>
+				<% } else { %>
+					<a href="reco"><img src="resources/img/bar-chart.png" onmouseover="this.src='resources/img/bar-chart-1--unscreen.gif'" onmouseout="this.src='resources/img/bar-chart.png'"></a>
+				<% } %>
             </div>
             <p style="border-left: 1px solid #eae7e4;"></p>
             <div class="setting_btn" style="border: 0;">
-                <a href="#"><img src="resources/img/settings.png" onmouseover="this.src='resources/img/settings-unscreen.gif'" onmouseout="this.src='resources/img/settings.png'"></a>
+                <% if (secheck == null) { %><!-- 설정 -->
+					<a href="movelogin"><img src="resources/img/settings.png" onmouseover="this.src='resources/img/settings-unscreen.gif'" onmouseout="this.src='resources/img/settings.png'"></a>
+				<% } else { %>
+					<a href="setting"><img src="resources/img/settings.png" onmouseover="this.src='resources/img/settings-unscreen.gif'" onmouseout="this.src='resources/img/settings.png'"></a>
+				<% } %>
             </div>
         </div>
   </div>
 
+	<script>
+		function GoMain() {
+			location.href="/web";
+		}
+	</script>
 </body>
 </html>
