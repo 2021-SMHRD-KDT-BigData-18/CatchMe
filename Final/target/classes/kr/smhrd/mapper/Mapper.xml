@@ -72,7 +72,7 @@ select id from ccu.user_info where id = #{id}
 </select>
 
 <select id="searchPw" parameterType="kr.smhrd.entity.User" resultType="kr.smhrd.entity.User">
-select * from user_info where id = #{id} and email = #{email}
+select * from user_info where id = #{id} and name = #{name} and email = #{email}
 </select>
 
 <update id="changePw" parameterType="kr.smhrd.entity.User">
