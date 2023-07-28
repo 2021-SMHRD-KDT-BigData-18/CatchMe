@@ -600,7 +600,7 @@ a.classi{
 </form>
 
 <!--<h1>알림음 설정</h1> -->
-<form class="joinForm3" onsubmit="showConfirmation2();">
+<form class="joinForm3" onsubmit="showConfirmation2(); uploadFile();">
     <div class="settings">
         <div class="setting-item">
             <label class="setting-label" for="username">사용자 이름:</label>
@@ -623,7 +623,6 @@ a.classi{
         <div>
             <label for="setting-label" class="bold-label">업로드:</label>
             <input type="file" id="fileInput">
-            <button onclick="uploadFile()" class="submit-btn123123">Upload</button>
         </div>
         <style>.bold-label { font-weight: bold; float:left;}</style>
       
