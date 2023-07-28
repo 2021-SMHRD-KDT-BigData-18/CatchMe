@@ -8,8 +8,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-	<link rel="stylesheet" type="text/css" href="resources/css/recordcss.css"/>
 	<link rel="stylesheet" type="text/css" href="resources/css/navicover.css"/>
+	<link rel="stylesheet" type="text/css" href="resources/css/recordcss.css"/>
 </head>
 <body onload="setSize()">
 	<audio id="notifySound" controls style="visibility: hidden;">
@@ -29,14 +29,16 @@
 		<div id="header">
 	    	<div class="dropdown" style="float: left;">
 	        	<button class="dropbtn">
-	            	<a href="/web"><img class="homeicon" src="resources/img/house.svg"></a>
+	            	<a href="/web"><img class="homeicon" src="resources/img/home (2).png"></a>
 	            </button>
 	            <!-- <div class="dropdown-content" style="left: 0;">
 	                <a href="#">링크#1</a>
 	            </div> -->
 	        </div>
+	        <span id="logo">Catch you</span>
+            <span id="logo_un">Whenever, Wherever </span>
 	       	<div class="dropdown" style="float: right;">
-	        	<button class="dropbtn"><img class="myicon" src="resources/img/user.svg"></button>
+	        	<button class="dropbtn"><img class="myicon" src="resources/img/user (2).png"></button>
 	            <div class="dropdown-content">
 	            	<a href='#'>문자 발송 내역</a>
 	                <a href='logout'>로그아웃</a>
@@ -44,21 +46,28 @@
 	            </div>
 	        </div>    
 	    </div>
-	    <br><br><br><br><br><br><br><hr>
+	    <hr>
 
 		<div id="main_area">
 			<div class="record_area" width=><video id="video"></video></div>
 			<div class="record_button">
 				<a id="toggleStream" class="start-rec-button"
-				onclick="toggleStream()"><img src="resources/img/video.png" id="record_img"></a>
+				onclick="toggleStream()"><img src="resources/img/video.png" id="record_img" style="float: left;"></a>
 				<a id = "stopSound" onclick="stopNotifySound()" style="visibility: hidden;">음악 종료</a>
 				<!-- <button>end</button> -->
+				<div class="content_up" style="margin-top: 70px; margin-left: 20px;">
+                    <span>이상행동 감지</span>
+                </div>
 			</div>
-			<div class="content_area">
+			<div class="content_area" style="overflow:auto;">
 				<p></p>
 			</div>
 		</div>
-
+		
+		<!-- 졸음감지시 졸음쉼터 알려주는 알림 문구창 -->
+    	<div class="resrest_spott">
+        	<span>00m 앞에 졸음쉼터가 있습니다.</span>
+    	</div>
 
 		<!-- 문자발송완료 알림문구창 -->
 	    <div class="notification-container" id="notification-container">
