@@ -53,7 +53,9 @@
 	background-color: rgba(243, 243, 229, 0.353);
 	/* border-radius: 2%; */
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-	font: bold 25px "SUIT-Regular";
+	/*font: bold 25px "SUIT-Regular";*/
+	font-size:25px;
+	font-weight:bold;
 	margin-top: 162px;
 }
 
@@ -82,7 +84,7 @@
 	
 }
 #notification-container p{
-	font-family: "SUIT-Regular";
+	/*font-family: "SUIT-Regular";*/
 	font-size: 25px;
 	margin-top: 200px;
 }

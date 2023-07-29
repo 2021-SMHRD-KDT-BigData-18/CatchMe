@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="ko">
   <head>
@@ -131,18 +132,18 @@
 
     /* -----------------------------------------------------------------------------------------*/ /* 외관 틀 */
     /* 그래프 툴팁 시 열리는 테이블 틀 잡는 코드 */
-        table, th, tr, td {
-            border: 1px solid black;
-            border-collapse: collapse;
-        }
+		table, th, tr, td {
+    	border: none;
+    	border-collapse: collapse;
+		}
 
-        th, td {
-            padding: 5px;
-        }
+		th, td {
+    	padding: 5px;
+		}
 
-        td {
-            text-align: center;
-        }
+		td {
+    	text-align: center;
+		}
 
         .forgot a {
             white-space: pre;
@@ -523,7 +524,6 @@
    <!-- ----------------------------------------------------------------------------------------------- -->
    <h1 class="articleTitle">WEEK-REPORT</h1>
    <input type = "hidden" value = "${user_data.id }" id = "username">
-    <a>${user_data.id }</a> 
    
    <div class="chart-container">
        
@@ -531,77 +531,78 @@
             <button id="prev-button" class="arrow-button">◄ </button>
     
             <!-- 느낌 상, 05,06 버튼도 추가해야함(아니면 1월, 2월, 3월 ... 로 가는 방법도 고려) -->
-            <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen" onclick=mon_week(1,1)>1월 1주차</a>
-            <a href="" title="Button push lightblue" class="button btnPush btnLightBlue" onclick=mon_week(1,2)>1월 2주차</a>
-            <a href="" title="Button push orange" class="button btnPush btnOrange" onclick=mon_week(1,3)>1월 3주차</a>
-            <a href="" title="Button push purple" class="button btnPush btnPurple" onclick=mon_week(1,4)>1월 4주차</a>
-            <a href="" title="Button push Brown" class="button btnPush btnBrown" onclick=mon_week(1,5)>1월 5주차</a>
+            <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen" onclick="mon_week(1,1); return false;">1월 1주차</a>
+            <a href="" title="Button push lightblue" class="button btnPush btnLightBlue" onclick="mon_week(1,2); return false;">1월 2주차</a>
+            <a href="" title="Button push orange" class="button btnPush btnOrange" onclick="mon_week(1,3); return false;">1월 3주차</a>
             
-            <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen" onclick=mon_week(2,1)>2월 1주차</a>
-            <a href="" title="Button push lightblue" class="button btnPush btnLightBlue" onclick=mon_week(2,2)>2월 2주차</a>
-            <a href="" title="Button push orange" class="button btnPush btnOrange" onclick=mon_week(2,3)>2월 3주차</a>
-            <a href="" title="Button push purple" class="button btnPush btnPurple" onclick=mon_week(2,4)>2월 4주차</a>
-            <a href="" title="Button push Brown" class="button btnPush btnBrown" onclick=mon_week(2,5)>2월 5주차</a>
+            <a href="" title="Button push purple" class="button btnPush btnPurple" onclick="mon_week(1,4); return false;">1월 4주차</a>
+            <a href="" title="Button push Brown" class="button btnPush btnBrown" onclick="mon_week(1,5); return false;">1월 5주차</a>
             
-            <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen" onclick=mon_week(3,1)>3월 1주차</a>
-            <a href="" title="Button push lightblue" class="button btnPush btnLightBlue" onclick=mon_week(3,2)>3월 2주차</a>
-            <a href="" title="Button push orange" class="button btnPush btnOrange" onclick=mon_week(3,3)>3월 3주차</a>
-            <a href="" title="Button push purple" class="button btnPush btnPurple" onclick=mon_week(3,4)>3월 4주차</a>
-            <a href="" title="Button push Brown" class="button btnPush btnBrown" onclick=mon_week(3,5)>3월 5주차</a>
+            <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen" onclick="mon_week(2,1); return false;">2월 1주차</a>
+            <a href="" title="Button push lightblue" class="button btnPush btnLightBlue" onclick="mon_week(2,2); return false;">2월 2주차</a>
+            <a href="" title="Button push orange" class="button btnPush btnOrange" onclick="mon_week(2,3); return false;">2월 3주차</a>
+            <a href="" title="Button push purple" class="button btnPush btnPurple" onclick="mon_week(2,4); return false;">2월 4주차</a>
+            <a href="" title="Button push Brown" class="button btnPush btnBrown" onclick="mon_week(2,5); return false;">2월 5주차</a>
             
-            <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen" onclick=mon_week(4,1)>4월 1주차</a>
-            <a href="" title="Button push lightblue" class="button btnPush btnLightBlue" onclick=mon_week(4,2)>4월 2주차</a>
-            <a href="" title="Button push orange" class="button btnPush btnOrange" onclick=mon_week(4,3)>4월 3주차</a>
-            <a href="" title="Button push purple" class="button btnPush btnPurple" onclick=mon_week(4,4)>4월 4주차</a>
-            <a href="" title="Button push Brown" class="button btnPush btnBrown" onclick=mon_week(4,5)>4월 5주차</a>
+            <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen" onclick="mon_week(3,1); return false;">3월 1주차</a>
+            <a href="" title="Button push lightblue" class="button btnPush btnLightBlue" onclick="mon_week(3,2); return false;">3월 2주차</a>
+            <a href="" title="Button push orange" class="button btnPush btnOrange" onclick="mon_week(3,3); return false;">3월 3주차</a>
+            <a href="" title="Button push purple" class="button btnPush btnPurple" onclick="mon_week(3,4); return false;">3월 4주차</a>
+            <a href="" title="Button push Brown" class="button btnPush btnBrown" onclick="mon_week(3,5); return false;">3월 5주차</a>
             
-            <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen" onclick=mon_week(5,1)>5월 1주차</a>
-            <a href="" title="Button push lightblue" class="button btnPush btnLightBlue" onclick=mon_week(5,2)>5월 2주차</a>
-            <a href="" title="Button push orange" class="button btnPush btnOrange" onclick=mon_week(5,3)>5월 3주차</a>
-            <a href="" title="Button push purple" class="button btnPush btnPurple" onclick=mon_week(5,4)>5월 4주차</a>
-            <a href="" title="Button push Brown" class="button btnPush btnBrown" onclick=mon_week(5,5)>5월 5주차</a>
+            <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen" onclick="mon_week(4,1); return false;">4월 1주차</a>
+            <a href="" title="Button push lightblue" class="button btnPush btnLightBlue" onclick="mon_week(4,2); return false;">4월 2주차</a>
+            <a href="" title="Button push orange" class="button btnPush btnOrange" onclick="mon_week(4,3); return false;">4월 3주차</a>
+            <a href="" title="Button push purple" class="button btnPush btnPurple" onclick="mon_week(4,4); return false;">4월 4주차</a>
+            <a href="" title="Button push Brown" class="button btnPush btnBrown" onclick="mon_week(4,5); return false;">4월 5주차</a>
             
-            <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen" onclick=mon_week(6,1)>6월 1주차</a>
-            <a href="" title="Button push lightblue" class="button btnPush btnLightBlue" onclick=mon_week(6,2)>6월 2주차</a>
-            <a href="" title="Button push orange" class="button btnPush btnOrange" onclick=mon_week(6,3)>6월 3주차</a>
-            <a href="" title="Button push purple" class="button btnPush btnPurple" onclick=mon_week(6,4)>6월 4주차</a>
-            <a href="" title="Button push Brown" class="button btnPush btnBrown" onclick=mon_week(6,5)>6월 5주차</a>
+            <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen" onclick="mon_week(5,1); return false;">5월 1주차</a>
+            <a href="" title="Button push lightblue" class="button btnPush btnLightBlue" onclick="mon_week(5,2); return false;">5월 2주차</a>
+            <a href="" title="Button push orange" class="button btnPush btnOrange" onclick="mon_week(5,3); return false;">5월 3주차</a>
+            <a href="" title="Button push purple" class="button btnPush btnPurple" onclick="mon_week(5,4); return false;">5월 4주차</a>
+            <a href="" title="Button push Brown" class="button btnPush btnBrown" onclick="mon_week(5,5); return false;">5월 5주차</a>
             
-            <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen" onclick=mon_week(7,1)>7월 1주차</a>
-            <a href="" title="Button push lightblue" class="button btnPush btnLightBlue" onclick=mon_week(7,2)>7월 2주차</a>
-            <a href="" title="Button push orange" class="button btnPush btnOrange" onclick=mon_week(7,3)>7월 3주차</a>
-            <a href="" title="Button push purple" class="button btnPush btnPurple" onclick=mon_week(7,4)>7월 4주차</a>
-            <a href="" title="Button push Brown" class="button btnPush btnBrown" onclick=mon_week(7,5)>7월 5주차</a>
+            <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen" onclick="mon_week(6,1); return false;">6월 1주차</a>
+            <a href="" title="Button push lightblue" class="button btnPush btnLightBlue" onclick="mon_week(6,2); return false;">6월 2주차</a>
+            <a href="" title="Button push orange" class="button btnPush btnOrange" onclick="mon_week(6,3); return false;">6월 3주차</a>
+            <a href="" title="Button push purple" class="button btnPush btnPurple" onclick="mon_week(6,4); return false;">6월 4주차</a>
+            <a href="" title="Button push Brown" class="button btnPush btnBrown" onclick="mon_week(6,5); return false;">6월 5주차</a>
             
-            <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen" onclick=mon_week(8,1)>8월 1주차</a>
-            <a href="" title="Button push lightblue" class="button btnPush btnLightBlue" onclick=mon_week(8,2)>8월 2주차</a>
-            <a href="" title="Button push orange" class="button btnPush btnOrange" onclick=mon_week(8,3)>8월 3주차</a>
-            <a href="" title="Button push purple" class="button btnPush btnPurple" onclick=mon_week(8,4)>8월 4주차</a>
-            <a href="" title="Button push Brown" class="button btnPush btnBrown" onclick=mon_week(8,5)>8월 5주차</a>
+            <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen" onclick="mon_week(7,1); return false;">7월 1주차</a>
+            <a href="" title="Button push lightblue" class="button btnPush btnLightBlue" onclick="mon_week(7,2); return false;">7월 2주차</a>
+            <a href="" title="Button push orange" class="button btnPush btnOrange" onclick="mon_week(7,3); return false;">7월 3주차</a>
+            <a href="" title="Button push purple" class="button btnPush btnPurple" onclick="mon_week(7,4); return false;">7월 4주차</a>
+            <a href="" title="Button push Brown" class="button btnPush btnBrown" onclick="mon_week(7,5); return false;">7월 5주차</a>
             
-            <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen" onclick=mon_week(9,1)>9월 1주차</a>
-            <a href="" title="Button push lightblue" class="button btnPush btnLightBlue" onclick=mon_week(9,2)>9월 2주차</a>
-            <a href="" title="Button push orange" class="button btnPush btnOrange" onclick=mon_week(9,3)>9월 3주차</a>
-            <a href="" title="Button push purple" class="button btnPush btnPurple" onclick=mon_week(9,4)>9월 4주차</a>
-            <a href="" title="Button push Brown" class="button btnPush btnBrown" onclick=mon_week(9,5)>9월 5주차</a>
+            <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen" onclick="mon_week(8,1); return false;">8월 1주차</a>
+            <a href="" title="Button push lightblue" class="button btnPush btnLightBlue" onclick="mon_week(8,2); return false;">8월 2주차</a>
+            <a href="" title="Button push orange" class="button btnPush btnOrange" onclick="mon_week(8,3); return false;">8월 3주차</a>
+            <a href="" title="Button push purple" class="button btnPush btnPurple" onclick="mon_week(8,4); return false;">8월 4주차</a>
+            <a href="" title="Button push Brown" class="button btnPush btnBrown" onclick="mon_week(8,5); return false;">8월 5주차</a>
             
-            <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen" onclick=mon_week(10,1)>10월 1주차</a>
-            <a href="" title="Button push lightblue" class="button btnPush btnLightBlue" onclick=mon_week(10,2)>10월 2주차</a>
-            <a href="" title="Button push orange" class="button btnPush btnOrange" onclick=mon_week(10,3)>10월 3주차</a>
-            <a href="" title="Button push purple" class="button btnPush btnPurple" onclick=mon_week(10,4)>10월 4주차</a>
-            <a href="" title="Button push Brown" class="button btnPush btnBrown" onclick=mon_week(10,5)>10월 5주차</a>
+            <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen" onclick="mon_week(9,1); return false;">9월 1주차</a>
+            <a href="" title="Button push lightblue" class="button btnPush btnLightBlue" onclick="mon_week(9,2); return false;">9월 2주차</a>
+            <a href="" title="Button push orange" class="button btnPush btnOrange" onclick="mon_week(9,3); return false;">9월 3주차</a>
+            <a href="" title="Button push purple" class="button btnPush btnPurple" onclick="mon_week(9,4); return false;">9월 4주차</a>
+            <a href="" title="Button push Brown" class="button btnPush btnBrown" onclick="mon_week(9,5); return false;">9월 5주차</a>
             
-            <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen" onclick=mon_week(11,1)>11월 1주차</a>
-            <a href="" title="Button push lightblue" class="button btnPush btnLightBlue" onclick=mon_week(11,2)>11월 2주차</a>
-            <a href="" title="Button push orange" class="button btnPush btnOrange" onclick=mon_week(11,3)>11월 3주차</a>
-            <a href="" title="Button push purple" class="button btnPush btnPurple" onclick=mon_week(11,4)>11월 4주차</a>
-            <a href="" title="Button push Brown" class="button btnPush btnBrown" onclick=mon_week(11,5)>11월 5주차</a>
+            <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen" onclick="mon_week(10,1); return false;">10월 1주차</a>
+            <a href="" title="Button push lightblue" class="button btnPush btnLightBlue" onclick="mon_week(10,2); return false;">10월 2주차</a>
+            <a href="" title="Button push orange" class="button btnPush btnOrange" onclick="mon_week(10,3); return false;">10월 3주차</a>
+            <a href="" title="Button push purple" class="button btnPush btnPurple" onclick="mon_week(10,4); return false;">10월 4주차</a>
+            <a href="" title="Button push Brown" class="button btnPush btnBrown" onclick="mon_week(10,5); return false;">10월 5주차</a>
             
-            <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen" onclick=mon_week(12,1)>12월 1주차</a>
-            <a href="" title="Button push lightblue" class="button btnPush btnLightBlue" onclick=mon_week(12,2)>12월 2주차</a>
-            <a href="" title="Button push orange" class="button btnPush btnOrange" onclick=mon_week(12,3)>12월 3주차</a>
-            <a href="" title="Button push purple" class="button btnPush btnPurple" onclick=mon_week(12,4)>12월 4주차</a>
-            <a href="" title="Button push Brown" class="button btnPush btnBrown" onclick=mon_week(12,5)>12월 5주차</a>
+            <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen" onclick="mon_week(11,1); return false;">11월 1주차</a>
+            <a href="" title="Button push lightblue" class="button btnPush btnLightBlue" onclick="mon_week(11,2); return false;">11월 2주차</a>
+            <a href="" title="Button push orange" class="button btnPush btnOrange" onclick="mon_week(11,3); return false;">11월 3주차</a>
+            <a href="" title="Button push purple" class="button btnPush btnPurple" onclick="mon_week(11,4); return false;">11월 4주차</a>
+            <a href="" title="Button push Brown" class="button btnPush btnBrown" onclick="mon_week(11,5); return false;">11월 5주차</a>
+            
+            <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen" onclick="mon_week(12,1); return false;">12월 1주차</a>
+            <a href="" title="Button push lightblue" class="button btnPush btnLightBlue" onclick="mon_week(12,2); return false;">12월 2주차</a>
+            <a href="" title="Button push orange" class="button btnPush btnOrange" onclick="mon_week(12,3); return false;">12월 3주차</a>
+            <a href="" title="Button push purple" class="button btnPush btnPurple" onclick="mon_week(12,4); return false;">12월 4주차</a>
+            <a href="" title="Button push Brown" class="button btnPush btnBrown" onclick="mon_week(12,5); return false;">12월 5주차</a>
     
             <button id="next-button" class="arrow-button">►</button>
         </div>
@@ -609,7 +610,7 @@
         <div class="clear"></div>
     </div>
     
-    <form action="#" class="joinForm">
+    <form action="#" class="joinForm" onsubmit="return false;">
         <div>
             <canvas id="myChart"></canvas>
         </div>
@@ -623,22 +624,66 @@
     <script>
     
     let username = document.getElementById('username').value;
-    
+    var event_count = [];
+    var event_day_count=[];
+    var day_date=[];
+    function formatDate(timestamp) {
+        var dateddddd = new Date(timestamp);
+        var year = dateddddd.getFullYear();
+        var month = String(dateddddd.getMonth() + 1).padStart(2, '0');
+        var day = String(dateddddd.getDate()).padStart(2, '0');
+        return year + '-' + month + '-' + day;
+    }
+
     function mon_week(mon, week) {
-        console.error("버튼이 클릭되었습니다! 정보:", mon, week);
+        console.log("버튼이 클릭되었습니다! 정보:", mon, week);
         $.ajax({
-           url : "mon_week",
-           type: "post",
-           data:{"mon":mon,"week":week,"username":username},
-           success:function(data){
-              console.log("차트데이터불러오기성공")
-              console.dir(data);
-           }, error : function(){
-        	   console.log("차트데이터불러오기실패")
+            url: "mon_week",
+            type: "post",
+            data: { "mon": mon, "week": week, "username": username },
+            success: function (data) {
+                console.log("차트데이터불러오기성공");
+                console.log("FRI 값: " + data.fri_sleep);
+                event_count = [
+                    data.sun,
+                    data.mon,
+                    data.tue,
+                    data.wed,
+                    data.thu,
+                    data.fri,
+                    data.sat
+                ];
+                event_day_count = [
+                    data.sun_sleep, data.sun_nolook,
+                    data.mon_sleep, data.mon_nolook,
+                    data.tue_sleep, data.tue_nolook,
+                    data.wed_sleep, data.wed_nolook,
+                    data.thu_sleep, data.thu_nolook,
+                    data.fri_sleep, data.fri_nolook,
+                    data.sat_sleep, data.sat_nolook
+                ];
+                
+                // day_date에 날짜 형식으로 변환된 데이터를 담기
+                day_date = [
+                    formatDate(data.sun_dates),
+                    formatDate(data.mon_dates),
+                    formatDate(data.tue_dates),
+                    formatDate(data.wed_dates),
+                    formatDate(data.thu_dates),
+                    formatDate(data.fri_dates),
+                    formatDate(data.sat_dates)
+                ];
+              
+              console.log(event_day_count);
+              console.log(day_date)
+				useEventData();
+           },
+           error: function() {
+             console.log("차트데이터불러오기실패");
            }
-        });
-     }
-         
+         });
+       }
+    
      // 화살표 누르면 버튼이 넘어가는 기능을 가진 script 코드
      const buttonContainer = document.querySelectorAll(".button");
      //alert("test: " + buttonContainer.length);
@@ -678,150 +723,200 @@
      <!-- ----------------------------------------------------------------------------------------------- -->
 
        
-         const ctx = document.getElementById('myChart');
+      const ctx = document.getElementById('myChart');
+      
+      function useEventData() {
+    	    var week_label = ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'];
+    	    // 알림 명
+    	    var event_label = '감지횟수';
+    	    // 날짜 지정
+    	    var week_day = '2023-07-23';
 
-         var week_label = new Array("일요일", "월요일", "화요일", "수요일", "목요일", "금요일", "토요일");
-         //알림 명
-         var event_label = '금일 알림 수';
-         //알림 수
-         var event_count = new Array(4, 7, 3, 5, 2, 3, 2);
-         //날짜 지정
-         var week_day ='2023-07-25';
-         //시작 시간 명
-         var start_label = 'Start';
-         //시작 시간
-         var start_time = '13:00';
-         //종료 시간 명
-         var end_label = 'End';
-         //종료 시간
-         var end_time = '17:00';
-         //발생 시간 명
-         var event_label = 'Event';
-         //발생 시간
-         var event_time = '15:30';
-         //발생 이유 명
-         var reason_label = 'Reason';
-         //발생 이유
-         var reason_name = '졸음'
-         
-       	
-         // X축 레이블에 요일명 사용하기
-        	 new Chart(ctx, {
-        	   type: 'bar',
-        	   data: {
-        	     labels: week_label, // 숫자를 요일명으로 변환하여 사용
-        	     datasets: [
-        	       {
-        	         label: event_label,
-        	         data: event_count,
-        	         backgroundColor: [
-        	           '#BE81F7',
-        	           '#F3F781',
-        	           '#FF8000',
-        	           '#2ECCFA',
-        	           '#00FF40',
-        	           '#FA5858',
-        	           '#FF8000'
-        	         ],
-        	         borderWidth: 1
-                 },
-             ],
-           },
-           options: {
-             plugins: {
-               
-                 tooltip: {
-                     // "on-canvas tooltip"을 비활성화
-                     
-                   
+    	    // X축 레이블에 요일명 사용하기
+    	    new Chart(ctx, {
+    	        type: 'bar',
+    	        data: {
+    	            labels: week_label, // 숫자를 요일명으로 변환하여 사용
+    	            datasets: [{
+    	                label: event_label,
+    	                data: event_count,
+    	                backgroundColor: [
+    	                    '#BE81F7',
+    	                    '#F3F781',
+    	                    '#FF8000',
+    	                    '#2ECCFA',
+    	                    '#00FF40',
+    	                    '#FA5858',
+    	                    '#FF8000'
+    	                ],
+    	                borderWidth: 1
+    	            }],
+    	        },
+    	        options: {
+    	            plugins: {
+    	                tooltip: {
+    	                    external: function (context) {
+    	                        // 툴팁 요소
+    	                        let tooltipEl = document.getElementById('chartjs-tooltip');
 
-                     external: function(context) {
-                         // 툴팁 요소
-                         let tooltipEl = document.getElementById('chartjs-tooltip');
+    	                        // 첫 번째 렌더링 시에 요소를 생성하는 코드
+    	                        if (!tooltipEl) {
+    	                            tooltipEl = document.createElement('div');
+    	                            tooltipEl.id = 'chartjs-tooltip';
+    	                            tooltipEl.innerHTML = '<table>';
+    	                            document.body.appendChild(tooltipEl);
+    	                        }
 
-                         // 첫 번째 렌더링 시에 요소를 생성하는 코드
-                         if (!tooltipEl) {
-                             tooltipEl = document.createElement('div');
-                             tooltipEl.id = 'chartjs-tooltip';
-                             tooltipEl.innerHTML = '<table>';
-                             document.body.appendChild(tooltipEl);
-                         }
-                       
-                         // 툴팁이 없는 경우에는 해당 요소를 숨겨라!!
-                         const tooltipModel = context.tooltip;
-                         if (tooltipModel.opacity === 0) {
-                             tooltipEl.style.opacity = 0;
-                             return;
-                         }
+    	                        const tooltipModel = context.tooltip;
+    	                        if (tooltipModel.opacity === 0) {
+    	                            tooltipEl.style.opacity = 0;
+    	                            return;
+    	                        }
 
-                         // 특정 입력 요소 내에서 커서 위치 설정하는 코드
-                         tooltipEl.classList.remove('above', 'below', 'no-transform');
-                         if (tooltipModel.yAlign) {
-                             tooltipEl.classList.add(tooltipModel.yAlign);
-                         } else {
-                             tooltipEl.classList.add('no-transform');
-                         }
+    	                        tooltipEl.classList.remove('above', 'below', 'no-transform');
+    	                        if (tooltipModel.yAlign) {
+    	                            tooltipEl.classList.add(tooltipModel.yAlign);
+    	                        } else {
+    	                            tooltipEl.classList.add('no-transform');
+    	                        }
 
-                         function getBody(bodyItem) {
-                             return bodyItem.lines;
-                         }
+    	                        function getBody(bodyItem) {
+    	                            return bodyItem.lines;
+    	                        }
 
-                         // 특정 요소의 텍스트 내용을 설정하는 코드
-                         if (tooltipModel.body) {
-                             const titleLines = tooltipModel.title || [];
-                             const bodyLines = tooltipModel.body.map(getBody);
-                      // 툴팁 관련 정의된 변수들 있는 위치
-                             let innerHtml = '';
-                             titleLines.forEach(function(title) {
-                                 innerHtml += '<tr><th colspan=5>'+ week_day + ' (' + title + ')' + '</th></tr>';
-                             });
-                             innerHtml += '<tr><th>No</th><th>'+start_label+'</th><th>'+end_label+'</th><th>'+event_label+'</th><th>'+reason_label+'</th></tr>';
-                             
+    	                        if (tooltipModel.body) {
+    	                        	var dayIndex = tooltipModel.dataPoints[0].dataIndex;
+    	                            console.log('마우스를 올린 데이터의 x축(index) 값:', dayIndex);
 
-                             bodyLines.forEach(function(body, i) {
-                                 const colors = tooltipModel.labelColors[i];
-                                 let style = '';
-                                 style += ' border-color:' + colors.borderColor;
-                                style += '; border-width: 10px'; 
-                               const span = '<span style="' + style + '">' + body + '</span>'; 
-                                 
-                                 var regex = /[^0-9]/g;            // 숫자가 아닌 문자열을 선택하는 정규식
-                                 var result = body[0].replace(regex, "");
-                                 
-                                 for(var j=1; j<=result; j++){ // j=순번  
-                                     innerHtml += '<tr>';
-                                     innerHtml += '<td>'+ j + '</td>';
-                                     innerHtml += '<td>'+ start_time +'</td>';
-                                     innerHtml += '<td>'+ end_time + '</td>';
-                                     innerHtml += '<td>'+ event_time + '</td>';
-                                     innerHtml += '<td>'+ reason_name + '</td>';
-                                    
-                                 }
-                                  
-                             });
-                              
+    	                            // 해당 인덱스를 사용하여 요일명을 얻음
+    	                            var day_label = week_label[dayIndex];
+    	                            console.log('요일명:', day_label);
+    	                            
+    	                            var innerHtml='';
 
-                             let tableRoot = tooltipEl.querySelector('table');
-                             tableRoot.innerHTML = innerHtml;
-                         }
+    	                            var event_types = ['졸음운전 - ', '주시태만 -'];
 
-                         const position = context.chart.canvas.getBoundingClientRect();
-                         const bodyFont = Chart.helpers.toFont(tooltipModel.options.bodyFont);
+    	                            // day_label에 따라 툴팁 컨텐츠 구성
+    	                            if (day_label === '일요일') {
+    	                                innerHtml += '<tr><th colspan=3>' + day_date[0] + '</th></tr>';
+    	                                innerHtml += '<tr>';
+    	                                innerHtml += '<td>' + event_types[0] + '</td>';
+    	                                innerHtml += '<td>' + event_day_count[0] + '회</td>';
+    	                                innerHtml += '</tr>';
+    	                                innerHtml += '<tr>';
+    	                                innerHtml += '<td>' + event_types[1] + '</td>';
+    	                                innerHtml += '<td>' + event_day_count[1] + '회</td>';
+    	                                innerHtml += '</tr>';
+    	                                innerHtml += '<tr>';
+    	                                innerHtml += '<td>' + '   총   ' + '</td>';
+    	                                innerHtml += '<td>' + (parseInt(event_day_count[0]) + parseInt(event_day_count[1])) + '회</td>';
+    	                                innerHtml += '</tr>';
+    	                            } else if (day_label === '월요일') {
+    	                                innerHtml += '<tr><th colspan=3>' + day_date[1] + '</th></tr>';
+    	                                innerHtml += '<tr>';
+    	                                innerHtml += '<td>' + event_types[0] + '</td>';
+    	                                innerHtml += '<td>' + event_day_count[2] + '회</td>';
+    	                                innerHtml += '</tr>';
+    	                                innerHtml += '<tr>';
+    	                                innerHtml += '<td>' + event_types[1] + '</td>';
+    	                                innerHtml += '<td>' + event_day_count[3] + '회</td>';
+    	                                innerHtml += '</tr>';
+    	                                innerHtml += '<tr>';
+    	                                innerHtml += '<td>' + '   총   ' + '</td>';
+    	                                innerHtml += '<td>' + (parseInt(event_day_count[2]) + parseInt(event_day_count[3])) + '회</td>';
+    	                                innerHtml += '</tr>';
+    	                            } else if (day_label === '화요일') {
+    	                            	innerHtml += '<tr><th colspan=3>' + day_date[2] + '</th></tr>';
+    	                                innerHtml += '<tr>';
+    	                                innerHtml += '<td>' + event_types[0] + '</td>';
+    	                                innerHtml += '<td>' + event_day_count[4] + '회</td>';
+    	                                innerHtml += '</tr>';
+    	                                innerHtml += '<tr>';
+    	                                innerHtml += '<td>' + event_types[1] + '</td>';
+    	                                innerHtml += '<td>' + event_day_count[5] + '회</td>';
+    	                                innerHtml += '</tr>';
+    	                                innerHtml += '<tr>';
+    	                                innerHtml += '<td>' + '   총   ' + '</td>';
+    	                                innerHtml += '<td>' + (parseInt(event_day_count[4]) + parseInt(event_day_count[5])) + '회</td>';
+    	                                innerHtml += '</tr>';
+    	                            } else if(day_label ==='수요일'){
+    	                            	innerHtml += '<tr><th colspan=3>' + day_date[3] + '</th></tr>';
+    	                                innerHtml += '<tr>';
+    	                                innerHtml += '<td>' + event_types[0] + '</td>';
+    	                                innerHtml += '<td>' + event_day_count[6] + '회</td>';
+    	                                innerHtml += '</tr>';
+    	                                innerHtml += '<tr>';
+    	                                innerHtml += '<td>' + event_types[1] + '</td>';
+    	                                innerHtml += '<td>' + event_day_count[7] + '회</td>';
+    	                                innerHtml += '</tr>';
+    	                                innerHtml += '<tr>';
+    	                                innerHtml += '<td>' + '   총   ' + '</td>';
+    	                                innerHtml += '<td>' + (parseInt(event_day_count[6]) + parseInt(event_day_count[7])) + '회</td>';
+    	                                innerHtml += '</tr>';
+    	                            } else if(day_label ==='목요일'){
+    	                            	innerHtml += '<tr><th colspan=3>' + day_date[4] + '</th></tr>';
+    	                                innerHtml += '<tr>';
+    	                                innerHtml += '<td>' + event_types[0] + '</td>';
+    	                                innerHtml += '<td>' + event_day_count[8] + '회</td>';
+    	                                innerHtml += '</tr>';
+    	                                innerHtml += '<tr>';
+    	                                innerHtml += '<td>' + event_types[1] + '</td>';
+    	                                innerHtml += '<td>' + event_day_count[9] + '회</td>';
+    	                                innerHtml += '</tr>';
+    	                                innerHtml += '<tr>';
+    	                                innerHtml += '<td>' + '   총   ' + '</td>';
+    	                                innerHtml += '<td>' + (parseInt(event_day_count[8]) + parseInt(event_day_count[9])) + '회</td>';
+    	                                innerHtml += '</tr>';
+    	                            }else if(day_label ==='금요일'){
+    	                            	innerHtml += '<tr><th colspan=3>' + day_date[5] + '</th></tr>';
+    	                                innerHtml += '<tr>';
+    	                                innerHtml += '<td>' + event_types[0] + '</td>';
+    	                                innerHtml += '<td>' + event_day_count[10] + '회</td>';
+    	                                innerHtml += '</tr>';
+    	                                innerHtml += '<tr>';
+    	                                innerHtml += '<td>' + event_types[1] + '</td>';
+    	                                innerHtml += '<td>' + event_day_count[11] + '회</td>';
+    	                                innerHtml += '</tr>';
+    	                                innerHtml += '<tr>';
+    	                                innerHtml += '<td>' + '   총   ' + '</td>';
+    	                                innerHtml += '<td>' + (parseInt(event_day_count[10]) + parseInt(event_day_count[11])) + '회</td>';
+    	                                innerHtml += '</tr>';
+    	                            }else if(day_label ==='토요일'){
+    	                            	innerHtml += '<tr><th colspan=3>' + day_date[6] + '</th></tr>';
+    	                                innerHtml += '<tr>';
+    	                                innerHtml += '<td>' + event_types[0] + '</td>';
+    	                                innerHtml += '<td>' + event_day_count[12] + '회</td>';
+    	                                innerHtml += '</tr>';
+    	                                innerHtml += '<tr>';
+    	                                innerHtml += '<td>' + event_types[1] + '</td>';
+    	                                innerHtml += '<td>' + event_day_count[13] + '회</td>';
+    	                                innerHtml += '</tr>';
+    	                                innerHtml += '<tr>';
+    	                                innerHtml += '<td>' + '   총   ' + '</td>';
+    	                                innerHtml += '<td>' + (parseInt(event_day_count[12]) + parseInt(event_day_count[13])) + '회</td>';
+    	                                innerHtml += '</tr>';
+    	                            }
+    	                            let tableRoot = tooltipEl.querySelector('table');
+    	                            tableRoot.innerHTML = innerHtml;
 
-                         //  폰트 표시, 배치, 스타일 설정코드
-                         tooltipEl.style.opacity = 1;
-                         tooltipEl.style.position = 'absolute';
-                         tooltipEl.style.left = position.left + window.pageXOffset + tooltipModel.caretX + 'px';
-                         tooltipEl.style.top = position.top + window.pageYOffset + tooltipModel.caretY + 'px';
-                         tooltipEl.style.font = bodyFont.string;
-                         tooltipEl.style.padding = tooltipModel.padding + 'px ' + tooltipModel.padding + 'px';
-                         tooltipEl.style.pointerEvents = 'none';
-                         
-                     }
-                 }
-             }
-          }
-         });
+    	                            const position = context.chart.canvas.getBoundingClientRect();
+    	                            const bodyFont = Chart.helpers.toFont(tooltipModel.options.bodyFont);
+
+    	                            // 폰트 표시, 배치, 스타일 설정코드
+    	                            tooltipEl.style.opacity = 1;
+    	                            tooltipEl.style.position = 'absolute';
+    	                            tooltipEl.style.left = position.left + window.pageXOffset + tooltipModel.caretX + 'px';
+    	                            tooltipEl.style.top = position.top + window.pageYOffset + tooltipModel.caretY + 'px';
+    	                            tooltipEl.style.font = bodyFont.string;
+    	                            tooltipEl.style.padding = tooltipModel.padding + 'px ' + tooltipModel.padding + 'px';
+    	                            tooltipEl.style.pointerEvents = 'none';
+    	                        }
+    	                    }
+    	                }
+    	            }
+    	        }
+    	    });
+    	}
     </script>
   </body>
 </html>
