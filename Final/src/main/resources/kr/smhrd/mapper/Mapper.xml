@@ -62,6 +62,8 @@ inner join ccu.user_info ui ON ri.id = ui.id
 where ui.id = #{param1};
 </select>
 
+<select id="sleep_img"></select>
+
 <select id="addnolook" parameterType="kr.smhrd.entity.Event">
 insert into ccu.event_info (rec_seq,event_content,event_at,event_img)
 values (#{rec_seq},'주시태만',sysdate(),#{event_img})
