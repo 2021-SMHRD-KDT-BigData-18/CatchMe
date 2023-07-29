@@ -203,4 +203,10 @@ public class RestController {
 		Event data = mapper.mon_week(mon, week, username);
 		return data;
 	}
+	
+	@PostMapping("/reset_alarm")
+	public int reset_alarm(@RequestParam("username") String username) {
+		int row = mapper.reset_alarm(username);
+		return row;
+	}
 }

@@ -55,4 +55,6 @@ public interface Mapper {
 
 	List<Event> sleep_img(String id);
 
+	int reset_alarm(String username);
+
 }

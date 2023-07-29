@@ -157,4 +157,8 @@ WHERE
   AND user_info.id = #{param3};
 </select>
 
+<update id="reset_alarm">
+update ccu.user_info set alarm='C:\\Users\\smhrd\\Desktop\\web(Server)\\express\\express\\uploads\\1690159353391-350406887c41a927.wav' where id = #{param1}
+</update>
+
 </mapper>
