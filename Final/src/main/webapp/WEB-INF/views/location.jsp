@@ -22,6 +22,7 @@
 	<br>
 	<a><%=music_url %></a>
 	<br>
+	<br>
 	<a href='logout'>logout</a>
 	<input type="hidden" value="${user_data.id }" id="username">
 	<input type="hidden" value="${user_data.alarm }" id="alarm">
@@ -41,6 +42,7 @@
 	 <c:forEach items="${sleep_img}" var="event">
         <img src="data:image/jpeg;base64,${event.base64Image}" alt="이미지없다야">
         <a>${event.formattedDateTime}</a>
+        <a><%=filename %></a>
     </c:forEach>
 	</div>
 	<div>앞안봄

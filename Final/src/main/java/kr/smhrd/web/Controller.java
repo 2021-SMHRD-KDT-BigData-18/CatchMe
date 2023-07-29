@@ -84,8 +84,10 @@ public class Controller {
 	    
 	    List<Event> sleep_img = mapper.sleep_img(user_data.getId());
 	    for (Event event : sleep_img) {
-	        String sleep_img_coding = encodeImageToBase64(event.getEvent_img());
-	        event.setBase64Image(sleep_img_coding);
+	    	String localFilePath = event.getEvent_img();
+	        String filename = localFilePath.substring(localFilePath.lastIndexOf("\\") + 1);
+	        String imageUrl = "http://121.179.7.41:3000/music/" + filename;
+	        event.setEvent_img(imageUrl);
 	        String formattedDateTime = formatEventDateTime(event.getEvent_img());
 	        event.setFormattedDateTime(formattedDateTime);
 	    }
