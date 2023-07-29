@@ -17,7 +17,9 @@
         .main_area .button{
             position: absolute;
             opacity: 0;
-            font: bold 40px "SUIT-Regular";
+            /*font: bold 40px "SUIT-Regular";*/
+            font-size: 40px;
+            font-weight:bold;
             color: #212A3E;
         }
         .record_btn:hover .button{
