@@ -73,8 +73,8 @@
 	</div>
 		
 	<!-- 졸음감지시 졸음쉼터 알려주는 알림 문구창 -->
-    <div id="nearestRestArea">
-    	<span>00m 앞에 졸음쉼터가 있습니다.</span>
+    <div id="nearestRestArea" style="visibility: hidden;">
+    	<span id = "restarea_info">00m 앞에 졸음쉼터가 있습니다.</span>
     </div>
    
      

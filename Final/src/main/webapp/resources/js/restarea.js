@@ -9,7 +9,10 @@
 	    navigator.geolocation.getCurrentPosition(function(position) {
 	      const lat = position.coords.latitude;
 	      const lng = position.coords.longitude;
-
+	      const nearestRestAreaElement = document.getElementById("nearestRestArea");
+	      const restarea_infoElement = document.getElementById("restarea_info");
+	      nearestRestAreaElement.style.visibility = "visible"; 
+	      
 	      const xhr = new XMLHttpRequest();
 	      const url = "/web/distance?lat=" + lat + "&lng=" + lng;
 	      xhr.open("GET", url, true);
@@ -20,8 +23,8 @@
 	            "가까운 쉼터 :  " + response[0].ra_name + "쉼터입니다. 거리 : " + (response[0].distance / 1000).toFixed(1) + "km입니다.";
 	          const secondRestArea =
 	            "가까운 쉼터 :  " + response[1].ra_name + "쉼터입니다. 거리 : " + (response[1].distance / 1000).toFixed(1) + "km입니다.";
-	          const nearestRestAreaElement = document.getElementById("nearestRestArea");
-	          nearestRestAreaElement.textContent = firstRestArea + "  " + secondRestArea;
+
+	          restare_infoElement.textContent = firstRestArea + "  " + secondRestArea;
 	          setTimeout(function() {
 	        	    nearestRestAreaElement.textContent = "";}, 30000);
 	        }
@@ -32,3 +35,8 @@
 	    console.log("쉼터알림실패");
 	  }
 	}
+	
+	document.addEventListener("click", function() {
+      const nearestRestAreaElement = document.getElementById("nearestRestArea");
+      nearestRestAreaElement.style.visibility = "hidden";
+    });
