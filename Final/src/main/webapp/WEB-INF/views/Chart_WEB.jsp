@@ -132,18 +132,18 @@
 
     /* -----------------------------------------------------------------------------------------*/ /* 외관 틀 */
     /* 그래프 툴팁 시 열리는 테이블 틀 잡는 코드 */
-        table, th, tr, td {
-            border: 1px solid black;
-            border-collapse: collapse;
-        }
+		table, th, tr, td {
+    	border: none;
+    	border-collapse: collapse;
+		}
 
-        th, td {
-            padding: 5px;
-        }
+		th, td {
+    	padding: 5px;
+		}
 
-        td {
-            text-align: center;
-        }
+		td {
+    	text-align: center;
+		}
 
         .forgot a {
             white-space: pre;
@@ -524,8 +524,6 @@
    <!-- ----------------------------------------------------------------------------------------------- -->
    <h1 class="articleTitle">WEEK-REPORT</h1>
    <input type = "hidden" value = "${user_data.id }" id = "username">
-    <a>${user_data.id }</a> 
-    <div id="resultDiv">ㅇㅇㅇ</div>
    
    <div class="chart-container">
        
@@ -628,29 +626,56 @@
     let username = document.getElementById('username').value;
     var event_count = [];
     var event_day_count=[];
+    var day_date=[];
+    function formatDate(timestamp) {
+        var dateddddd = new Date(timestamp);
+        var year = dateddddd.getFullYear();
+        var month = String(dateddddd.getMonth() + 1).padStart(2, '0');
+        var day = String(dateddddd.getDate()).padStart(2, '0');
+        return year + '-' + month + '-' + day;
+    }
+
     function mon_week(mon, week) {
         console.log("버튼이 클릭되었습니다! 정보:", mon, week);
         $.ajax({
-           url : "mon_week",
-           type: "post",
-           data:{"mon":mon,"week":week,"username":username},
-           success:function(data){
-              console.log("차트데이터불러오기성공")
-              console.log("FRI 값: " + data.fri_sleep);
-              event_count = [
-                  data.sun,
-                  data.mon,
-                  data.tue,
-                  data.wed,
-                  data.thu,
-                  data.fri,
-                  data.sat
+            url: "mon_week",
+            type: "post",
+            data: { "mon": mon, "week": week, "username": username },
+            success: function (data) {
+                console.log("차트데이터불러오기성공");
+                console.log("FRI 값: " + data.fri_sleep);
+                event_count = [
+                    data.sun,
+                    data.mon,
+                    data.tue,
+                    data.wed,
+                    data.thu,
+                    data.fri,
+                    data.sat
                 ];
-              event_day_count=[
-            	  data.fri_sleep,
-            	  data.fri_nolook
-              ];
+                event_day_count = [
+                    data.sun_sleep, data.sun_nolook,
+                    data.mon_sleep, data.mon_nolook,
+                    data.tue_sleep, data.tue_nolook,
+                    data.wed_sleep, data.wed_nolook,
+                    data.thu_sleep, data.thu_nolook,
+                    data.fri_sleep, data.fri_nolook,
+                    data.sat_sleep, data.sat_nolook
+                ];
+                
+                // day_date에 날짜 형식으로 변환된 데이터를 담기
+                day_date = [
+                    formatDate(data.sun_dates),
+                    formatDate(data.mon_dates),
+                    formatDate(data.tue_dates),
+                    formatDate(data.wed_dates),
+                    formatDate(data.thu_dates),
+                    formatDate(data.fri_dates),
+                    formatDate(data.sat_dates)
+                ];
               
+              console.log(event_day_count);
+              console.log(day_date)
 				useEventData();
            },
            error: function() {
@@ -659,14 +684,6 @@
          });
        }
     
-    
-
-       
-    function displayData(data) {
-        var resultDiv = document.getElementById("resultDiv");
-        resultDiv.innerHTML = "이벤트 내용: " + data + "<br>이벤트 날짜: " + data;
-    }
-         
      // 화살표 누르면 버튼이 넘어가는 기능을 가진 script 코드
      const buttonContainer = document.querySelectorAll(".button");
      //alert("test: " + buttonContainer.length);
@@ -706,138 +723,200 @@
      <!-- ----------------------------------------------------------------------------------------------- -->
 
        
-         const ctx = document.getElementById('myChart');
-         
-         function useEventData() {
-         var week_label = new Array("일요일", "월요일", "화요일", "수요일", "목요일", "금요일", "토요일");
-         //알림 명
-         var event_label = '금일 알림 수';
-         //알림 수
-         //날짜 지정
-         var week_day ='2023-07-23';
-         //시작 시간 명
-         
-         
-         
-         
-       	
-         // X축 레이블에 요일명 사용하기
-        	 new Chart(ctx, {
-        	   type: 'bar',
-        	   data: {
-        	     labels: week_label, // 숫자를 요일명으로 변환하여 사용
-        	     datasets: [
-        	       {
-        	         label: event_label,
-        	         data: event_count,
-        	         backgroundColor: [
-        	           '#BE81F7',
-        	           '#F3F781',
-        	           '#FF8000',
-        	           '#2ECCFA',
-        	           '#00FF40',
-        	           '#FA5858',
-        	           '#FF8000'
-        	         ],
-        	         borderWidth: 1
-                 },
-             ],
-           },
-           options: {
-             plugins: {
-               
-                 tooltip: {
-                     // "on-canvas tooltip"을 비활성화
-                     
-                   
+      const ctx = document.getElementById('myChart');
+      
+      function useEventData() {
+    	    var week_label = ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'];
+    	    // 알림 명
+    	    var event_label = '감지횟수';
+    	    // 날짜 지정
+    	    var week_day = '2023-07-23';
 
-                     external: function(context) {
-                         // 툴팁 요소
-                         let tooltipEl = document.getElementById('chartjs-tooltip');
+    	    // X축 레이블에 요일명 사용하기
+    	    new Chart(ctx, {
+    	        type: 'bar',
+    	        data: {
+    	            labels: week_label, // 숫자를 요일명으로 변환하여 사용
+    	            datasets: [{
+    	                label: event_label,
+    	                data: event_count,
+    	                backgroundColor: [
+    	                    '#BE81F7',
+    	                    '#F3F781',
+    	                    '#FF8000',
+    	                    '#2ECCFA',
+    	                    '#00FF40',
+    	                    '#FA5858',
+    	                    '#FF8000'
+    	                ],
+    	                borderWidth: 1
+    	            }],
+    	        },
+    	        options: {
+    	            plugins: {
+    	                tooltip: {
+    	                    external: function (context) {
+    	                        // 툴팁 요소
+    	                        let tooltipEl = document.getElementById('chartjs-tooltip');
 
-                         // 첫 번째 렌더링 시에 요소를 생성하는 코드
-                         if (!tooltipEl) {
-                             tooltipEl = document.createElement('div');
-                             tooltipEl.id = 'chartjs-tooltip';
-                             tooltipEl.innerHTML = '<table>';
-                             document.body.appendChild(tooltipEl);
-                         }
-                       
-                         // 툴팁이 없는 경우에는 해당 요소를 숨겨라!!
-                         const tooltipModel = context.tooltip;
-                         if (tooltipModel.opacity === 0) {
-                             tooltipEl.style.opacity = 0;
-                             return;
-                         }
+    	                        // 첫 번째 렌더링 시에 요소를 생성하는 코드
+    	                        if (!tooltipEl) {
+    	                            tooltipEl = document.createElement('div');
+    	                            tooltipEl.id = 'chartjs-tooltip';
+    	                            tooltipEl.innerHTML = '<table>';
+    	                            document.body.appendChild(tooltipEl);
+    	                        }
 
-                         // 특정 입력 요소 내에서 커서 위치 설정하는 코드
-                         tooltipEl.classList.remove('above', 'below', 'no-transform');
-                         if (tooltipModel.yAlign) {
-                             tooltipEl.classList.add(tooltipModel.yAlign);
-                         } else {
-                             tooltipEl.classList.add('no-transform');
-                         }
+    	                        const tooltipModel = context.tooltip;
+    	                        if (tooltipModel.opacity === 0) {
+    	                            tooltipEl.style.opacity = 0;
+    	                            return;
+    	                        }
 
-                         function getBody(bodyItem) {
-                             return bodyItem.lines;
-                         }
+    	                        tooltipEl.classList.remove('above', 'below', 'no-transform');
+    	                        if (tooltipModel.yAlign) {
+    	                            tooltipEl.classList.add(tooltipModel.yAlign);
+    	                        } else {
+    	                            tooltipEl.classList.add('no-transform');
+    	                        }
 
-                         // 특정 요소의 텍스트 내용을 설정하는 코드
-                         if (tooltipModel.body) {
-                             const titleLines = tooltipModel.title || [];
-                             const bodyLines = tooltipModel.body.map(getBody);
-                      // 툴팁 관련 정의된 변수들 있는 위치
-                             let innerHtml = '';
-                             titleLines.forEach(function(title) {
-                                 innerHtml += '<tr><th colspan=5>'+ week_day + ' (' + title + ')' + '</th></tr>';
-                             });
-                             
+    	                        function getBody(bodyItem) {
+    	                            return bodyItem.lines;
+    	                        }
 
-                             bodyLines.forEach(function(body, i) {
-                                 const colors = tooltipModel.labelColors[i];
-                                 let style = '';
-                                 style += ' border-color:' + colors.borderColor;
-                                style += '; border-width: 10px'; 
-                               const span = '<span style="' + style + '">' + body + '</span>'; 
-                                 
-                                 var regex = /[^0-9]/g;            // 숫자가 아닌 문자열을 선택하는 정규식
-                                 var result = body[0].replace(regex, "");
-                                 
-                                 for(var j=1; j<=7; j++){ // j=순번  
-                                     innerHtml += '<tr>';
-                                     innerHtml += '<td>'+ j + '</td>';
-                                     innerHtml += '<td>'+ '졸음운전 : ' + '</td>';
-                                     innerHtml += '<td>'+ event_day_count[0] + '</td>';
-                                     innerHtml += '<td>'+ '주시태만 : ' + '</td>';
-                                     innerHtml += '<td>'+ event_day_count[1] + '</td>';
-                                    
-                                 }
-                                  
-                             });
-                              
+    	                        if (tooltipModel.body) {
+    	                        	var dayIndex = tooltipModel.dataPoints[0].dataIndex;
+    	                            console.log('마우스를 올린 데이터의 x축(index) 값:', dayIndex);
 
-                             let tableRoot = tooltipEl.querySelector('table');
-                             tableRoot.innerHTML = innerHtml
-                             
-                         }
+    	                            // 해당 인덱스를 사용하여 요일명을 얻음
+    	                            var day_label = week_label[dayIndex];
+    	                            console.log('요일명:', day_label);
+    	                            
+    	                            var innerHtml='';
 
-                         const position = context.chart.canvas.getBoundingClientRect();
-                         const bodyFont = Chart.helpers.toFont(tooltipModel.options.bodyFont);
+    	                            var event_types = ['졸음운전 - ', '주시태만 -'];
 
-                         //  폰트 표시, 배치, 스타일 설정코드
-                         tooltipEl.style.opacity = 1;
-                         tooltipEl.style.position = 'absolute';
-                         tooltipEl.style.left = position.left + window.pageXOffset + tooltipModel.caretX + 'px';
-                         tooltipEl.style.top = position.top + window.pageYOffset + tooltipModel.caretY + 'px';
-                         tooltipEl.style.font = bodyFont.string;
-                         tooltipEl.style.padding = tooltipModel.padding + 'px ' + tooltipModel.padding + 'px';
-                         tooltipEl.style.pointerEvents = 'none';
-                         
-                     }
-                 }
-             }
-          }
-         })};
+    	                            // day_label에 따라 툴팁 컨텐츠 구성
+    	                            if (day_label === '일요일') {
+    	                                innerHtml += '<tr><th colspan=3>' + day_date[0] + '</th></tr>';
+    	                                innerHtml += '<tr>';
+    	                                innerHtml += '<td>' + event_types[0] + '</td>';
+    	                                innerHtml += '<td>' + event_day_count[0] + '회</td>';
+    	                                innerHtml += '</tr>';
+    	                                innerHtml += '<tr>';
+    	                                innerHtml += '<td>' + event_types[1] + '</td>';
+    	                                innerHtml += '<td>' + event_day_count[1] + '회</td>';
+    	                                innerHtml += '</tr>';
+    	                                innerHtml += '<tr>';
+    	                                innerHtml += '<td>' + '   총   ' + '</td>';
+    	                                innerHtml += '<td>' + (parseInt(event_day_count[0]) + parseInt(event_day_count[1])) + '회</td>';
+    	                                innerHtml += '</tr>';
+    	                            } else if (day_label === '월요일') {
+    	                                innerHtml += '<tr><th colspan=3>' + day_date[1] + '</th></tr>';
+    	                                innerHtml += '<tr>';
+    	                                innerHtml += '<td>' + event_types[0] + '</td>';
+    	                                innerHtml += '<td>' + event_day_count[2] + '회</td>';
+    	                                innerHtml += '</tr>';
+    	                                innerHtml += '<tr>';
+    	                                innerHtml += '<td>' + event_types[1] + '</td>';
+    	                                innerHtml += '<td>' + event_day_count[3] + '회</td>';
+    	                                innerHtml += '</tr>';
+    	                                innerHtml += '<tr>';
+    	                                innerHtml += '<td>' + '   총   ' + '</td>';
+    	                                innerHtml += '<td>' + (parseInt(event_day_count[2]) + parseInt(event_day_count[3])) + '회</td>';
+    	                                innerHtml += '</tr>';
+    	                            } else if (day_label === '화요일') {
+    	                            	innerHtml += '<tr><th colspan=3>' + day_date[2] + '</th></tr>';
+    	                                innerHtml += '<tr>';
+    	                                innerHtml += '<td>' + event_types[0] + '</td>';
+    	                                innerHtml += '<td>' + event_day_count[4] + '회</td>';
+    	                                innerHtml += '</tr>';
+    	                                innerHtml += '<tr>';
+    	                                innerHtml += '<td>' + event_types[1] + '</td>';
+    	                                innerHtml += '<td>' + event_day_count[5] + '회</td>';
+    	                                innerHtml += '</tr>';
+    	                                innerHtml += '<tr>';
+    	                                innerHtml += '<td>' + '   총   ' + '</td>';
+    	                                innerHtml += '<td>' + (parseInt(event_day_count[4]) + parseInt(event_day_count[5])) + '회</td>';
+    	                                innerHtml += '</tr>';
+    	                            } else if(day_label ==='수요일'){
+    	                            	innerHtml += '<tr><th colspan=3>' + day_date[3] + '</th></tr>';
+    	                                innerHtml += '<tr>';
+    	                                innerHtml += '<td>' + event_types[0] + '</td>';
+    	                                innerHtml += '<td>' + event_day_count[6] + '회</td>';
+    	                                innerHtml += '</tr>';
+    	                                innerHtml += '<tr>';
+    	                                innerHtml += '<td>' + event_types[1] + '</td>';
+    	                                innerHtml += '<td>' + event_day_count[7] + '회</td>';
+    	                                innerHtml += '</tr>';
+    	                                innerHtml += '<tr>';
+    	                                innerHtml += '<td>' + '   총   ' + '</td>';
+    	                                innerHtml += '<td>' + (parseInt(event_day_count[6]) + parseInt(event_day_count[7])) + '회</td>';
+    	                                innerHtml += '</tr>';
+    	                            } else if(day_label ==='목요일'){
+    	                            	innerHtml += '<tr><th colspan=3>' + day_date[4] + '</th></tr>';
+    	                                innerHtml += '<tr>';
+    	                                innerHtml += '<td>' + event_types[0] + '</td>';
+    	                                innerHtml += '<td>' + event_day_count[8] + '회</td>';
+    	                                innerHtml += '</tr>';
+    	                                innerHtml += '<tr>';
+    	                                innerHtml += '<td>' + event_types[1] + '</td>';
+    	                                innerHtml += '<td>' + event_day_count[9] + '회</td>';
+    	                                innerHtml += '</tr>';
+    	                                innerHtml += '<tr>';
+    	                                innerHtml += '<td>' + '   총   ' + '</td>';
+    	                                innerHtml += '<td>' + (parseInt(event_day_count[8]) + parseInt(event_day_count[9])) + '회</td>';
+    	                                innerHtml += '</tr>';
+    	                            }else if(day_label ==='금요일'){
+    	                            	innerHtml += '<tr><th colspan=3>' + day_date[5] + '</th></tr>';
+    	                                innerHtml += '<tr>';
+    	                                innerHtml += '<td>' + event_types[0] + '</td>';
+    	                                innerHtml += '<td>' + event_day_count[10] + '회</td>';
+    	                                innerHtml += '</tr>';
+    	                                innerHtml += '<tr>';
+    	                                innerHtml += '<td>' + event_types[1] + '</td>';
+    	                                innerHtml += '<td>' + event_day_count[11] + '회</td>';
+    	                                innerHtml += '</tr>';
+    	                                innerHtml += '<tr>';
+    	                                innerHtml += '<td>' + '   총   ' + '</td>';
+    	                                innerHtml += '<td>' + (parseInt(event_day_count[10]) + parseInt(event_day_count[11])) + '회</td>';
+    	                                innerHtml += '</tr>';
+    	                            }else if(day_label ==='토요일'){
+    	                            	innerHtml += '<tr><th colspan=3>' + day_date[6] + '</th></tr>';
+    	                                innerHtml += '<tr>';
+    	                                innerHtml += '<td>' + event_types[0] + '</td>';
+    	                                innerHtml += '<td>' + event_day_count[12] + '회</td>';
+    	                                innerHtml += '</tr>';
+    	                                innerHtml += '<tr>';
+    	                                innerHtml += '<td>' + event_types[1] + '</td>';
+    	                                innerHtml += '<td>' + event_day_count[13] + '회</td>';
+    	                                innerHtml += '</tr>';
+    	                                innerHtml += '<tr>';
+    	                                innerHtml += '<td>' + '   총   ' + '</td>';
+    	                                innerHtml += '<td>' + (parseInt(event_day_count[12]) + parseInt(event_day_count[13])) + '회</td>';
+    	                                innerHtml += '</tr>';
+    	                            }
+    	                            let tableRoot = tooltipEl.querySelector('table');
+    	                            tableRoot.innerHTML = innerHtml;
+
+    	                            const position = context.chart.canvas.getBoundingClientRect();
+    	                            const bodyFont = Chart.helpers.toFont(tooltipModel.options.bodyFont);
+
+    	                            // 폰트 표시, 배치, 스타일 설정코드
+    	                            tooltipEl.style.opacity = 1;
+    	                            tooltipEl.style.position = 'absolute';
+    	                            tooltipEl.style.left = position.left + window.pageXOffset + tooltipModel.caretX + 'px';
+    	                            tooltipEl.style.top = position.top + window.pageYOffset + tooltipModel.caretY + 'px';
+    	                            tooltipEl.style.font = bodyFont.string;
+    	                            tooltipEl.style.padding = tooltipModel.padding + 'px ' + tooltipModel.padding + 'px';
+    	                            tooltipEl.style.pointerEvents = 'none';
+    	                        }
+    	                    }
+    	                }
+    	            }
+    	        }
+    	    });
+    	}
     </script>
   </body>
 </html>
