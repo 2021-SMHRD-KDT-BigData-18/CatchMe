@@ -38,17 +38,18 @@
 	  <source src="<%=music_url %>" type="audio/mpeg">
 		군대기상나팔
 	</audio>
-	<div>잠
-	 <c:forEach items="${sleep_img}" var="event">
-        <img src="data:image/jpeg;base64,${event.base64Image}" alt="이미지없다야">
-        <a>${event.formattedDateTime}</a>
-        <a><%=filename %></a>
-    </c:forEach>
-	</div>
+
 	<div>앞안봄
 	<c:forEach items="${nolook_img}" var="event">
         <img src="data:image/jpeg;base64,${event.base64Image}" alt="이미지없다야">
         <a>${event.formattedDateTime }</a>
+    </c:forEach>
+	</div>
+	
+	<div>잠
+	 <c:forEach items="${sleep_img}" var="event">
+        <img src="${event.event_img}" alt="이미지없다야">
+        <a>${event.formattedDateTime}</a>
     </c:forEach>
 	</div>
     	 
