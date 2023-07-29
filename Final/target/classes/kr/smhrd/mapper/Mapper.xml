@@ -62,6 +62,8 @@ inner join ccu.user_info ui ON ri.id = ui.id
 where ui.id = #{param1};
 </select>
 
+<select id="sleep_img"></select>
+
 <select id="addnolook" parameterType="kr.smhrd.entity.Event">
 insert into ccu.event_info (rec_seq,event_content,event_at,event_img)
 values (#{rec_seq},'주시태만',sysdate(),#{event_img})
@@ -96,6 +98,13 @@ SELECT
   SUM(CASE WHEN DAYOFWEEK(ccu.event_info.event_at) = 5 THEN 1 ELSE 0 END) AS 'thu',
   SUM(CASE WHEN DAYOFWEEK(ccu.event_info.event_at) = 6 THEN 1 ELSE 0 END) AS 'fri',
   SUM(CASE WHEN DAYOFWEEK(ccu.event_info.event_at) = 7 THEN 1 ELSE 0 END) AS 'sat',
+  GROUP_CONCAT(DISTINCT CASE WHEN DAYOFWEEK(ccu.event_info.event_at) = 1 THEN DATE(ccu.event_info.event_at) ELSE NULL END) AS 'sun_dates',
+  GROUP_CONCAT(DISTINCT CASE WHEN DAYOFWEEK(ccu.event_info.event_at) = 2 THEN DATE(ccu.event_info.event_at) ELSE NULL END) AS 'mon_dates',
+  GROUP_CONCAT(DISTINCT CASE WHEN DAYOFWEEK(ccu.event_info.event_at) = 3 THEN DATE(ccu.event_info.event_at) ELSE NULL END) AS 'tue_dates',
+  GROUP_CONCAT(DISTINCT CASE WHEN DAYOFWEEK(ccu.event_info.event_at) = 4 THEN DATE(ccu.event_info.event_at) ELSE NULL END) AS 'wed_dates',
+  GROUP_CONCAT(DISTINCT CASE WHEN DAYOFWEEK(ccu.event_info.event_at) = 5 THEN DATE(ccu.event_info.event_at) ELSE NULL END) AS 'thu_dates',
+  GROUP_CONCAT(DISTINCT CASE WHEN DAYOFWEEK(ccu.event_info.event_at) = 6 THEN DATE(ccu.event_info.event_at) ELSE NULL END) AS 'fri_dates',
+  GROUP_CONCAT(DISTINCT CASE WHEN DAYOFWEEK(ccu.event_info.event_at) = 7 THEN DATE(ccu.event_info.event_at) ELSE NULL END) AS 'sat_dates',
   GROUP_CONCAT(CASE WHEN DAYOFWEEK(ccu.event_info.event_at) = 1 THEN ccu.event_info.event_content ELSE NULL END) AS 'sun_event_content',
   GROUP_CONCAT(CASE WHEN DAYOFWEEK(ccu.event_info.event_at) = 2 THEN ccu.event_info.event_content ELSE NULL END) AS 'mon_event_content',
   GROUP_CONCAT(CASE WHEN DAYOFWEEK(ccu.event_info.event_at) = 3 THEN ccu.event_info.event_content ELSE NULL END) AS 'tue_event_content',
