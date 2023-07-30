@@ -11,6 +11,7 @@ public class Event {
 	public String event_img;
 	
 	private String base64Image;
+	private String formattedDateTime;
 	
 	// DB쪽을 위해서 만듬
 	private int sun;
@@ -49,10 +50,11 @@ public class Event {
 
 
 	public Event(int event_seq, int rec_seq, String event_content, Date event_at, String event_img, String base64Image,
-			int sun, int mon, int tue, int wed, int thu, int fri, int sat, Date sun_dates, Date mon_dates,
-			Date tue_dates, Date wed_dates, Date thu_dates, Date fri_dates, Date sat_dates, int sun_sleep,
-			int sun_nolook, int mon_sleep, int mon_nolook, int tue_sleep, int tue_nolook, int wed_sleep, int wed_nolook,
-			int thu_sleep, int thu_nolook, int fri_sleep, int fri_nolook, int sat_sleep, int sat_nolook) {
+			String formattedDateTime, int sun, int mon, int tue, int wed, int thu, int fri, int sat, Date sun_dates,
+			Date mon_dates, Date tue_dates, Date wed_dates, Date thu_dates, Date fri_dates, Date sat_dates,
+			int sun_sleep, int sun_nolook, int mon_sleep, int mon_nolook, int tue_sleep, int tue_nolook, int wed_sleep,
+			int wed_nolook, int thu_sleep, int thu_nolook, int fri_sleep, int fri_nolook, int sat_sleep,
+			int sat_nolook) {
 		super();
 		this.event_seq = event_seq;
 		this.rec_seq = rec_seq;
@@ -60,6 +62,7 @@ public class Event {
 		this.event_at = event_at;
 		this.event_img = event_img;
 		this.base64Image = base64Image;
+		this.formattedDateTime = formattedDateTime;
 		this.sun = sun;
 		this.mon = mon;
 		this.tue = tue;
@@ -160,6 +163,18 @@ public class Event {
 
 	public void setBase64Image(String base64Image) {
 		this.base64Image = base64Image;
+	}
+
+
+
+	public String getFormattedDateTime() {
+		return formattedDateTime;
+	}
+
+
+
+	public void setFormattedDateTime(String formattedDateTime) {
+		this.formattedDateTime = formattedDateTime;
 	}
 
 
@@ -497,5 +512,8 @@ public class Event {
 	public void setSat_nolook(int sat_nolook) {
 		this.sat_nolook = sat_nolook;
 	}
+
+
+
 	
 }

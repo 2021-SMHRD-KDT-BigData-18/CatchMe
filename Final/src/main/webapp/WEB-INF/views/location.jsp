@@ -15,11 +15,13 @@
 	String alarm_select_path = alarm_full_path.substring(alarm_full_path.lastIndexOf("\\") + 1);
 	String music_url = "http://localhost:3000/music/" + alarm_select_path;
 %>
-	<a>${user_data.id }</a>
+
+ 	<a>${user_data.id }</a>
 	<br>
 	<a>${user_data.alarm }</a>
 	<br>
 	<a><%=music_url %></a>
+	<br>
 	<br>
 	<a href='logout'>logout</a>
 	<input type="hidden" value="${user_data.id }" id="username">
@@ -36,9 +38,21 @@
 	  <source src="<%=music_url %>" type="audio/mpeg">
 		군대기상나팔
 	</audio>
-	 <c:forEach items="${allImg}" var="event">
+
+	<div>앞안봄
+	<c:forEach items="${nolook_img}" var="event">
         <img src="data:image/jpeg;base64,${event.base64Image}" alt="이미지없다야">
+        <a>${event.formattedDateTime }</a>
     </c:forEach>
+	</div>
+	
+	<div>잠
+	 <c:forEach items="${sleep_img}" var="event">
+        <img src="${event.event_img}" alt="이미지없다야">
+        <a>${event.formattedDateTime}</a>
+    </c:forEach>
+	</div>
+    	 
 
 	  	
 	<script src="resources/js/upload.js"></script>
@@ -105,6 +119,8 @@
 		socket.onclose = () => {
 			console.log('소켓연결종료');
 			};
+			
+		
 	</script>
 </body>
 </html>

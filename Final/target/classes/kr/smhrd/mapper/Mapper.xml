@@ -54,15 +54,23 @@ select event_at,event_content from ccu.event_info where rec_seq=#{rec_seq};
 insert into ccu.sms_info(id, sms_content, event_at,sms_at,rec_seq) values(#{id},#{sms_content},#{event_at},sysdate(),#{rec_seq})
 </insert>
 
-<select id="allImg" resultType="kr.smhrd.entity.Event">
-select ei.event_img
-from ccu.event_info ei
-inner join ccu.record_info ri ON ei.rec_seq = ri.rec_seq
-inner join ccu.user_info ui ON ri.id = ui.id
-where ui.id = #{param1};
+<select id="nolook_Img" resultType="kr.smhrd.entity.Event">
+SELECT ei.event_img
+FROM ccu.event_info ei
+INNER JOIN ccu.record_info ri ON ei.rec_seq = ri.rec_seq
+INNER JOIN ccu.user_info ui ON ri.id = ui.id
+WHERE ui.id = #{param1}
+AND ei.event_img LIKE CONCAT('%', 'abnormal', '%');
 </select>
 
-<select id="sleep_img"></select>
+<select id="sleep_img" resultType="kr.smhrd.entity.Event">
+SELECT ei.event_img
+FROM ccu.event_info ei
+INNER JOIN ccu.record_info ri ON ei.rec_seq = ri.rec_seq
+INNER JOIN ccu.user_info ui ON ri.id = ui.id
+WHERE ui.id = #{param1}
+AND ei.event_img LIKE CONCAT('%', 'sleep', '%');
+</select>
 
 <select id="addnolook" parameterType="kr.smhrd.entity.Event">
 insert into ccu.event_info (rec_seq,event_content,event_at,event_img)
@@ -148,5 +156,9 @@ WHERE
   AND WEEK(ccu.event_info.event_at, 1) - WEEK(DATE_FORMAT(ccu.event_info.event_at, '%Y-%m-01'), 1) + 1 = #{param2}
   AND user_info.id = #{param3};
 </select>
+
+<update id="reset_alarm">
+update ccu.user_info set alarm='C:\\Users\\smhrd\\Desktop\\web(Server)\\express\\express\\uploads\\1690159353391-350406887c41a927.wav' where id = #{param1}
+</update>
 
 </mapper>

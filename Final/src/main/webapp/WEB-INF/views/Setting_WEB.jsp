@@ -492,6 +492,7 @@
 </head>
 
 <body>
+<input type = "hidden" value = "${user_data.id }" id = "username">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <aside class="side-bar">
@@ -591,7 +592,7 @@
         <div>
             <label for="setting-label" class="bold-label">업로드:</label>
             <input type="file" id="fileInput">
-            <button type="button" onclick="uploadFile" class="btnbtn">파일 저장</button>
+            <button type="button" onclick="uploadFile()" class="btnbtn">파일 저장</button>
             <!--    <button onclick="uploadFile()" class="submit-btn123123">Upload</button> -->
         </div>
             <style>

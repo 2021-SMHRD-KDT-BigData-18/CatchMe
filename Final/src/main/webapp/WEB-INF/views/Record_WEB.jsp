@@ -28,7 +28,7 @@
 	<div id="center">
 		<div id="header">
 	    	<div class="dropdown" style="float: left;">
-	        	<button class="dropbtn">
+	        	<button class="dropbtn" id="homeButton">
 	            	<a href="/web"><img class="homeicon" src="resources/img/home (2).png"></a>
 	            </button>
 	            <!-- <div class="dropdown-content" style="left: 0;">
@@ -167,7 +167,11 @@
 
 	    	  contentArea.appendChild(newParagraph); 
 	    	}
-		
+	    
+	    
+	    document.getElementById("homeButton").addEventListener("click", function() {
+	        stopStream();
+	    });
 	    </script>
 </body>
 </html>

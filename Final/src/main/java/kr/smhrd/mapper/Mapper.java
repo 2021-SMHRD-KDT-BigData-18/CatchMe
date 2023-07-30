@@ -35,9 +35,6 @@ public interface Mapper {
 	List<Event> search_event_at(int rec_seq);
 
 	int sms_record(Sms sms);
-
-	List<Event> allImg(String username);
-
 	
 
 	User confrim(String confid);
@@ -53,5 +50,11 @@ public interface Mapper {
 	void addnolook(Event event);
 
 	Event mon_week(int mon, int week, String username);
+
+	List<Event> nolook_Img(String id);
+
+	List<Event> sleep_img(String id);
+
+	int reset_alarm(String username);
 
 }
