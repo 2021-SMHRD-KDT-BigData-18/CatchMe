@@ -777,6 +777,22 @@
             });
          }
       }
+      function resetFileInput() {
+    	  let userId = $("#userId").val();
+    	  $.ajax({
+    		  url : "reset_alarm",
+    		  method : "post",
+    		  data : {username : userId},
+    		  success : function(data) {
+    			  if (data != 0) {
+    				  alert("초기화되었습니다.")
+    			  }
+    		  },
+    		  error : function() {
+    			  console.log("오류!")
+    		  }
+    	  });
+      }
    </script>
    <script>
 
