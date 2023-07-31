@@ -193,7 +193,7 @@
             width: 100%;
             height: 100%;
             max-width: 500px;
-            max-height: 620px;
+            max-height: 650px;
             padding: 30px;
             background-color: #FFFFFF;
             text-align: center;
@@ -238,7 +238,7 @@
             margin-top: 20px;
             width: 80%;
             height: 40px;
-            box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+            box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.04);
             background: #33cccc;
             background-position: left;
             background-size: 200%;
@@ -255,7 +255,7 @@
 
         .joinForm h2 {
             text-align: center;
-            margin: 1px;
+            margin: 5px;
             color:#33cccc;
         }
 
@@ -379,7 +379,7 @@
         }
 
         .setting-item {
-            margin-bottom: 15px;
+            margin-bottom: 1px;
             display: flex;
             align-items: center;
         }
@@ -443,6 +443,7 @@
         }
         .btnbtn {
             width: 90px;
+            margin-left: 0px;
             height: 20px;
             box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
             background: #33cccc;
@@ -470,18 +471,42 @@
             white-space: pre;
         }
     /* Style for the 초기화 (Reset) button */
-    .reset_Btn2 {
-        background-color: #33cccc;
-        color: white;
-        border: none;
-        padding: 8px 15px;
-        margin-top: 5px;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 12px;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s;
+      .reset_Btn2 {
+        margin-bottom: 10px;
+         margin-left: 330px;
+            margin-top: 20px;
+            width: 90px;
+            height: 20px;
+          box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+          background-color: #33cccc;
+          color: white;
+          border: none;
+          padding: 1px 6px;
+          margin-top: 5px;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 12px;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background-color 0.3s;
+        /*      .btnbtn {
+                         width: 90px;
+                         margin-left: 0px;
+                         height: 20px;
+                         box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+                         background: #33cccc;
+                         background-position: left;
+                         background-size: 200%;
+                         color: white;
+                         font-weight: bold;
+                         border: none;
+                         cursor: pointer;
+                         transition: 0.4s;
+                         display: inline;
+                         border-radius: 5em;
+                         float: right; */
+        }
+
     }
 
     .reset_Btn2:hover {
@@ -621,7 +646,7 @@
            placeholder="문자 수신인(전화번호)을 입력하세요" required>
         &nbsp &nbsp <!-- 띄어쓰기--!>
 
-        <input type="button" onclick="resetRecipient()" class="reset_Btn2" value="초기화">
+        
     </div>
     <div id="errorMessage" style="display: none; color: red;">올바른 전화번호를 입력해주세요.</div>
          <!--   <input type="submit" class="reset_Btn2" value="알림음 &nbsp 초기화"> -->
@@ -629,19 +654,30 @@
         <br>
             <div class="form-inline">
             </div>  
-        <div>
+      <!--   <div>
             <label for="setting-label" class="bold-label">업로드:</label>
             <input type="file" id="fileInput            ">
-            <button type="button" onclick="uploadFile" class="btnbtn">파일 저장</button>
-            <!--    <button onclick="uploadFile()" class="submit-btn123123">Upload</button> -->
-        </div>
+            <button type="button" onclick="uploadFile" class="btnbtn">파일 저장
+          <input type="button" onclick="resetRecipient()" class="reset_Btn2" value="초기화"></button>
+            <button onclick="uploadFile()" class="submit-btn123123">Upload</button>
+          
+           &nbsp &nbsp
+        </div> -->
+        
+         <div>
+               <label for="setting-label" class="bold-label">업로드:</label>
+               <input type="file" id="fileInput"> 
+               <button type="button" onclick="uploadFile()" class="btnbtn">파일 저장</button>
+             
+           
+          </div>
+  <input type="button" onclick="resetFileInput()" class="reset_Btn2" value="알림음 초기화">
             <style>
                 .bold-label {
                     font-weight: bold;
                     float: left;
                 }
             </style>
-
             <input type="button" class="submit-btn" onclick="chanrecephon()" value="저장" ></input>
         </div>
     </form>
@@ -745,7 +781,7 @@
    <script>
 
 function resetRecipient() {
-    document.getElementById("recipient").value = ""; // Clears the input field
+     document.getElementById("fileInput").value = null; // Clears the input field
 }
      
         document.getElementById("recipient").addEventListener("input", function () {
