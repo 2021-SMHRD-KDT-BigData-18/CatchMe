@@ -540,13 +540,13 @@
     <div id="center">
         <div id="header">
             <div class="dropdown" style="float: left">
-                <button class="dropbtn" id="gomain" onclick="GoMain()">
-                    <!--  <img class="homeicon" src="./image/free-icon-home-1828864.png" /> -->
+                <button class="dropbtn" id="gomain">
+                    <a href="/web"><img class="homeicon" src="resources/img/home (2).png"></a>
                 </button>
             </div>
             <div class="dropdown" style="float: right">
                 <button class="dropbtn">
-                    <!-- <img class="myicon" src="./image/free-icon-user-5264565.png" /> --> 
+                    <img class="myicon" src="resources/img/user (2).png"> 
                 </button>
                 <div class="dropdown-content">
                     <!-- 우측 상단 메뉴바 -->
