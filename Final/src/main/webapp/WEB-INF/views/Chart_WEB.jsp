@@ -717,12 +717,14 @@
     
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script>
+    
+    <script type="text/javascript" language="javascript">
 
         /* ----------------------------------------------------------------- */
 
         let username = document.getElementById('username').value;
         const CHARTMESSAGE = document.getElementById('chart-message');
+        let ALERTTEXT = document.getElementById('buttonAlert');
         let myChartInstance= null;
         let chartCounter = 0;
 
@@ -740,8 +742,7 @@
         function mon_week(mon, week) {
             console.log('버튼이 클릭되었습니다! 정보:', mon, week);
 
-            let ALERTTEXT = document.getElementById('buttonAlert');
-            ALERTTEXT.innerText = `${mon}월 ${week}주차 차트입니다.`;
+            ALERTTEXT.innerText = mon + '월 ' + week + '주차 차트입니다.';
             ALERTTEXT.classList.add('activeBtn');
             setTimeout(() => {
                 ALERTTEXT.classList.remove('activeBtn');
@@ -757,6 +758,7 @@
             // Call the function to update the chart data and create the new chart
             updateChartData(mon, week);
         }
+
 
         function updateChartData(mon, week) {
             $.ajax({
@@ -876,7 +878,7 @@
 //            var week_day = '2023-07-23';
 
             // X축 레이블에 요일명 사용하기
-            new Chart(ctx, {
+            myChartInstance =new Chart(ctx, {
                 type: 'bar',
                 data: {
                     labels: week_label, // 숫자를 요일명으로 변환하여 사용
