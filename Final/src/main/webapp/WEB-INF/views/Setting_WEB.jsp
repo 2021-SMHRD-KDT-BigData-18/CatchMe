@@ -657,6 +657,7 @@
       <!--   <div>
             <label for="setting-label" class="bold-label">업로드:</label>
             <input type="file" id="fileInput            ">
+
             <button type="button" onclick="uploadFile" class="btnbtn">파일 저장
           <input type="button" onclick="resetRecipient()" class="reset_Btn2" value="초기화"></button>
             <button onclick="uploadFile()" class="submit-btn123123">Upload</button>
@@ -776,6 +777,22 @@
                }
             });
          }
+      }
+      function resetFileInput() {
+    	  let userId = $("#userId").val();
+    	  $.ajax({
+    		  url : "reset_alarm",
+    		  method : "post",
+    		  data : {username : userId},
+    		  success : function(data) {
+    			  if (data != 0) {
+    				  alert("초기화되었습니다.")
+    			  }
+    		  },
+    		  error : function() {
+    			  console.log("오류!")
+    		  }
+    	  });
       }
    </script>
    <script>

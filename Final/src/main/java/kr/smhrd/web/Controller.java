@@ -40,7 +40,7 @@ public class Controller {
 	// 로그인페이지 이동
 	@RequestMapping("/movelogin")
 	public String Loginpage() {
-		return "Login_WEB";
+		return "Login_Regi_WEB";
 	}
 	// 설정 이동
 	@RequestMapping("/setting")
@@ -129,22 +129,7 @@ public class Controller {
 	public String cv(@SessionAttribute("user_data") User user_data) {
 		return "opencv";
 	}
-
-	// 회원가입
-	@RequestMapping("/join")
-	public String join(Model model, User dto) {
-		int join = mapper.join(dto);
-		String nextView = null;
-		if (join > 0) {
-			String successMessage = "회원가입에 성공하였습니다.";
-			model.addAttribute("successMessage", successMessage);
-		} else {
-			String failMessage = "회원가입에 실패하였습니다.";
-			model.addAttribute("failMessage", failMessage);
-		}
-		return "redirect:/";
-	}
-
+	
 	// 로그인
 	@RequestMapping("/login")
 	public String login(User dto, Model model, HttpSession session) {
@@ -152,7 +137,7 @@ public class Controller {
 		String nextView = null;
 		if (user_data == null) {
 			model.addAttribute("loginFail", "로그인정보를 확인해주세요");
-			nextView = "Login_WEB";
+			nextView = "Login_Regi_WEB";
 		} else {
 			session.setAttribute("user_data", user_data);
 			nextView = "redirect:/";

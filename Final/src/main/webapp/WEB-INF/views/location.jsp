@@ -13,7 +13,7 @@
 <% User user_data = (User) session.getAttribute("user_data");
 	String alarm_full_path = user_data.getAlarm();
 	String alarm_select_path = alarm_full_path.substring(alarm_full_path.lastIndexOf("\\") + 1);
-	String music_url = "http://localhost:3000/music/" + alarm_select_path;
+	String music_url = "http://121.179.7.41:3000/music/" + alarm_select_path;
 %>
 
  	<a>${user_data.id }</a>
@@ -51,7 +51,7 @@
         <img src="${event.event_img}" alt="이미지없다야">
         <a>${event.formattedDateTime}</a>
     </c:forEach>
-	</div>
+	</div>  -->
     	 
 
 	  	
@@ -109,7 +109,7 @@
 		}
 		
 		//소켓연결
-		const socket = new WebSocket('ws://localhost:3000');		
+		const socket = new WebSocket('ws://121.179.7.41:3000');		
 		socket.onopen = () => {
 			console.log('소켓연결완료');
 			};

@@ -1,49 +1,3 @@
-let smsInterval;
-
-function successCallback(mediaStream) {
-	video.srcObject = mediaStream;
-	video.play();
-	startSendingFrames();
-}
-
-function errorCallback(error) {
-	alert("웹캠 연결 실패");
-	console.error("웹캠 연결 실패", error);
-}
-
-// 녹화시작 함수
-function toggleStream() {
-	if (!streaming) {
-		// Start streaming
-		sendstartRecRequest("startRec", "startRec 컨트롤러 실행 성공", "startRec 컨트롤러 실행 실패");
-		navigator.mediaDevices.getUserMedia({ video: true, audio: true })
-			.then(successCallback)
-			.catch(errorCallback);
-
-		document.getElementById("record_img").src = "resources/img/stop-button.png";
-		streaming = true;
-		console.log("toggleStream() 실행됨");
-	} else {
-		stopStream();
-	}
-}
-
-// 녹화종료 함수
-function stopStream() {
-	if (streaming) {
-		sendendRecRequest("endRec", "endRec 컨트롤러 실행 성공", "endRec 컨트롤러 실행 실패");
-		video.srcObject.getTracks().forEach(track => track.stop());
-		video.srcObject = null;
-		clearInterval(interval);
-
-		streaming = false;
-		document.getElementById("record_img").src = "resources/img/video.png";
-		stopNotifySound();
-
-		console.log("stopStream() 실행됨");
-	}
-}
-// 프레임 보내기 시작 함수
 function startSendingFrames() {
 	interval = setInterval(async () => { await Promise.all([sendFrameToPython(),sendFrameToRobo()]); }, 1000);
 	streaming = true;
@@ -139,35 +93,4 @@ function sendFrameToRobo() {
 		.catch(error => {
 			console.error('데이터안넘어감:', error);
 		});
-}
-
-
-//녹화시작 기록
-function sendstartRecRequest(url, successMessage, errorMessage) {
-	$.ajax({
-		url: url,
-		type: "post",
-		data: { username: username },
-		success: function(data) {
-			console.log("녹화시작 DB전달 성공");
-		},
-		error: function() {
-			console.log("녹화시작 DB전달 실패");
-		}
-	});
-}
-
-//녹화종료 기록
-function sendendRecRequest(url, successMessage, errorMessage) {
-	$.ajax({
-		url: url,
-		type: "post",
-		data: { username: username },
-		success: function(data) {
-			console.log("녹화종료 DB전달 성공");
-		},
-		error: function() {
-			console.log("녹화종료 DB전달 실패");
-		}
-	});
 }

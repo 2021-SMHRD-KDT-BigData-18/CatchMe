@@ -192,7 +192,7 @@
       
       </div>
         <div class="links">
-            <a href="login" style="font-weight: bold;">로그인</a> | <a href="join" style="font-weight: bold;">회원가입</a>
+            <a href="movelogin" style="font-weight: bold;">로그인</a> | <a href="movelogin" style="font-weight: bold;">회원가입</a>
          <!-- <a href="memberId">아이디 찾기</a> |-->
 
         </div>
