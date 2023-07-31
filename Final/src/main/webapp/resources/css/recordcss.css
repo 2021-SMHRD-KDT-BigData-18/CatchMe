@@ -14,6 +14,7 @@
 	/* border-radius:30px; */
 	/* border: 5px solid rgb(39, 41, 60); */
 	margin-top: -11px;
+	position: relative;
 }
 
 #main_area {
@@ -45,6 +46,7 @@
 	box-shadow: 0 0 10px rgba(129, 127, 127, 0.548);
 	position: relative;
 }
+
 
 .content_area { /*이상현상 감지를 나타내는 화면*/
 	height: 42vh;
@@ -97,18 +99,18 @@
 	opacity: 1;
 	position: absolute;
 	background-color: #6a7da5ad;
-	top: 50%;
-	left: 50%;
-	margin: -200px 0 0 -370px;
-	height: 600px;
-	width: 800px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-size: 40px;
+	/*display: flex;
+	justify-content: center;*/
 	font-weight: bold;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+	position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
 }
+.restarea_info{
+
+	}
 /*운행시작 전 알림문구창*/
 .start_before{
 	display:none;

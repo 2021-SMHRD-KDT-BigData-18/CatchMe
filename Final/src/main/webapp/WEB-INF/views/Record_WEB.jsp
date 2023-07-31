@@ -49,7 +49,8 @@
 	    <br><hr>
 
 		<div id="main_area">
-			<div class="record_area" style="background-image: url('resources/img/action!.gif'); background-size: cover;"><video id="video"></video></div>
+			<!-- <div class="record_area" style="background-image: url('resources/img/action!.gif'); background-size: cover;"><video id="video"></video></div> -->
+			<div class="record_area" style=" background-size: cover;"><video id="video"></video></div>
 			<div class="record_button">
 				<a id="toggleStream" class="start-rec-button"
 				onclick="toggleStream()"><img src="resources/img/video.png" id="record_img" style="float: left;"></a>
@@ -73,15 +74,19 @@
 	</div>
 	
 	<!-- 운행시작 전 알림문구창 -->
-	<div class="start_before">
+	<!-- <div class="start_before">
 		<p>운행을 시작합니다 안전운전하세요:)</p>
 		<p>월요일은 졸음 횟수가 높기 때문에 주의하시기 바랍니다!</p>
 	</div>
+	 -->
 		
 	<!-- 졸음감지시 졸음쉼터 알려주는 알림 문구창 -->
     <!-- <div id="nearestRestArea" style="visibility: hidden;">-->
-    <div id="nearestRestArea"> 
-    	<span id = "restarea_info">00m 앞에 졸음쉼터가 있습니다.</span>
+    <div id="nearestRestArea" style="font-size: 30px; display: block; text-align: center; line-height: 70px; overflow:hidden; height:auto; width: auto; padding: 100px;"> 
+    	<span id = "restarea_info" >가까운 쉼터 oo쉼터입니다.vvvvvvvvvvvvvvvvvvvvvvvvvv</span><br>
+    	<span id = "restarea_info" style="margin-bottom: -10px;">거리 00km입니다.</span><br><br>
+    	<span id = "restarea_info">가까운 쉼터 oo쉼터입니다.</span><br>
+    	<span id = "restarea_info">거리 00km입니다.</span>
     </div>
    
      
