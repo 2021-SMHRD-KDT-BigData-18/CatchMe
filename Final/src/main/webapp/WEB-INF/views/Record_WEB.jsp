@@ -49,7 +49,7 @@
 	    <br><hr>
 
 		<div id="main_area">
-			<div class="record_area" style="background-image: url('resources/img/action!.gif'); background-size: cover;"><video id="video"></video></div>
+			<div class="record_area" style="background-image: url('resources/img/action!.gif'); background-size: cover;"><video id="video"  controls height= "530" width= "800"></video></div>
 			<!-- <div class="record_area" style=" background-size: cover;"><video id="video"></video></div>-->
 			<div class="record_button">
 				<a id="toggleStream" class="start-rec-button"
