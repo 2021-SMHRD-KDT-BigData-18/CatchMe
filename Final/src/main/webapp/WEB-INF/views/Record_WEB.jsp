@@ -82,11 +82,13 @@
 		
 	<!-- 졸음감지시 졸음쉼터 알려주는 알림 문구창 -->
     <!-- <div id="nearestRestArea" style="visibility: hidden;">-->
-    <div id="nearestRestArea" style="font-size: 30px; display: block; text-align: center; line-height: 70px; overflow:hidden; height:auto; width: auto; padding: 100px;"> 
-    	<span id = "restarea_info" >가까운 쉼터 oo쉼터입니다.vvvvvvvvvvvvvvvvvvvvvvvvvv</span><br>
-    	<span id = "restarea_info" style="margin-bottom: -10px;">거리 00km입니다.</span><br><br>
-    	<span id = "restarea_info">가까운 쉼터 oo쉼터입니다.</span><br>
-    	<span id = "restarea_info">거리 00km입니다.</span>
+    <div id="nearestRestArea" style="font-size: 30px; display: block; text-align: center; line-height: 70px; overflow:hidden; width: auto; height: auto; padding-top: 80px; padding-left: 80px; padding-right: 80px; padding-bottom:48px;">
+    <!-- <div id="nearestRestArea" style="font-size: 30px; width: 1804px; height:633px; margin-left:-902px; margin-top:-209px;display: block; text-align: center; border-radius: 0 0 35px 35px;">-->
+    	<span id = "restarea_info" >가까운 쉼터는 대관령전망대쉼터입니다.</span><br>
+    	<span id = "restarea_info">거리 00km입니다.</span><br><br>
+    	<span id = "restarea_info">가까운 쉼터 광주쉼터입니다.</span><br>
+    	<span id = "restarea_info">거리 00km입니다.</span><br>
+    	<button class="alarm_btn" style="width: 300px; height: 70px; background-color: #487070; font-size: 20px; font-weight: bold; border: 0; border-radius: 20px; margin-top:65px; color:white">알림 종료</button>
     </div>
    
      

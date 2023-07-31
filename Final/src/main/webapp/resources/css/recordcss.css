@@ -14,7 +14,6 @@
 	/* border-radius:30px; */
 	/* border: 5px solid rgb(39, 41, 60); */
 	margin-top: -11px;
-	position: relative;
 }
 
 #main_area {
@@ -47,7 +46,6 @@
 	position: relative;
 }
 
-
 .content_area { /*이상현상 감지를 나타내는 화면*/
 	height: 42vh;
 	width: 34vw;
@@ -56,8 +54,8 @@
 	/* border-radius: 2%; */
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 	/*font: bold 25px "SUIT-Regular";*/
-	font-size:25px;
-	font-weight:bold;
+	font-size: 25px;
+	font-weight: bold;
 	margin-top: 162px;
 }
 
@@ -69,7 +67,7 @@
 /*문자발송완료 알림문구창*/
 .notification-container {
 	width: 1000px;
-	height:200px;
+	height: 200px;
 	background: rgba(255, 255, 255, 0.3);
 	/* border-radius: 10px 10px 0 0 ; */
 	border-radius: 0 0 10px 10px;
@@ -80,12 +78,12 @@
 	transition: transform 0.3s ease-in-out;
 	margin-left: 23%;
 	letter-spacing: 2px;
-	display : flex;
-	justify-content : center;
-	align-items : center;
-	
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
-#notification-container p{
+
+#notification-container p {
 	/*font-family: "SUIT-Regular";*/
 	font-size: 25px;
 	margin-top: 200px;
@@ -99,23 +97,22 @@
 	opacity: 1;
 	position: absolute;
 	background-color: #6a7da5ad;
-	/*display: flex;
-	justify-content: center;*/
 	font-weight: bold;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
-	position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	/*position: absolute;
+	display:inline-block;
+	vertical-align:middle;*/
 }
-.restarea_info{
+/*졸음쉼터 알림문구창에 알림종료 버튼 설정*/
+.alarm_btn {
+	
+}
 
-	}
 /*운행시작 전 알림문구창*/
-.start_before{
-	display:none;
+.start_before {
+	display: none;
 	width: 1000px;
-	height:200px;
+	height: 200px;
 	background: rgba(255, 255, 255, 0.3);
 	/* border-radius: 10px 10px 0 0 ; */
 	border-radius: 0 0 10px 10px;
@@ -126,13 +123,13 @@
 	transition: transform 0.3s ease-in-out;
 	margin-left: 23%;
 	letter-spacing: 2px;
-	display : flex;
-	justify-content : center;
-	align-items : center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
-.start_before:active{
+
+.start_before:active {
 	transition: transform 0.3s ease-in-out;
-	
 }
 
 /*녹화 재생 버튼 누를시 이미지 사라지게*/
