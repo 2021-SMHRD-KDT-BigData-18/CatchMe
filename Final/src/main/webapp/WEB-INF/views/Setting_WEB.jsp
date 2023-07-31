@@ -194,7 +194,7 @@
             height: 100%;
             max-width: 500px;
             max-height: 700px;
-            padding: 30px;
+            padding: 20px;
             background-color: #FFFFFF;
             text-align: center;
             top: calc(50% + 1.5cm);
@@ -211,8 +211,8 @@
             width: 100%;
             height: 100%;
             max-width: 500px;
-            max-height: 350px;
-            padding: 30px;
+            max-height: 300px;
+            padding: 20px;
             background-color: #FFFFFF;
             text-align: center;
             top: calc(50% + 0.01cm);
@@ -239,7 +239,7 @@
             width: 80%;
             height: 40px;
             box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
-            background: linear-gradient(to right, #9C27B0, #E040FB);
+            background: #33cccc;
             background-position: left;
             background-size: 200%;
             color: white;
@@ -256,7 +256,7 @@
         .joinForm h2 {
             text-align: center;
             margin: 30px;
-            color: #8C55AA;
+            color:#33cccc;
         }
 
 
@@ -296,7 +296,7 @@
             width: 80%;
             height: 40px;
             box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
-            background: linear-gradient(to right, #9C27B0, #E040FB);
+            background: #33cccc;
             background-position: left;
             background-size: 200%;
             color: white;
@@ -401,7 +401,7 @@
 
         .submit-btn2 {
             margin-top: 20px;
-            background-color: #4CAF50;
+            background-color:  #33cccc;
             color: white;
             border: none;
             padding: 10px 20px;
@@ -419,7 +419,7 @@
         }
 
         .submit-btn2:hover {
-            background-color: #45a049;
+            background-color: #33cccc;
         }
 
         .btn2 {
@@ -428,7 +428,7 @@
             width: 40%;
             height: 40px;
             box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
-            background: linear-gradient(to right, #9C27B0, #E040FB);
+            background: #33cccc;
             background-position: left;
             background-size: 200%;
             color: white;
@@ -445,7 +445,7 @@
             width: 90px;
             height: 20px;
             box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
-            background: linear-gradient(to right, #9C27B0, #E040FB);
+            background: #33cccc;
             background-position: left;
             background-size: 200%;
             color: white;
@@ -510,15 +510,12 @@
     <li>
       <a href="#" class="classi" id="settingBtn"></a>  <!-- 절대 지우지 마세요 팝업 관련해서 넣어놨습니다 (23/07/28) -->
 
-    </li>
+     </li>
     <li>
-                  <a href="#" class="classi" id="alarmBtn">
-                 
-                    
-                    
-                    
-                    
-                 알림음 설정</a>
+      <a href="#" class="classi" id="alarmBtn">
+        
+        <br>
+              알림음 설정</a>
       <ul>
         <li><a href="#">text1</a></li>
         <li><a href="#">text2</a></li>
@@ -529,10 +526,9 @@
     <li>
       <a href="#" class="classi" id="personalInfoLink">
     
+        <br>
         
-        
-        
-                개인정보수정</a>
+              개인정보 수정</a>
       <ul>
         <li><a href="#">text1</a></li>
         <li><a href="#">text2</a></li>
@@ -544,31 +540,6 @@
   </ul>
 </aside>
 
-    <li>
-                <a href="#" class="classi" id="alarmBtn">
-
-
-
-
-                    알림음 설정</a>
-                <ul>
-                </ul>
-            </li>
-            <li>
-                <a href="#" class="classi" id="personalInfoLink">
-
-
-
-
-
-
-                    개인정보수정</a>
-                <ul>
-                </ul>
-            </li>
-
-        </ul>
-    </aside>
 <!--
 <input type="submit" class="btn2" value="Confirm"/>
 <input type="submit" class="btn" value="J O I N"/>
@@ -579,7 +550,7 @@
         <div class="textForm">
             <label for="loginId" class="left-align-label">아이디</label>
             <div class="inputBox">
-              <input name="loginId" type="text" class="id" id="userId" value="<%=userId %>"class="left-align-label">
+              <input name="loginId" type="text" class="id" id="userId" value="<%=userId %>" class="left-align-label">
             </div>
         </div>
         <div class="textForm">
@@ -627,16 +598,15 @@
       <div class="setting-item">
         <label class="setting-label" for="recipient" id="settingBtn">문자 수신인 설정:</label>
         <input class="setting-input" oninput="hypenTel(this)" type="text" id="recipient" name="recipient" 
-        	placeholder="문자 수신인(전화번호)을 입력하세요" required>
+           placeholder="문자 수신인(전화번호)을 입력하세요" required>
+        <input type="button" onclick="resetRecipient()" class="reset_Btn2" value="초기화">
     </div>
     <div id="errorMessage" style="display: none; color: red;">올바른 전화번호를 입력해주세요.</div>
+         <!--   <input type="submit" class="reset_Btn2" value="알림음 &nbsp 초기화"> -->
+            <!-- <button type="button"  class="btnbtn">알림음 초기화</button> -->
         <br>
             <div class="form-inline">
-            <div class="reset-container">
-                <label for="rese" class="reset_Btn">알림음초기화:</label>
-                <input type="submit" class="reset_Btn2" value="초기화">
-            </div>
-        <br><br>       
+            </div>  
         <div>
             <label for="setting-label" class="bold-label">업로드:</label>
             <input type="file" id="fileInput            ">
@@ -650,7 +620,7 @@
                 }
             </style>
 
-            <input type="button" class="submit-btn" onclick="chanrecephon()" value="저장"></input>
+            <input type="button" class="submit-btn" onclick="chanrecephon()" value="저장" ></input>
         </div>
     </form>
 
@@ -752,6 +722,10 @@
    </script>
    <script>
 
+function resetRecipient() {
+    document.getElementById("recipient").value = ""; // Clears the input field
+}
+     
         document.getElementById("recipient").addEventListener("input", function () {
             const phoneNumber = this.value;
             const isValidPhoneNumber = /^(\d{2,3}-)?\d{3,4}-\d{4}$/.test(phoneNumber);
