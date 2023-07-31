@@ -37,6 +37,9 @@ public class SmsController {
 		User user = mapper.sendSms(username);
 		String name = user.getName();
 		String receiver = user.getSms_receiver();
+		receiver = receiver.replace("-", "");
+		
+		
 	
 		String hostNameUrl = "https://sens.apigw.ntruss.com"; // api 기본 주소
 		String requestUrl = "/sms/v2/services/"; // 추가 주소
