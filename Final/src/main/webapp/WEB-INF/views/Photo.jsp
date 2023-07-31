@@ -429,14 +429,6 @@ body {
 </body>
 
 <script>
-   function GoMain() {
-      location.href="/web";
-   }
-    // 새로운 창에 이미지 표시
- /*   function showImage(imageSrc) {
-        window.open(imageSrc, '_blank', 'width=800, height=600');
-    } */
-
     function showModal(imageUrl) {
         var modal = document.getElementById('lightbox');
         var modalImage = document.getElementById('lightbox-image');
