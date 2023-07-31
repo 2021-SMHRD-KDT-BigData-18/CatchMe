@@ -621,7 +621,7 @@
            placeholder="문자 수신인(전화번호)을 입력하세요" required>
         &nbsp &nbsp <!-- 띄어쓰기--!>
 
-        <input type="button" onclick="resetRecipient()" class="reset_Btn2" value="초기화">
+        
     </div>
     <div id="errorMessage" style="display: none; color: red;">올바른 전화번호를 입력해주세요.</div>
          <!--   <input type="submit" class="reset_Btn2" value="알림음 &nbsp 초기화"> -->
@@ -634,6 +634,7 @@
             <input type="file" id="fileInput            ">
             <button type="button" onclick="uploadFile" class="btnbtn">파일 저장</button>
             <!--    <button onclick="uploadFile()" class="submit-btn123123">Upload</button> -->
+            <input type="button" onclick="resetRecipient()" class="reset_Btn2" value="초기화">
         </div>
             <style>
                 .bold-label {

@@ -643,6 +643,8 @@
                     onclick="mon_week(7,4); return false;">7월 4주차</a>
                 <a href="javascript:void(0);" title="Button push Brown" class="button btnPush btnBrown"
                     onclick="mon_week(7,5); return false;">7월 5주차</a>
+                    <a href="javascript:void(0);" title="Button push Brown" class="button btnPush btnBrown"
+                    onclick="mon_week(7,6); return false;">7월 6주차</a>
 
                 <a href="javascript:void(0);" title="Button push blue/green" class="button btnPush btnBlueGreen"
                     onclick="mon_week(8,1); return false;">8월 1주차</a>
