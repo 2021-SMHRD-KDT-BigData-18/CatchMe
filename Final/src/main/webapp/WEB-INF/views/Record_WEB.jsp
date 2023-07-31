@@ -71,6 +71,12 @@
 			</div>
 		</div>
 	</div>
+	
+	<!-- 운행시작 전 알림문구창 -->
+	<div class="start_before">
+		<p>운행을 시작합니다 안전운전하세요:)</p>
+		<p>월요일은 졸음 횟수가 높기 때문에 주의하시기 바랍니다!</p>
+	</div>
 		
 	<!-- 졸음감지시 졸음쉼터 알려주는 알림 문구창 -->
     <!-- <div id="nearestRestArea" style="visibility: hidden;">-->
