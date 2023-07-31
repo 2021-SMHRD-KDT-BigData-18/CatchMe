@@ -67,9 +67,58 @@ public class Controller {
 	
 	// photo 페이지
 	@RequestMapping("/photo")
-	public String Photo() {
+	public String Photo(@SessionAttribute("user_data") User user_data, Model model) {
+		 List<Event> nolook_img = mapper.nolook_Img(user_data.getId());
+		    for (Event event : nolook_img) {
+		    	String localFilePath = event.getEvent_img();
+		        String filename = localFilePath.substring(localFilePath.lastIndexOf("\\") + 1);
+		        String imageUrl = "http://121.179.7.41:3000/music/" + filename;
+		        String formattedDateTime = formatEventDateTime(event.getEvent_img());
+		        event.setEvent_img(imageUrl);
+		        event.setFormattedDateTime(formattedDateTime);
+		    }
+		    
+		    List<Event> sleep_img = mapper.sleep_img(user_data.getId());
+		    for (Event event : sleep_img) {
+		    	String localFilePath = event.getEvent_img();
+		        String filename = localFilePath.substring(localFilePath.lastIndexOf("\\") + 1);
+		        String imageUrl = "http://121.179.7.41:3000/music/" + filename;
+		        String formattedDateTime = formatEventDateTime(event.getEvent_img());
+		        event.setEvent_img(imageUrl);
+		        event.setFormattedDateTime(formattedDateTime);
+		    }
+		    model.addAttribute("nolook_img", nolook_img);
+		    model.addAttribute("sleep_img", sleep_img);
 		return "Photo";
 	}
+	private String encodeImageToBase64(String event_img) {
+		try {
+			Path imagePath = Paths.get(event_img);
+			byte[] imageBytes = Files.readAllBytes(imagePath);
+			return Base64.getEncoder().encodeToString(imageBytes);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	private String formatEventDateTime(String event_img) {
+	    String fileName = event_img.substring(event_img.lastIndexOf("\\") + 1); 
+	    String dateTimePart = fileName.substring(0, fileName.lastIndexOf("_")); 
+
+	    if (dateTimePart.length() >= 15) {
+	        String year = dateTimePart.substring(2, 4);
+	        String month = dateTimePart.substring(4, 6);
+	        String day = dateTimePart.substring(6, 8);
+	        String hour = dateTimePart.substring(9, 11);
+	        String minute = dateTimePart.substring(11, 13);
+	        String second = dateTimePart.substring(13, 15);
+	        
+	        return year + "." + month + "." + day + ". " + hour + ":" + minute + ":" + second;
+	    } else {
+	        return dateTimePart;
+	    }
+	}
+	
 	
 	// 쉼터알려주기 테스트용, 문자보내기 테스트, 이미지 쭉 보여주는거.
 	@RequestMapping("/location")
@@ -94,35 +143,7 @@ public class Controller {
 	    model.addAttribute("nolook_img", nolook_img);
 	    model.addAttribute("sleep_img", sleep_img);
 	    return "location";
-	}
-	private String encodeImageToBase64(String event_img) {
-		try {
-			Path imagePath = Paths.get(event_img);
-			byte[] imageBytes = Files.readAllBytes(imagePath);
-			return Base64.getEncoder().encodeToString(imageBytes);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return null;
-	}
-	private String formatEventDateTime(String event_img) {
-	    String fileName = event_img.substring(event_img.lastIndexOf("\\") + 1); 
-	    String dateTimePart = fileName.substring(0, fileName.lastIndexOf("_")); 
-
-	    if (dateTimePart.length() >= 15) {
-	        String year = dateTimePart.substring(0, 4);
-	        String month = dateTimePart.substring(4, 6);
-	        String day = dateTimePart.substring(6, 8);
-	        String hour = dateTimePart.substring(9, 11);
-	        String minute = dateTimePart.substring(11, 13);
-	        String second = dateTimePart.substring(13, 15);
-	        
-	        return year + "년 " + month + "월 " + day + "일 " + hour + "시 " + minute + "분 " + second + "초";
-	    } else {
-	        return dateTimePart;
-	    }
-	}
-	
+	}	
 	
 
 	@RequestMapping("/cv")

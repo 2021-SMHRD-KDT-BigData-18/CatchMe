@@ -51,7 +51,7 @@
         <img src="${event.event_img}" alt="이미지없다야">
         <a>${event.formattedDateTime}</a>
     </c:forEach>
-	</div>  -->
+	</div>
     	 
 
 	  	
