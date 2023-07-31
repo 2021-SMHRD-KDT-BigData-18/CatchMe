@@ -131,8 +131,3 @@
 .start_before:active {
 	transition: transform 0.3s ease-in-out;
 }
-
-/*녹화 재생 버튼 누를시 이미지 사라지게*/
-.start-rec-button:active {
-	display: none
-}
