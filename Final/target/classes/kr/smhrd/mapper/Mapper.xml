@@ -127,7 +127,7 @@ SELECT
   (LENGTH(GROUP_CONCAT(CASE WHEN DAYOFWEEK(ccu.event_info.event_at) = 2 THEN ccu.event_info.event_content ELSE NULL END)) - 
    LENGTH(REPLACE(GROUP_CONCAT(CASE WHEN DAYOFWEEK(ccu.event_info.event_at) = 2 THEN ccu.event_info.event_content ELSE NULL END), '졸음운전', ''))) / LENGTH('졸음운전') AS 'mon_sleep',
   (LENGTH(GROUP_CONCAT(CASE WHEN DAYOFWEEK(ccu.event_info.event_at) = 2 THEN ccu.event_info.event_content ELSE NULL END)) - 
-   LENGTH(REPLACE(GROUP_CONCAT(CASE WHEN DAYOFWEEK(ccu.event_info.event_at) = 2 THEN ccu.event_info.event_content ELSE NULL END), '주시운전', ''))) / LENGTH('주시운전') AS 'mon_nolook',
+   LENGTH(REPLACE(GROUP_CONCAT(CASE WHEN DAYOFWEEK(ccu.event_info.event_at) = 2 THEN ccu.event_info.event_content ELSE NULL END), '주시태만', ''))) / LENGTH('주시운전') AS 'mon_nolook',
   (LENGTH(GROUP_CONCAT(CASE WHEN DAYOFWEEK(ccu.event_info.event_at) = 3 THEN ccu.event_info.event_content ELSE NULL END)) - 
    LENGTH(REPLACE(GROUP_CONCAT(CASE WHEN DAYOFWEEK(ccu.event_info.event_at) = 3 THEN ccu.event_info.event_content ELSE NULL END), '졸음운전', ''))) / LENGTH('졸음운전') AS 'tue_sleep',
   (LENGTH(GROUP_CONCAT(CASE WHEN DAYOFWEEK(ccu.event_info.event_at) = 3 THEN ccu.event_info.event_content ELSE NULL END)) - 

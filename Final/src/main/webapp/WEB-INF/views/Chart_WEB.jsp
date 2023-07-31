@@ -572,15 +572,15 @@
 <body>
     <div id="center">
         <div id="header">
-            <div class="dropdown" style="float: left;" id="gomain" onclick="GoMain()">
+            <div class="dropdown" style="float: left;" id="gomain">
                 <button class="dropbtn">
-                    <img class="homeicon" src="./home (2).png">
+                    <a href="/web"><img class="homeicon" src="resources/img/home (2).png"></a>
                 </button>
             </div>
 
             <div class="dropdown" style="float: right">
                 <button class="dropbtn">
-                    <img class="myicon" src="./user (2).png"> 
+                    <button class="dropbtn"><img class="myicon" src="resources/img/user (2).png"></button> 
                 </button>
                 <div class="dropdown-content">
                     <!-- 우측 상단 메뉴바 -->
@@ -840,7 +840,7 @@
                         formatDate(data.sat_dates),
                     ];
 
-                    console.log(event_day_count);
+                    console.log(event_day_count[3]);
                     console.log(day_date);
 
                     // Call the function to create or update the chart
@@ -1117,6 +1117,7 @@
                                         innerHtml += '</tr>';
                                     }
                                     let tableRoot = tooltipEl.querySelector('table');
+                                    tableRoot.style.border = 'none';
                                     tableRoot.innerHTML = innerHtml;
 
                                     const position =
