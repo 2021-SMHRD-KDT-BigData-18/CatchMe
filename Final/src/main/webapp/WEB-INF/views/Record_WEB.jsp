@@ -73,8 +73,8 @@
 	</div>
 		
 	<!-- 졸음감지시 졸음쉼터 알려주는 알림 문구창 -->
-    <div id="nearestRestArea" style="visibility: hidden;">
-    <!-- <div id="nearestRestArea"> -->
+    <!-- <div id="nearestRestArea" style="visibility: hidden;">-->
+    <div id="nearestRestArea"> 
     	<span id = "restarea_info">00m 앞에 졸음쉼터가 있습니다.</span>
     </div>
    
@@ -104,12 +104,15 @@
 	function setSize() {
 		if (window.orientation === 0) {
 			width = 800;
-			height = 570;
+			height = 530;
 		} else {
 			width = 800;
-			height = 570;
+			height = 530;
 			/*height = 620;*/
+			/*height: 530px;
+			width: 800px;*/
 		}
+		
 
 		video = document.getElementById("video");
 		video.width = width;
