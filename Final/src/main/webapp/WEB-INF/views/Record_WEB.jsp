@@ -49,7 +49,7 @@
 	    <br><hr>
 
 		<div id="main_area">
-			<div class="record_area" style="background-image: url('resources/img/action!.gif'); background-size: cover;"><video id="video"></video></div>
+			<div class="record_area" style="background-image: url('resources/img/action!.gif'); background-size: cover;"><video id="video"  controls height= "530" width= "800"></video></div>
 			<!-- <div class="record_area" style=" background-size: cover;"><video id="video"></video></div>-->
 			<div class="record_button">
 				<a id="toggleStream" class="start-rec-button"
@@ -78,8 +78,10 @@
     <!-- <div id="nearestRestArea" style="visibility: hidden;">-->
     <div id="nearestRestArea" style="font-size: 30px; width:600px; display: block; visibility: hidden; text-align: center; line-height: 70px; overflow:hidden; padding-top: 80px; padding-left: 60px; padding-right: 60px; padding-bottom:48px;  position: absolute; left: calc(50% - 360px); margin-top:-622px;">
     <!-- <div id="nearestRestArea" style="font-size: 30px; width: 1804px; height:633px; margin-left:-902px; margin-top:-209px;display: block; text-align: center; border-radius: 0 0 35px 35px;">-->
+<
     	<span id = "restarea_info" ></span><br>
     	<button id = "stopSound" onclick="stopNotifySound()" class="alarm_btn" style="width: 300px; height: 70px; background-color: #212A3E; font-size: 20px; font-weight: bold; border: 0; border-radius: 20px; margin-top:65px; color:white" >알림 종료</button>
+
     </div>
    
     
