@@ -121,7 +121,7 @@ public class RestController {
 	// 아이디 중복 확인
 	@PostMapping("/idcheck")
 	@ResponseBody
-	public int idcheck(@RequestParam("userId") String id) {
+	public int idcheck(@RequestParam("id") String id) {
 		String confid = id;
 		User user = mapper.confrim(confid);
 		int row = 0;
