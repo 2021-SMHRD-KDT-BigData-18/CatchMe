@@ -23,7 +23,7 @@
             /* 해당 태그의 list-style을 none으로 하는 것으로 ●을 제거한다 */
         }
 
-        /******************************/
+    /******************************/
         #center {
             height: 88vh;
             width: 94vw;
@@ -47,15 +47,15 @@
             box-shadow: 0 0 15px rgba(159, 151, 151, 0.326);
         }
 
-        .homeicon {
+        .homeicon{
             margin: 28px 0;
             width: 17%;
             height: 17%;
             margin-right: 70%;
         }
-
+      
         /*마이 아이콘*/
-        .myicon {
+        .myicon{
             width: 20%;
             height: 20%;
             margin: 18px 25px;
@@ -64,50 +64,53 @@
 
         }
 
-        /*드롭다운 메뉴바*/
+       /*드롭다운 메뉴바*/
         .dropbtn {
             background-color: transparent;
             border: 0;
             /* padding: 16px; */
             /* cursor: pointer; 커서가 손가락 모양으로 바뀜*/
         }
-
-        .dropdown {
+      
+        .dropdown{
             position: relative;
             display: inline-block;
         }
-
-        .dropdown-content {
+      
+        .dropdown-content{
             display: none;
             position: absolute;
             background-color: #f9f9f9;
             min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             z-index: 1;
             right: 0;
         }
-
-        .dropdown-content a {
+      
+        .dropdown-content a{
             color: black;
             padding: 12px 16px;
             text-decoration: none;
             display: block;
         }
-
-        .dropdown-content a:hover {
+      
+        .dropdown-content a:hover{
             background-color: #f1f1f1;
         }
-
-        .dropdown:hover .dropdown-content {
+      
+        .dropdown:hover .dropdown-content{
             display: block;
         }
-
+      
         /* .dropdown:hover .dropbtn{
             background-color: #3e8e41;
         } */
 
+        .alarmBtn.classi {
+            padding: 3px; /* 원하는 크기로 변경하세요. 예: 5px */
+        }
 
-        /******************************/
+ /******************************/
 
         a {
             color: inherit;
@@ -208,7 +211,7 @@
             width: 100%;
             height: 100%;
             max-width: 500px;
-            max-height: 285px;
+            max-height: 350px;
             padding: 30px;
             background-color: #FFFFFF;
             text-align: center;
@@ -263,11 +266,7 @@
             padding: 10px 10px;
         }
 
-        .id,
-        .pw,
-        .name,
-        .email,
-        .phone {
+        .id, .pw, .name, .email, .phone {
             width: 100%;
             border: none;
             outline: none;
@@ -465,49 +464,87 @@
             font-weight: bold;
             margin-bottom: 5px;
         }
+
+        /* 글자를 띄어쓸 수 있는 기호 */
+        .setting-label{
+            white-space: pre;
+        }
     </style>
 
-    <div id="center">
-        <div id="header">
-            <div class="dropdown" style="float: left;">
-                <button class="dropbtn" id="gomain" onclick="GoMain()">
-                    <img class="homeicon" src="resources/img/home (2).png">
-                </button>
-            </div>
-            <div class="dropdown" style="float: right;">
-                <button class="dropbtn"><img class="myicon" src="resources/img/user (2).png"></button>
-                <div class="dropdown-content">
-                    <a href="photo">사진</a>
-                    <a href="logout">로그아웃</a>
-                    <a href="#">회원탈퇴</a>
-                </div>
-            </div>
+
+<div id="center">
+    <div id="header">
+        <div class="dropdown" style="float: left;">
+            <button class="dropbtn" id="gomain" onclick="GoMain()">
+                <img class="homeicon" src="resources/img/home (2).png">
+            </button>
         </div>
-        <br><br><br><br>
-        <hr>
-        <!-- 여기서 작업하면됨 -->
+        <div class="dropdown" style="float: right;">
+            <button class="dropbtn"><img class="myicon" src="resources/img/user (2).png"></button>
+            <div class="dropdown-content">
+               
+                <a href="photo">사진</a>
+                <a href="logout">로그아웃</a>
+                <a href="#">회원탈퇴</a>
+            </div>
+        </div>    
     </div>
+    <br><br><br><br><hr>
+    <!-- 여기서 작업하면됨 -->
+</div>
 
 
 </head>
-
 <body>
-<input type = "hidden" value = "${user_data.id }" id = "username">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <aside class="side-bar">
-        <section class="side-bar__icon-box">
-            <section class="side-bar__icon-1">
-                <div></div>
-                <div></div>
-                <div></div>
-            </section>
-        </section>
-        <ul>
-            <li>
-                <!-- <a href="#" class="classi" id="settingBtn"></a> <!-- 절대 지우지 마세요 팝업 관련해서 넣어놨습니다 (23/07/28) -->
-            </li>
-            <li>
+<aside class="side-bar">
+  <section class="side-bar__icon-box">
+    <section class="side-bar__icon-1">
+      <div></div>
+      <div></div>
+      <div></div>
+    </section>
+  </section>
+  <ul>
+    <li>
+      <a href="#" class="classi" id="settingBtn"></a>  <!-- 절대 지우지 마세요 팝업 관련해서 넣어놨습니다 (23/07/28) -->
+
+    </li>
+    <li>
+                  <a href="#" class="classi" id="alarmBtn">
+                 
+                    
+                    
+                    
+                    
+                 알림음 설정</a>
+      <ul>
+        <li><a href="#">text1</a></li>
+        <li><a href="#">text2</a></li>
+        <li><a href="#">text3</a></li>
+        <li><a href="#">text4</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#" class="classi" id="personalInfoLink">
+    
+        
+        
+        
+                개인정보수정</a>
+      <ul>
+        <li><a href="#">text1</a></li>
+        <li><a href="#">text2</a></li>
+        <li><a href="#">text3</a></li>
+        <li><a href="#">text4</a></li>
+      </ul>
+    </li>
+    
+  </ul>
+</aside>
+
+    <li>
                 <a href="#" class="classi" id="alarmBtn">
 
 
@@ -532,25 +569,23 @@
 
         </ul>
     </aside>
-
-    <!--
+<!--
 <input type="submit" class="btn2" value="Confirm"/>
 <input type="submit" class="btn" value="J O I N"/>
 -->
 
-    <form action="doJoin" method="POST" class="joinForm">
-        <!--onsubmit="DoJoinForm__submit(this); return false;"-->
-        <h2>Modify</h2>
+<form action="doJoin" id="personal_info" method="POST" class="joinForm">  <!--onsubmit="DoJoinForm__submit(this); return false;"-->
+    <h2>Modify</h2>
         <div class="textForm">
             <label for="loginId" class="left-align-label">아이디</label>
             <div class="inputBox">
-                <input name="loginId" type="text" class="id" id="userId" value="<%=userId %>" class="left-align-label">
+              <input name="loginId" type="text" class="id" id="userId" value="<%=userId %>"class="left-align-label">
             </div>
         </div>
         <div class="textForm">
             <label for="loginPw" class="left-align-label">비밀번호</label>
             <div class="inputBox">
-                <input name="loginPw" type="password" class="pw" placeholder="*****" id="modpw">
+              <input name="loginPw" type="password" class="pw" placeholder="*****" id="loginPwInput" >
             </div>
         </div>
         <div class="textForm">
@@ -560,11 +595,12 @@
                 <input type="button" onclick="chanPw()" class="btn2" value="Confirm" />
             </div>
         </div>
-        <br><br><br>
+            <br><br><br>
+        </div>
         <div class="textForm">
             <label for="name" class="left-align-label">이름</label>
             <div class="inputBox">
-                <input name="name" type="text" class="name" id="UName" placeholder="홍길동">
+              <input name="name" type="text" class="name" id="UName" placeholder="김은영" >
             </div>
         </div>
         <div class="textForm">
@@ -575,24 +611,36 @@
         </div>
         <input type="button" id="changeMy" onclick="chanMy()" class="btn" value="Complete" />
     </form>
-    <form class="joinForm3">
+      
+  </form>
 
+
+    <form class="joinForm3" id="mail_receive">
+       
         <div class="settings">
-        	<div class="setting-item">
-        		<label class="setting-label" for="recipient" id="settingBtn">기존 수신인:</label>
-        		<p><%=userrePhone %></p>
-        	</div>
-            <div class="setting-item">
-                <label class="setting-label" for="recipient" id="settingBtn">문자 수신인 설정:</label>
-                <input class="setting-input" type="text" id="recipient" name="recipient"
-                    placeholder="문자 수신인(전화번호)을 입력하세요" required>
-            </div>
-        <div id="errorMessage" style="display: none; color: red;">올바른 전화번호를 입력해주세요.</div>
+           <div class="setting-item">
+              <label class="setting-label" for="recipient" id="settingBtn">    기존 수신인: <%=userrePhone %></label>
+           <!--   <input class="setting-input" oninput="hypenTel(this)" type="text" id="recipient" name="recipient" placeholder="010-4040-4040" required>-->
+           </div>
+          
+         <div class="settings">
+      <div class="setting-item">
+        <label class="setting-label" for="recipient" id="settingBtn">문자 수신인 설정:</label>
+        <input class="setting-input" oninput="hypenTel(this)" type="text" id="recipient" name="recipient" 
+        	placeholder="문자 수신인(전화번호)을 입력하세요" required>
+    </div>
+    <div id="errorMessage" style="display: none; color: red;">올바른 전화번호를 입력해주세요.</div>
         <br>
+            <div class="form-inline">
+            <div class="reset-container">
+                <label for="rese" class="reset_Btn">알림음초기화:</label>
+                <input type="submit" class="reset_Btn2" value="초기화">
+            </div>
+        <br><br>       
         <div>
             <label for="setting-label" class="bold-label">업로드:</label>
-            <input type="file" id="fileInput">
-            <button type="button" onclick="uploadFile()" class="btnbtn">파일 저장</button>
+            <input type="file" id="fileInput            ">
+            <button type="button" onclick="uploadFile" class="btnbtn">파일 저장</button>
             <!--    <button onclick="uploadFile()" class="submit-btn123123">Upload</button> -->
         </div>
             <style>
@@ -608,99 +656,101 @@
 
 
 
-
     <!-- script가 2개로 나뉘어져 있는데 나누시지 마세요 -->
-	<script src="resources/js/upload.js"></script>
+
+
+
+   <script src="resources/js/upload.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script>
-		function chanPw() {
-			if (confirm("변경하시겠습니까?")) {
-				let userId = $("#userId").val();
-				let modpw = $("#modpw").val();
-				let userPwch = $("#userPwch").val();	
-				if (modpw == userPwch) {
-					$.ajax({ 
-						url : "ChangePw",
-						method : "post",
-						data : {
-							userId : userId,
-							modpw : modpw
-						},
-						success : function(data) {
-							if (data == 1) {
-								alert("변경하였습니다.")
-							}
-							else {
-								alert("변경되지 않았습니다")
-							}
-						},
-						error : function() {
-							console.log("오류!오류!")
-						}
-					});
-				}
-				else {
-					alert("일치하지 않습니다.")
-				}
-			}
-		}
-		function chanMy() {
-			if (confirm("변경하시겠습니까?")) {
-				let userId = $("#userId").val();
-				let UName = $("#UName").val();
-				let userPhon = $("#userPhon").val();
-				$.ajax({
-					url : "changeMy",
-					method : "post",
-					data : {
-						userId : userId,
-						UName : UName,
-						userPhon : userPhon
-					},
-					success : function(data) {
-						if (data == 1) {
-							alert("변경하였습니다.")
-						}
-						else {
-							alert("변경되지 않았습니다")
-						}
-					},
-					error : function() {
-						console.log("오류!오류!")
-					}
-				});
-			}
-		}
-		function GoMain() {
-			location.href="/web";
-		}
-		function chanrecephon() {
-			if (confirm("저장하시겠습니까?")) {
-				let userId = $("#userId").val();
-				let recPhon = $("#recipient").val();
-				$.ajax({
-					url : "chrephonw",
-					method : "post",
-					data : {
-						userId : userId,
-						recPhon : recPhon
-					},
-					success : function(data) {
-						if (data == 1) {
-							alert("저장하였습니다.")
-						}
-						else {
-							alert("저장되지 않았습니다")
-						}
-					},
-					error : function() {
-						console.log("오류!오류!")
-					}
-				});
-			}
-		}
-	</script>
-	<script>
+      function chanPw() {
+         if (confirm("변경하시겠습니까?")) {
+            let userId = $("#userId").val();
+            let modpw = $("#loginPwInput").val();
+            let userPwch = $("#userPwch").val();   
+            if (modpw == userPwch) {
+               $.ajax({ 
+                  url : "ChangePw",
+                  method : "post",
+                  data : {
+                     userId : userId,
+                     modpw : modpw
+                  },
+                  success : function(data) {
+                     if (data == 1) {
+                        alert("변경하였습니다.")
+                     }
+                     else {
+                        alert("변경되지 않았습니다")
+                     }
+                  },
+                  error : function() {
+                     console.log("오류!오류!")
+                  }
+               });
+            }
+            else {
+               alert("일치하지 않습니다.")
+            }
+         }
+      }
+      function chanMy() {
+         if (confirm("변경하시겠습니까?")) {
+            let userId = $("#userId").val();
+            let UName = $("#UName").val();
+            let userPhon = $("#userPhon").val();
+            $.ajax({
+               url : "changeMy",
+               method : "post",
+               data : {
+                  userId : userId,
+                  UName : UName,
+                  userPhon : userPhon
+               },
+               success : function(data) {
+                  if (data == 1) {
+                     alert("변경하였습니다.")
+                  }
+                  else {
+                     alert("변경되지 않았습니다")
+                  }
+               },
+               error : function() {
+                  console.log("오류!오류!")
+               }
+            });
+         }
+      }
+      function GoMain() {
+         location.href="/web";
+      }
+      function chanrecephon() {
+         if (confirm("저장하시겠습니까?")) {
+            let userId = $("#userId").val();
+            let recPhon = $("#recipient").val();
+            $.ajax({
+               url : "chrephonw",
+               method : "post",
+               data : {
+                  userId : userId,
+                  recPhon : recPhon
+               },
+               success : function(data) {
+                  if (data == 1) {
+                     alert("저장하였습니다.")
+                  }
+                  else {
+                     alert("저장되지 않았습니다")
+                  }
+               },
+               error : function() {
+                  console.log("오류!오류!")
+               }
+            });
+         }
+      }
+   </script>
+   <script>
 
         document.getElementById("recipient").addEventListener("input", function () {
             const phoneNumber = this.value;

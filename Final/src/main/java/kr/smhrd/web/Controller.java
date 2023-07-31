@@ -91,7 +91,6 @@ public class Controller {
 	        String formattedDateTime = formatEventDateTime(event.getEvent_img());
 	        event.setFormattedDateTime(formattedDateTime);
 	    }
-	    
 	    model.addAttribute("nolook_img", nolook_img);
 	    model.addAttribute("sleep_img", sleep_img);
 	    return "location";
