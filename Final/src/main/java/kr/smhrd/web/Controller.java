@@ -112,7 +112,6 @@ public class Controller {
 	        String hour = dateTimePart.substring(9, 11);
 	        String minute = dateTimePart.substring(11, 13);
 	        String second = dateTimePart.substring(13, 15);
-	        System.out.println("년"+year);
 	        
 	        return year + "." + month + "." + day + ". " + hour + ":" + minute + ":" + second;
 	    } else {
