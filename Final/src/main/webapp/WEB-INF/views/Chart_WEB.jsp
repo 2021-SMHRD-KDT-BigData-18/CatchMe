@@ -540,13 +540,13 @@
     <div id="center">
         <div id="header">
             <div class="dropdown" style="float: left">
-                <button class="dropbtn" id="gomain" onclick="GoMain()">
-                    <img class="homeicon" src="./image/free-icon-home-1828864.png" />
+                <button class="dropbtn" id="gomain">
+                    <a href="/web"><img class="homeicon" src="resources/img/home (2).png"></a>
                 </button>
             </div>
             <div class="dropdown" style="float: right">
                 <button class="dropbtn">
-                    <img class="myicon" src="./image/free-icon-user-5264565.png" />
+                    <img class="myicon" src="resources/img/user (2).png"> 
                 </button>
                 <div class="dropdown-content">
                     <!-- 우측 상단 메뉴바 -->
@@ -566,137 +566,137 @@
                 <button id="prev-button" class="arrow-button">◄</button>
 
                 <!-- 느낌 상, 05,06 버튼도 추가해야함(아니면 1월, 2월, 3월 ... 로 가는 방법도 고려) -->
-                <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen"
+                <a href="javascript:void(0);" title="Button push blue/green" class="button btnPush btnBlueGreen"
                     onclick="mon_week(1,1); return false;">1월 1주차</a>
-                <a href="" title="Buttoan push lightblue" class="button btnPush btnLightBlue"
+                <a href="javascript:void(0);" title="Buttoan push lightblue" class="button btnPush btnLightBlue"
                     onclick="mon_week(1,2); return false;">1월 2주차</a>
-                <a href="" title="Button push orange" class="button btnPush btnOrange"
+                <a href="javascript:void(0);" title="Button push orange" class="button btnPush btnOrange"
                     onclick="mon_week(1,3); return false;">1월 3주차</a>
 
-                <a href="" title="Button push purple" class="button btnPush btnPurple"
+                <a href="javascript:void(0);" title="Button push purple" class="button btnPush btnPurple"
                     onclick="mon_week(1,4); return false;">1월 4주차</a>
-                <a href="" title="Button push Brown" class="button btnPush btnBrown"
+                <a href="javascript:void(0);" title="Button push Brown" class="button btnPush btnBrown"
                     onclick="mon_week(1,5); return false;">1월 5주차</a>
 
-                <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen"
+                <a href="javascript:void(0);" title="Button push blue/green" class="button btnPush btnBlueGreen"
                     onclick="mon_week(2,1); return false;">2월 1주차</a>
-                <a href="" title="Button push lightblue" class="button btnPush btnLightBlue"
+                <a href="javascript:void(0);" title="Button push lightblue" class="button btnPush btnLightBlue"
                     onclick="mon_week(2,2); return false;">2월 2주차</a>
-                <a href="" title="Button push orange" class="button btnPush btnOrange"
+                <a href="javascript:void(0);" title="Button push orange" class="button btnPush btnOrange"
                     onclick="mon_week(2,3); return false;">2월 3주차</a>
-                <a href="" title="Button push purple" class="button btnPush btnPurple"
+                <a href="javascript:void(0);" title="Button push purple" class="button btnPush btnPurple"
                     onclick="mon_week(2,4); return false;">2월 4주차</a>
-                <a href="" title="Button push Brown" class="button btnPush btnBrown"
+                <a href="javascript:void(0);" title="Button push Brown" class="button btnPush btnBrown"
                     onclick="mon_week(2,5); return false;">2월 5주차</a>
 
-                <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen"
+                <a href="javascript:void(0);" title="Button push blue/green" class="button btnPush btnBlueGreen"
                     onclick="mon_week(3,1); return false;">3월 1주차</a>
-                <a href="" title="Button push lightblue" class="button btnPush btnLightBlue"
+                <a href="javascript:void(0);" title="Button push lightblue" class="button btnPush btnLightBlue"
                     onclick="mon_week(3,2); return false;">3월 2주차</a>
-                <a href="" title="Button push orange" class="button btnPush btnOrange"
+                <a href="javascript:void(0);" title="Button push orange" class="button btnPush btnOrange"
                     onclick="mon_week(3,3); return false;">3월 3주차</a>
-                <a href="" title="Button push purple" class="button btnPush btnPurple"
+                <a href="javascript:void(0);" title="Button push purple" class="button btnPush btnPurple"
                     onclick="mon_week(3,4); return false;">3월 4주차</a>
-                <a href="" title="Button push Brown" class="button btnPush btnBrown"
+                <a href="javascript:void(0);" title="Button push Brown" class="button btnPush btnBrown"
                     onclick="mon_week(3,5); return false;">3월 5주차</a>
 
-                <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen"
+                <a href="javascript:void(0);" title="Button push blue/green" class="button btnPush btnBlueGreen"
                     onclick="mon_week(4,1); return false;">4월 1주차</a>
-                <a href="" title="Button push lightblue" class="button btnPush btnLightBlue"
+                <a href="javascript:void(0);" title="Button push lightblue" class="button btnPush btnLightBlue"
                     onclick="mon_week(4,2); return false;">4월 2주차</a>
-                <a href="" title="Button push orange" class="button btnPush btnOrange"
+                <a href="javascript:void(0);" title="Button push orange" class="button btnPush btnOrange"
                     onclick="mon_week(4,3); return false;">4월 3주차</a>
-                <a href="" title="Button push purple" class="button btnPush btnPurple"
+                <a href="javascript:void(0);" title="Button push purple" class="button btnPush btnPurple"
                     onclick="mon_week(4,4); return false;">4월 4주차</a>
-                <a href="" title="Button push Brown" class="button btnPush btnBrown"
+                <a href="javascript:void(0);" title="Button push Brown" class="button btnPush btnBrown"
                     onclick="mon_week(4,5); return false;">4월 5주차</a>
 
-                <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen"
+                <a href="javascript:void(0);" title="Button push blue/green" class="button btnPush btnBlueGreen"
                     onclick="mon_week(5,1); return false;">5월 1주차</a>
-                <a href="" title="Button push lightblue" class="button btnPush btnLightBlue"
+                <a href="javascript:void(0);" title="Button push lightblue" class="button btnPush btnLightBlue"
                     onclick="mon_week(5,2); return false;">5월 2주차</a>
-                <a href="" title="Button push orange" class="button btnPush btnOrange"
+                <a href="javascript:void(0);" title="Button push orange" class="button btnPush btnOrange"
                     onclick="mon_week(5,3); return false;">5월 3주차</a>
-                <a href="" title="Button push purple" class="button btnPush btnPurple"
+                <a href="javascript:void(0);" title="Button push purple" class="button btnPush btnPurple"
                     onclick="mon_week(5,4); return false;">5월 4주차</a>
-                <a href="" title="Button push Brown" class="button btnPush btnBrown"
+                <a href="javascript:void(0);" title="Button push Brown" class="button btnPush btnBrown"
                     onclick="mon_week(5,5); return false;">5월 5주차</a>
 
-                <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen"
+                <a href="javascript:void(0);" title="Button push blue/green" class="button btnPush btnBlueGreen"
                     onclick="mon_week(6,1); return false;">6월 1주차</a>
-                <a href="" title="Button push lightblue" class="button btnPush btnLightBlue"
+                <a href="javascript:void(0);" title="Button push lightblue" class="button btnPush btnLightBlue"
                     onclick="mon_week(6,2); return false;">6월 2주차</a>
-                <a href="" title="Button push orange" class="button btnPush btnOrange"
+                <a href="javascript:void(0);" title="Button push orange" class="button btnPush btnOrange"
                     onclick="mon_week(6,3); return false;">6월 3주차</a>
-                <a href="" title="Button push purple" class="button btnPush btnPurple"
+                <a href="javascript:void(0);" title="Button push purple" class="button btnPush btnPurple"
                     onclick="mon_week(6,4); return false;">6월 4주차</a>
-                <a href="" title="Button push Brown" class="button btnPush btnBrown"
+                <a href="javascript:void(0);" title="Button push Brown" class="button btnPush btnBrown"
                     onclick="mon_week(6,5); return false;">6월 5주차</a>
 
-                <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen"
+                <a href="javascript:void(0);" title="Button push blue/green" class="button btnPush btnBlueGreen"
                     onclick="mon_week(7,1); return false;">7월 1주차</a>
-                <a href="" title="Button push lightblue" class="button btnPush btnLightBlue"
+                <a href="javascript:void(0);" title="Button push lightblue" class="button btnPush btnLightBlue"
                     onclick="mon_week(7,2); return false;">7월 2주차</a>
-                <a href="" title="Button push orange" class="button btnPush btnOrange"
+                <a href="javascript:void(0);" title="Button push orange" class="button btnPush btnOrange"
                     onclick="mon_week(7,3); return false;">7월 3주차</a>
-                <a href="" title="Button push purple" class="button btnPush btnPurple"
+                <a href="javascript:void(0);" title="Button push purple" class="button btnPush btnPurple"
                     onclick="mon_week(7,4); return false;">7월 4주차</a>
-                <a href="" title="Button push Brown" class="button btnPush btnBrown"
+                <a href="javascript:void(0);" title="Button push Brown" class="button btnPush btnBrown"
                     onclick="mon_week(7,5); return false;">7월 5주차</a>
 
-                <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen"
+                <a href="javascript:void(0);" title="Button push blue/green" class="button btnPush btnBlueGreen"
                     onclick="mon_week(8,1); return false;">8월 1주차</a>
-                <a href="" title="Button push lightblue" class="button btnPush btnLightBlue"
+                <a href="javascript:void(0);" title="Button push lightblue" class="button btnPush btnLightBlue"
                     onclick="mon_week(8,2); return false;">8월 2주차</a>
-                <a href="" title="Button push orange" class="button btnPush btnOrange"
+                <a href="javascript:void(0);" title="Button push orange" class="button btnPush btnOrange"
                     onclick="mon_week(8,3); return false;">8월 3주차</a>
-                <a href="" title="Button push purple" class="button btnPush btnPurple"
+                <a href="javascript:void(0);" title="Button push purple" class="button btnPush btnPurple"
                     onclick="mon_week(8,4); return false;">8월 4주차</a>
-                <a href="" title="Button push Brown" class="button btnPush btnBrown"
+                <a href="javascript:void(0);" title="Button push Brown" class="button btnPush btnBrown"
                     onclick="mon_week(8,5); return false;">8월 5주차</a>
 
-                <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen"
+                <a href="javascript:void(0);" title="Button push blue/green" class="button btnPush btnBlueGreen"
                     onclick="mon_week(9,1); return false;">9월 1주차</a>
-                <a href="" title="Button push lightblue" class="button btnPush btnLightBlue"
+                <a href="javascript:void(0);" title="Button push lightblue" class="button btnPush btnLightBlue"
                     onclick="mon_week(9,2); return false;">9월 2주차</a>
-                <a href="" title="Button push orange" class="button btnPush btnOrange"
+                <a href="javascript:void(0);" title="Button push orange" class="button btnPush btnOrange"
                     onclick="mon_week(9,3); return false;">9월 3주차</a>
-                <a href="" title="Button push purple" class="button btnPush btnPurple"
+                <a href="javascript:void(0);" title="Button push purple" class="button btnPush btnPurple"
                     onclick="mon_week(9,4); return false;">9월 4주차</a>
-                <a href="" title="Button push Brown" class="button btnPush btnBrown"
+                <a href="javascript:void(0);" title="Button push Brown" class="button btnPush btnBrown"
                     onclick="mon_week(9,5); return false;">9월 5주차</a>
 
-                <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen"
+                <a href="javascript:void(0);" title="Button push blue/green" class="button btnPush btnBlueGreen"
                     onclick="mon_week(10,1); return false;">10월 1주차</a>
-                <a href="" title="Button push lightblue" class="button btnPush btnLightBlue"
+                <a href="javascript:void(0);" title="Button push lightblue" class="button btnPush btnLightBlue"
                     onclick="mon_week(10,2); return false;">10월 2주차</a>
-                <a href="" title="Button push orange" class="button btnPush btnOrange"
+                <a href="javascript:void(0);" title="Button push orange" class="button btnPush btnOrange"
                     onclick="mon_week(10,3); return false;">10월 3주차</a>
-                <a href="" title="Button push purple" class="button btnPush btnPurple"
+                <a href="javascript:void(0);" title="Button push purple" class="button btnPush btnPurple"
                     onclick="mon_week(10,4); return false;">10월 4주차</a>
-                <a href="" title="Button push Brown" class="button btnPush btnBrown"
+                <a href="javascript:void(0);" title="Button push Brown" class="button btnPush btnBrown"
                     onclick="mon_week(10,5); return false;">10월 5주차</a>
 
-                <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen"
+                <a href="javascript:void(0);" title="Button push blue/green" class="button btnPush btnBlueGreen"
                     onclick="mon_week(11,1); return false;">11월 1주차</a>
-                <a href="" title="Button push lightblue" class="button btnPush btnLightBlue"
+                <a href="javascript:void(0);" title="Button push lightblue" class="button btnPush btnLightBlue"
                     onclick="mon_week(11,2); return false;">11월 2주차</a>
-                <a href="" title="Button push orange" class="button btnPush btnOrange"
+                <a href="javascript:void(0);" title="Button push orange" class="button btnPush btnOrange"
                     onclick="mon_week(11,3); return false;">11월 3주차</a>
-                <a href="" title="Button push purple" class="button btnPush btnPurple"
+                <a href="javascript:void(0);" title="Button push purple" class="button btnPush btnPurple"
                     onclick="mon_week(11,4); return false;">11월 4주차</a>
-                <a href="" title="Button push Brown" class="button btnPush btnBrown"
+                <a href="javascript:void(0);" title="Button push Brown" class="button btnPush btnBrown"
                     onclick="mon_week(11,5); return false;">11월 5주차</a>
 
-                <a href="" title="Button push blue/green" class="button btnPush btnBlueGreen"
+                <a href="javascript:void(0);" title="Button push blue/green" class="button btnPush btnBlueGreen"
                     onclick="mon_week(12,1); return false;">12월 1주차</a>
-                <a href="" title="Button push lightblue" class="button btnPush btnLightBlue"
+                <a href="javascript:void(0);" title="Button push lightblue" class="button btnPush btnLightBlue"
                     onclick="mon_week(12,2); return false;">12월 2주차</a>
-                <a href="" title="Button push orange" class="button btnPush btnOrange"
+                <a href="javascript:void(0);" title="Button push orange" class="button btnPush btnOrange"
                     onclick="mon_week(12,3); return false;">12월 3주차</a>
-                <a href="" title="Button push purple" class="button btnPush btnPurple"
+                <a href="javascript:void(0);" title="Button push purple" class="button btnPush btnPurple"
                     onclick="mon_week(12,4); return false;">12월 4주차</a>
-                <a href="" title="Button push Brown" class="button btnPush btnBrown"
+                <a href="javascript:void(0);" title="Button push Brown" class="button btnPush btnBrown"
                     onclick="mon_week(12,5); return false;">12월 5주차</a>
 
                 <button id="next-button" class="arrow-button">►</button>
@@ -714,14 +714,19 @@
             </div>
         </form>
     </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script>
+    
+    <script type="text/javascript" language="javascript">
 
         /* ----------------------------------------------------------------- */
 
         let username = document.getElementById('username').value;
-        let ALERTTEXT = document.getElementById('buttonAlert');
         const CHARTMESSAGE = document.getElementById('chart-message');
+        let ALERTTEXT = document.getElementById('buttonAlert');
+        let myChartInstance= null;
+        let chartCounter = 0;
 
         var event_count = [];
         var event_day_count = [];
@@ -737,14 +742,25 @@
         function mon_week(mon, week) {
             console.log('버튼이 클릭되었습니다! 정보:', mon, week);
 
-            ALERTTEXT.innerText = `${mon}월 ${week}주차 차트입니다.`;
+            ALERTTEXT.innerText = mon + '월 ' + week + '주차 차트입니다.';
             ALERTTEXT.classList.add('activeBtn');
             setTimeout(() => {
                 ALERTTEXT.classList.remove('activeBtn');
             }, 2000);
             CHARTMESSAGE.style.display = 'none';
 
-            setTimeout;
+            // Destroy the previous chart if it exists
+            if (myChartInstance) {
+                myChartInstance.destroy();
+                myChartInstance = null;
+            }
+
+            // Call the function to update the chart data and create the new chart
+            updateChartData(mon, week);
+        }
+
+
+        function updateChartData(mon, week) {
             $.ajax({
                 url: 'mon_week',
                 type: 'post',
@@ -791,6 +807,8 @@
 
                     console.log(event_day_count);
                     console.log(day_date);
+
+                    // Call the function to create or update the chart
                     useEventData();
                 },
                 error: function () {
@@ -842,6 +860,7 @@
             .addEventListener('click', showNextButtons);
 
         const ctx = document.getElementById('myChart');
+        
 
         function useEventData() {
             var week_label = [
@@ -856,10 +875,10 @@
             // 알림 명
             var event_label = '감지횟수';
             // 날짜 지정
-            var week_day = '2023-07-23';
+//            var week_day = '2023-07-23';
 
             // X축 레이블에 요일명 사용하기
-            new Chart(ctx, {
+            myChartInstance =new Chart(ctx, {
                 type: 'bar',
                 data: {
                     labels: week_label, // 숫자를 요일명으로 변환하여 사용
