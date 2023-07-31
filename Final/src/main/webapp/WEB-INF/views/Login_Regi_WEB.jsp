@@ -125,7 +125,7 @@
             top: 0;
             width: 1804px;/*고정 인제 수정 금지ㅠㅠㅠ*/
             height: 100%;
-            background-image: url("./image/car-gb74fda5ff_1280.jpg");
+            background-image: url("resources/img/car-gb74fda5ff_1280.jpg");
             background-size: cover;
             transition: transform 1.2s ease-in-out;
         }
@@ -432,8 +432,8 @@
 <body>
     <div class="center" style="position: relative;">
         <div class="dropdown" style="float: left;">
-            <button class="dropbtn">
-                <img class="homeicon" src="./image/home (2).png">
+            <button class="dropbtn" id="gomain" onclick="GoMain()">
+                <img class="homeicon" src="resources/img/home (2).png">
             </button>
         </div>
 
@@ -499,13 +499,13 @@
     <!-- 회원가입 성공/실패 메시지 -->
     <div class="success_check">
         <div class="success">
-            <img src="./image/Loading-fail-unscreen.gif"><br>
+            <img src="resources/img/Icon-Reward-unscreen.gif"><br>
             <span>회원가입이 되었습니다!</span>
             <button class="success_btn" type="button" onclick="regiche('succ')">CONTINUE</button>
             
         </div>
         <div class="fail" style="margin-top: -700px; margin-left: 1010px; ">
-            <img src="./image/Icon-Reward-unscreen.gif"><br>
+            <img src="resources/img/Loading-fail-unscreen.gif"><br>
             <span>회원가입을 실패했습니다.</span><br>
             <span style="margin-left: 203px;">다시 입력해주세요!</span>
 
@@ -520,6 +520,9 @@
     <!-- 여기까지 -->
 	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script>
+	    function GoMain() {
+			location.href="/web";
+		}
         // 로그인&회원가입 버튼 눌렀을 때 효과
         document.querySelector('.img__btn').addEventListener('click', function () {
             document.querySelector('.center').classList.toggle('s--signup');
@@ -581,6 +584,7 @@
                 },
                 error: function (error) {
                     console.log('Error:', error);
+                    $('.fail').css("display","block");
                     // 오류 처리 (원하는 동작 추가)
                 }
             });
