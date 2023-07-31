@@ -530,6 +530,15 @@
         // 로그인&회원가입 버튼 눌렀을 때 효과
         document.querySelector('.img__btn').addEventListener('click', function () {
             document.querySelector('.center').classList.toggle('s--signup');
+            $('.id_ok').css("display", "none");
+            $('.id_already').css("display", "none");
+            $("#id").val("");
+            $("#password").val("");
+            $("#userid").val("");
+            $("#user_pw").val("");
+            $("#user_name").val("");
+            $("#user_email").val("");
+            $("#user_phon").val("");
         });
 
         // 실시간 id 중복 확인
@@ -562,9 +571,9 @@
                 id: $("#userid").val(),
                 pw: $("#user_pw").val(),
                 name: $("#user_name").val(),
+                email: $("#user_email").val(),
                 phone: $("#user_phon").val()
             };
-            console.log(formData)
 
             // 비동기적으로 회원가입 요청을 서버로 전송합니다.
             $.ajax({
@@ -576,10 +585,11 @@
                     if (data != 0) {
                         $('.success').css("display","block");
                         $('.id_ok').css("display", "none");
-                        id: $("#userid").val("");
-                        pw: $("#user_pw").val("");
-                        name: $("#user_name").val("");
-                        phone: $("#user_phon").val("");
+                        $("#userid").val("");
+                        $("#user_pw").val("");
+                        $("#user_name").val("");
+                        $("#user_email").val("");
+                        $("#user_phon").val("");
                         // 회원가입 성공시 처리 (원하는 동작 추가)
                     } else {
                         $('.fail').css("display","block");
