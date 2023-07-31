@@ -24,7 +24,7 @@
 	          const secondRestArea =
 	            "가까운 쉼터 :  " + response[1].ra_name + "쉼터입니다. 거리 : " + (response[1].distance / 1000).toFixed(1) + "km입니다.";
 
-	          restare_infoElement.textContent = firstRestArea + "  " + secondRestArea;
+	          restarea_infoElement.textContent = firstRestArea + "  " + secondRestArea;
 	          setTimeout(function() {
 	        	    nearestRestAreaElement.textContent = "";}, 30000);
 	        }
