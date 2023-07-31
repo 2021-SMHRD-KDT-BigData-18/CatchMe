@@ -193,8 +193,8 @@
             width: 100%;
             height: 100%;
             max-width: 500px;
-            max-height: 700px;
-            padding: 20px;
+            max-height: 620px;
+            padding: 30px;
             background-color: #FFFFFF;
             text-align: center;
             top: calc(50% + 1.5cm);
@@ -212,7 +212,7 @@
             height: 100%;
             max-width: 500px;
             max-height: 300px;
-            padding: 20px;
+            padding: 30px;
             background-color: #FFFFFF;
             text-align: center;
             top: calc(50% + 0.01cm);
@@ -255,7 +255,7 @@
 
         .joinForm h2 {
             text-align: center;
-            margin: 30px;
+            margin: 1px;
             color:#33cccc;
         }
 
@@ -469,6 +469,26 @@
         .setting-label{
             white-space: pre;
         }
+    /* Style for the 초기화 (Reset) button */
+    .reset_Btn2 {
+        background-color: #33cccc;
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        margin-top: 5px;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 12px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .reset_Btn2:hover {
+        background-color: #29a1ab; /* Change the color on hover if desired */
+    }
+</style>
+
     </style>
 
 
@@ -596,9 +616,11 @@
           
          <div class="settings">
       <div class="setting-item">
-        <label class="setting-label" for="recipient" id="settingBtn">문자 수신인 설정:</label>
+        <label class="setting-label" for="recipient" id="settingBtn" style="margin-right: 10px;">문자 수신인 설정: </label>
         <input class="setting-input" oninput="hypenTel(this)" type="text" id="recipient" name="recipient" 
            placeholder="문자 수신인(전화번호)을 입력하세요" required>
+        &nbsp &nbsp <!-- 띄어쓰기--!>
+
         <input type="button" onclick="resetRecipient()" class="reset_Btn2" value="초기화">
     </div>
     <div id="errorMessage" style="display: none; color: red;">올바른 전화번호를 입력해주세요.</div>
