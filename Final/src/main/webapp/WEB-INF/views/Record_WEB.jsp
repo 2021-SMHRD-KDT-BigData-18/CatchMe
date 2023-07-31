@@ -49,7 +49,7 @@
 	    <br><hr>
 
 		<div id="main_area">
-			<div class="record_area" width=><video id="video"></video></div>
+			<div class="record_area" style="background-image: url('resources/img/action!.gif'); background-size: cover;"><video id="video"></video></div>
 			<div class="record_button">
 				<a id="toggleStream" class="start-rec-button"
 				onclick="toggleStream()"><img src="resources/img/video.png" id="record_img" style="float: left;"></a>
@@ -74,6 +74,7 @@
 		
 	<!-- 졸음감지시 졸음쉼터 알려주는 알림 문구창 -->
     <div id="nearestRestArea" style="visibility: hidden;">
+    <!-- <div id="nearestRestArea"> -->
     	<span id = "restarea_info">00m 앞에 졸음쉼터가 있습니다.</span>
     </div>
    
