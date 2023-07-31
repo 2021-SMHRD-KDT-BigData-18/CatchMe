@@ -95,13 +95,9 @@
 /* 졸음쉼터 알림문구창 */
 #nearestRestArea {
 	opacity: 1;
-	position: absolute;
-	background-color: #6a7da5ad;
+	background-color: #adb1b9ec;
 	font-weight: bold;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-	/*position: absolute;
-	display:inline-block;
-	vertical-align:middle;*/
 }
 /*졸음쉼터 알림문구창에 알림종료 버튼 설정*/
 .alarm_btn {
