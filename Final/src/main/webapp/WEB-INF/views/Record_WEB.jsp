@@ -109,10 +109,10 @@
 
 	function setSize() {
 		if (window.orientation === 0) {
-			width = 800;
+			width = 850;
 			height = 530;
 		} else {
-			width = 800;
+			width = 850;
 			height = 530;
 			/*height = 620;*/
 			/*height: 530px;
