@@ -99,10 +99,29 @@ public class RestController {
 		}
 	}
 
+	// 회원가입
+	@PostMapping("/join")
+	@ResponseBody
+	public int join(Model model, User dto) {
+		System.out.println(dto.getId() +" ddd "+ dto.getPw() + " ddd "+ dto.getPhone());
+		dto.setEmail("ab");
+		int join = mapper.join(dto);
+		int row = 0;
+		if (join > 0) {
+			String successMessage = "회원가입에 성공하였습니다.";
+			model.addAttribute("successMessage", successMessage);
+			row = 1;
+		} else {
+			String failMessage = "회원가입에 실패하였습니다.";
+			model.addAttribute("failMessage", failMessage);
+		}
+		return row;
+	}
+
 	// 아이디 중복 확인
 	@PostMapping("/idcheck")
 	@ResponseBody
-	public int idcheck(@RequestParam("userId") String id) {
+	public int idcheck(@RequestParam("id") String id) {
 		String confid = id;
 		User user = mapper.confrim(confid);
 		int row = 0;
