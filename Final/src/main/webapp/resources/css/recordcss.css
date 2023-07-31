@@ -109,3 +109,31 @@
 	font-weight: bold;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
+/*운행시작 전 알림문구창*/
+.start_before{
+	display:none;
+	width: 1000px;
+	height:200px;
+	background: rgba(255, 255, 255, 0.3);
+	/* border-radius: 10px 10px 0 0 ; */
+	border-radius: 0 0 10px 10px;
+	padding: 20px 10px;
+	position: absolute;
+	/* bottom: -50px; */
+	top: -240px;
+	transition: transform 0.3s ease-in-out;
+	margin-left: 23%;
+	letter-spacing: 2px;
+	display : flex;
+	justify-content : center;
+	align-items : center;
+}
+.start_before:active{
+	transition: transform 0.3s ease-in-out;
+	
+}
+
+/*녹화 재생 버튼 누를시 이미지 사라지게*/
+.start-rec-button:active {
+	display: none
+}
