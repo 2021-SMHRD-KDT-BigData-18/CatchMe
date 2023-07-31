@@ -321,7 +321,7 @@
             margin-top: -10px;
         }
         .sign-up p{
-            margin-top: 70px;
+            margin-top: 50px;
             /* margin-bottom: -20px; */
         }
         .sign-up .submit{
@@ -448,7 +448,7 @@
                         <input type="password" name="pw" id="password" autocomplete="off" required>
                         <label for="password"><span>비밀번호</span></label>
                     </p> 
-                <a href="findPw"><p class="forgot-pass">비밀번호를 잃어버렸나요?</p></a>
+                <a href="findPw" style="text-decoration-line: none;"><p class="forgot-pass">비밀번호를 잃어버렸나요?</p></a>
                 <button type="submit" class="submit">로그인</button>
             </form>
         </div>
@@ -490,7 +490,11 @@
                     <p>
                         <input type="text" id="user_phon" autocomplete="off" required>
                         <label for="user_phon"><span>핸드폰번호</span></label>
-                    </p> 
+                    </p>
+                    <p>
+                        <input type="text" id="user_email" autocomplete="off" required>
+                        <label for="user_email"><span>이메일</span></label>
+                    </p>
                     <button type="button" class="submit" onclick="userRegi()">회원가입</button>
                 </form>
             </div>
