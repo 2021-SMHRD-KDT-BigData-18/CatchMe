@@ -574,13 +574,13 @@
         <div id="header">
             <div class="dropdown" style="float: left;" id="gomain" onclick="GoMain()">
                 <button class="dropbtn">
-                    <img class="homeicon" src="./home (2).png">
+                    <a href="/web"><img class="homeicon" src="resources/img/home (2).png"></a>
                 </button>
             </div>
 
             <div class="dropdown" style="float: right">
                 <button class="dropbtn">
-                    <img class="myicon" src="./user (2).png"> 
+                    <button class="dropbtn"><img class="myicon" src="resources/img/user (2).png"></button> 
                 </button>
                 <div class="dropdown-content">
                     <!-- 우측 상단 메뉴바 -->

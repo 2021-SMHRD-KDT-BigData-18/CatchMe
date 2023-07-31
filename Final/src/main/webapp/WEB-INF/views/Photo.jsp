@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+	<%@page import="kr.smhrd.entity.User"%>
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -352,6 +355,7 @@ body {
 </head>
 
 <body>
+<input type="hidden" value="${user_data.id }" id="username">
     <div id="center">
         <div id="header">
             <h2 class="photo-record">Photo_Archive</h2>
@@ -375,7 +379,7 @@ body {
         <!-- 세로 구분선 표시 -->
         <div class="v-line"></div>
 
-        <h2 class="upmenu_nomodify">음 주 운 전</h2>
+        <h2 class="upmenu_nomodify">졸 음 운 전</h2>
         <!-- 폼 두개로 분리 -->
         <form style="float: left; width: 40%; overflow: auto;" class="leftform" >
             <div class="image-container">
@@ -384,12 +388,12 @@ body {
                 <table>
                     <tr>
                         <td>
-                            <a href="#" onclick="showModal('image1')">
-                            <img id="image1" class="form-image"
-                                src="https://1.bp.blogspot.com/-QELd67pUwLw/XTgEGbI0_nI/AAAAAAAARRY/s6GHJQssgx43RKOyqRUU_tRIhvMnkVupQCLcBGAs/s1600/pink-rose-250x250.png"
-                                alt="이미지 1">
+							<c:forEach items="${sleep_img}" var="event">
+                            <a href="#" onclick="showModal('image1')">   
+							   <img src="${event.event_img}" alt="이미지없다야" class="form-image">    
                             </a>
-                            <p>2023-07-28 pm12:00</p>
+                            <p>${event.formattedDateTime}</p>
+                            </c:forEach>
                         </td>
                     <tr>
                 </table>
@@ -405,9 +409,10 @@ body {
                     <tr>
                         <td>
                             <a href="#" onclick="showModal('image2')">
-                            <img id="image2" class="form-image"
-                                src="https://search.pstatic.net/common/?src=http%3A%2F%2Fshop1.phinf.naver.net%2F20230626_278%2F1687708110525ELQEd_PNG%2F2723925397979220_1632312291.png&type=a340"
-                                alt="이미지 2">
+								<c:forEach items="${nolook_img}" var="event">
+									<img src="${event.event_img}" alt="이미지없다야" class="form-image">
+									<a>${event.formattedDateTime }</a>
+								</c:forEach>
                             </a>
                             <p>2023-07-28 pm12:00</p>
                         </td>
