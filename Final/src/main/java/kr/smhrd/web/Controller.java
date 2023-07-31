@@ -73,8 +73,8 @@ public class Controller {
 		    	String localFilePath = event.getEvent_img();
 		        String filename = localFilePath.substring(localFilePath.lastIndexOf("\\") + 1);
 		        String imageUrl = "http://121.179.7.41:3000/music/" + filename;
-		        event.setEvent_img(imageUrl);
 		        String formattedDateTime = formatEventDateTime(event.getEvent_img());
+		        event.setEvent_img(imageUrl);
 		        event.setFormattedDateTime(formattedDateTime);
 		    }
 		    
@@ -83,11 +83,10 @@ public class Controller {
 		    	String localFilePath = event.getEvent_img();
 		        String filename = localFilePath.substring(localFilePath.lastIndexOf("\\") + 1);
 		        String imageUrl = "http://121.179.7.41:3000/music/" + filename;
-		        event.setEvent_img(imageUrl);
 		        String formattedDateTime = formatEventDateTime(event.getEvent_img());
+		        event.setEvent_img(imageUrl);
 		        event.setFormattedDateTime(formattedDateTime);
 		    }
-		    System.out.println(sleep_img);
 		    model.addAttribute("nolook_img", nolook_img);
 		    model.addAttribute("sleep_img", sleep_img);
 		return "Photo";
@@ -107,7 +106,7 @@ public class Controller {
 	    String dateTimePart = fileName.substring(0, fileName.lastIndexOf("_")); 
 
 	    if (dateTimePart.length() >= 15) {
-	        String year = dateTimePart.substring(0, 4);
+	        String year = dateTimePart.substring(2, 4);
 	        String month = dateTimePart.substring(4, 6);
 	        String day = dateTimePart.substring(6, 8);
 	        String hour = dateTimePart.substring(9, 11);
@@ -115,7 +114,7 @@ public class Controller {
 	        String second = dateTimePart.substring(13, 15);
 	        System.out.println("년"+year);
 	        
-	        return year + "년 " + month + "월 " + day + "일 " + hour + "시 " + minute + "분 " + second + "초";
+	        return year + "." + month + "." + day + ". " + hour + ":" + minute + ":" + second;
 	    } else {
 	        return dateTimePart;
 	    }

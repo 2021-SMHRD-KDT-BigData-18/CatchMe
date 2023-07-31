@@ -359,15 +359,14 @@ body {
     <div id="center">
         <div id="header">
             <h2 class="photo-record">Photo_Archive</h2>
-            <div class="dropdown" style="float: left;" id="gomain" onclick="GoMain()">
+            <div class="dropdown" style="float: left;" id="gomain">
                 <button class="dropbtn">
-                    <img class="homeicon" src="./home (2).png">
+                    <a href="/web"><img class="homeicon" src="resources/img/home (2).png"></a>
                 </button>
             </div>
             <div class="dropdown" style="float: right;">
-                <button class="dropbtn"><img class="myicon" src="./user (2).png"></button>
+                <button class="dropbtn"><img class="myicon" src="resources/img/user (2).png"></button>
                 <div class="dropdown-content">
-                    <a href="#">문자 발송 내역</a>
                     <a href="logout">로그아웃</a>
                     <a href="#">회원탈퇴</a>
                 </div>
@@ -389,7 +388,7 @@ body {
                     <tr>
                         <td>
 							<c:forEach items="${sleep_img}" var="event">
-                            <a href="#" onclick="showModal('image1')">   
+                            <a href="#" onclick="showModal('${event.event_img}')">   
 							   <img src="${event.event_img}" alt="이미지없다야" class="form-image">    
                             </a>
                             <p>${event.formattedDateTime}</p>
@@ -407,16 +406,15 @@ body {
                 <!-- 800 x 620 -->
                 <table>
                     <tr>
-                        <td>
-                            <a href="#" onclick="showModal('image2')">
-								<c:forEach items="${nolook_img}" var="event">
-									<img src="${event.event_img}" alt="이미지없다야" class="form-image">
-									<a>${event.formattedDateTime }</a>
-								</c:forEach>
+						<td>
+							<c:forEach items="${nolook_img}" var="event">	
+                            <a href="#" onclick="showModal('${event.event_img}')">   
+							   <img src="${event.event_img}" alt="이미지없다야" class="form-image">    
                             </a>
-                            <p>2023-07-28 pm12:00</p>
+                            <p>${event.formattedDateTime}</p>
+                        	</c:forEach>    
                         </td>
-                    <tr>
+					<tr>
                 </table>
             
             </div>
@@ -439,17 +437,22 @@ body {
         window.open(imageSrc, '_blank', 'width=800, height=600');
     } */
 
-    function showModal(imageId) {
-        var imageSrc = document.getElementById(imageId).src;
+    function showModal(imageUrl) {
         var modal = document.getElementById('lightbox');
         var modalImage = document.getElementById('lightbox-image');
         var closeButton = document.getElementById('close-button');
 
-        modalImage.src = imageSrc;
+        modalImage.src = imageUrl;
         modal.style.display = 'block';
 
         closeButton.onclick = function () {
             modal.style.display = 'none';
+        };
+
+        window.onclick = function (event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
         };
     }
 
