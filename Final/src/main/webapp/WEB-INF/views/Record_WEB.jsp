@@ -54,7 +54,7 @@
 			<div class="record_button">
 				<a id="toggleStream" class="start-rec-button"
 				onclick="toggleStream()"><img src="resources/img/video.png" id="record_img" style="float: left;"></a>
-				<a id = "stopSound" onclick="stopNotifySound()" style="visibility: hidden;">음악 종료</a>
+				<a id = "stopSound" onclick="stopNotifySound()" style="visibility: hidden;">알림 종료 / 닫음</a>
 				<!-- <button>end</button> -->
 				<div class="content_up" style=" font: bold 35px 'SUIT-Regular'; margin-top: 40px; margin-left: 120px;">
                     <span>지금 뭐해 이상행동 감지되었잖아!</span>
