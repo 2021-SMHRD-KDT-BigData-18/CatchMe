@@ -1,3 +1,5 @@
+let isSendSmsAllowed = true;
+
 function successCallback(mediaStream) {
 	video.srcObject = mediaStream;
 	video.play();
@@ -87,8 +89,19 @@ function sendFrameToPython() {
 				callNotifyController(img_path);
 				content_area(1);
 				playNotifySound();
-				//sendSms();
-				smsRecord();				
+				
+				if (isSendSmsAllowed) {
+				isSendSmsAllowed = false;
+				sendSms()
+				.then(() => {
+				setTimeout(() => {isSendSmsAllowed = true;}, 30000);
+				})
+				.catch(error => {
+				console.error('sendSms 실행 중 에러:', error);
+				isSendSmsAllowed = true;
+				});
+				}
+				smsRecord();
 			}
 		})
 		.catch(error => {
