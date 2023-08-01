@@ -67,10 +67,17 @@
 		</div>
 	</div>
 	
-	<!-- 운행시작 전 알림문구창 -->
+	<!-- 녹화 재생 버튼 시 알림문구창 -->
 	<!-- <div class="start_before">
-		<p>운행을 시작합니다 안전운전하세요:)</p>
-		<p>월요일은 졸음 횟수가 높기 때문에 주의하시기 바랍니다!</p>
+		<span>운행을 시작합니다 안전운전하세요:)</span>
+		<span>월요일은 졸음 횟수가 높기 때문에 주의하시기 바랍니다!</span>
+	</div>
+	 -->
+	 
+	<!-- 녹화 종료 버튼 시 알림문구창 -->
+	<!-- <div class="start_before">
+		<span>녹화를 종료합니다!</span>
+		<span>월요일은 졸음 횟수가 높기 때문에 주의하시기 바랍니다!</span>
 	</div>
 	 -->
 		
@@ -85,7 +92,6 @@
     	<button id = "stopSound" onclick="stopNotifySound()" class="alarm_btn" style="width: 300px; height: 70px; background-color: #212A3E; font-size: 20px; font-weight: bold; border: 0; border-radius: 20px; margin-top:65px; color:white" >알림 종료</button>
 
     </div>
-   
     
 
 	<!-- 문자발송완료 알림문구창 -->
