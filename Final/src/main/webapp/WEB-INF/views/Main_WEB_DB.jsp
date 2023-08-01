@@ -27,7 +27,7 @@
             <div class="dropdown">
                 <button class="dropbtn"><img class="myicon" src="resources/img/user (2).png"></button>
                 
-                <div class="dropdown-content">
+                <div class="dropdown-content" style="width: auto; height: auto;">
 					
 					<% if (secheck == null) { %>
 						<a href="movelogin">로그인</a>

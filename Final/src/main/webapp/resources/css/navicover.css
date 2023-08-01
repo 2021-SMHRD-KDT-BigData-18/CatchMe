@@ -1,44 +1,5 @@
 @charset "UTF-8";
 
-/* 글꼴 얇은거(카페24 써라운드에어) */
-@font-face {
-	font-family: 'Cafe24SsurroundAir';
-	src:
-		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24SsurroundAir.woff')
-		format('woff');
-	font-weight: normal;
-	font-style: normal;
-}
-/* 두꺼운거(카페24 써라운드) */
-@font-face {
-	font-family: 'Cafe24Ssurround';
-	src:
-		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff')
-		format('woff');
-	font-weight: normal;
-	font-style: normal;
-}
-/*티머니 둥근 바람*/
-@font-face {
-    font-family: 'TmoneyRoundWindExtraBold';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/TmoneyRoundWindExtraBold.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-/*강원교육튼튼체*/
-@font-face {
-    font-family: 'GangwonEduPowerExtraBoldA';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-/*수트 이걸로 글꼴 적용할거임*/
-@font-face {
-    font-family: 'SUIT-Regular';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
 * {
 	/*font-family: 'SUIT-Regular';*/
 	font-family: "Open Sans", Helvetica, Arial, sans-serif;
@@ -136,7 +97,7 @@ hr {
 .dropbtn {
 	background-color: transparent;
 	border: 0;
-	/* padding: 16px; */
+	/*padding: 16px;*/
 	/* cursor: pointer; 커서가 손가락 모양으로 바뀜*/
 }
 
@@ -150,8 +111,7 @@ hr {
 	position: absolute;
 	background-color: #f9f9f9;
 	min-width: 180px;
-	/* min-height: 180px; */
-	height: 180px;
+	/*height: 180px;*/
 	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 	z-index: 1;
 	right: 0;
