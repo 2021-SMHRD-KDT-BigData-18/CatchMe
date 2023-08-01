@@ -11,6 +11,8 @@
 <% User user = (User)session.getAttribute("user_data");
    String userId = user.getId();
    String userrePhone = user.getSms_receiver();
+   String userName = user.getName();
+   String userPhone = user.getPhone();
 %> 
     <style>
         /* 노멀라이즈 시작 */
@@ -616,13 +618,13 @@
         <div class="textForm">
             <label for="name" class="left-align-label">이름</label>
             <div class="inputBox">
-              <input name="name" type="text" class="name" id="UName" placeholder="김은영" >
+              <input name="name" type="text" class="name" id="UName" placeholder="<%=userName %>" >
             </div>
         </div>
         <div class="textForm">
             <label for="phone" class="left-align-label">휴대폰 번호</label>
             <div class="inputBox">
-                <input name="phone" type="text" class="phone" id="userPhon" placeholder="010-1111-2222">
+                <input name="phone" type="text" class="phone" id="userPhon" placeholder="<%=userPhone %>">
             </div>
         </div>
         <input type="button" id="changeMy" onclick="chanMy()" class="btn" value="Complete" />
