@@ -23,7 +23,7 @@
 
 .record_button { /*녹화에 대한 버튼*/
 	margin-top: 35px;
-	margin-left: 910px;
+	margin-left: 870px;
 	position: absolute;
 }
 
@@ -35,7 +35,7 @@
 
 .record_area { /*녹화 화면*/
 	height: 530px;
-	width: 800px;
+	width: 707px;
 	/* height: 480px;
             width: 640px; */
 	float: left;
@@ -126,4 +126,11 @@
 
 .start_before:active {
 	transition: transform 0.3s ease-in-out;
+}
+
+/*녹화 크기 조절*/
+#video{
+       min-width: 100%;
+       width: auto; height: auto; z-index: -100;
+       background-size: cover;
 }
