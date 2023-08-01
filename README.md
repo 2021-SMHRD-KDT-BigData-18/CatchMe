@@ -1,4 +1,4 @@
-# 📎 Catch You(팀명 : OH YES)
+# 📎 Catch YOU(팀명 : OH YES)
 ![image-removebg-preview (2)-fococlipping-standard](https://github.com/2021-SMHRD-KDT-BigData-18/CatchMe/assets/130841823/46587074-3ec2-4dec-aa94-eb34e58d290e)
 
 
