@@ -583,9 +583,9 @@
                 <button class="dropbtn">
                     <button class="dropbtn"><img class="myicon" src="resources/img/user (2).png"></button> 
                 </button>
-                <div class="dropdown-content">
+                <div class="dropdown-content" style="width: auto; height: auto;">
                     <!-- 우측 상단 메뉴바 -->
-                    <a href="photo">사진</a>
+                    <a href="photo">라이브러리</a>
                     <a href="logout">로그아웃</a>
                     <a href="#">회원탈퇴</a>
                 </div>

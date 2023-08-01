@@ -526,9 +526,8 @@
         </div>
         <div class="dropdown" style="float: right;">
             <button class="dropbtn"><img class="myicon" src="resources/img/user (2).png"></button>
-            <div class="dropdown-content">
-               
-                <a href="photo">사진</a>
+            <div class="dropdown-content" style="width: auto; height: auto;">
+                <a href="photo">라이브러리</a>
                 <a href="logout">로그아웃</a>
                 <a href="#">회원탈퇴</a>
             </div>

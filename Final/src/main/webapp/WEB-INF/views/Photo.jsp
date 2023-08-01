@@ -335,7 +335,7 @@ body {
 <input type="hidden" value="${user_data.id }" id="username">
     <div id="center">
         <div id="header">
-            <h2 class="photo-record">Photo_Archive</h2>
+            <h2 class="photo-record">라이브러리</h2>
             <div class="dropdown" style="float: left;" id="gomain">
                 <button class="dropbtn">
                     <a href="/web"><img class="homeicon" src="resources/img/home (2).png"></a>
@@ -343,7 +343,7 @@ body {
             </div>
             <div class="dropdown" style="float: right;">
                 <button class="dropbtn"><img class="myicon" src="resources/img/user (2).png"></button>
-                <div class="dropdown-content">
+                <div class="dropdown-content" style="width: auto; height: auto;">
                     <a href="logout">로그아웃</a>
                     <a href="#">회원탈퇴</a>
                 </div>
