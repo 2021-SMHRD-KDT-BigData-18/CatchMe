@@ -184,5 +184,11 @@ public class Controller {
 	public String modifyPw() {
 		return "ModiPw";
 	}
+	
+	// 녹화 페이지(녹화버전)
+	@RequestMapping("/record2")
+	public String record2() {
+		return "Record_WEB2";
+	}
 
 }
