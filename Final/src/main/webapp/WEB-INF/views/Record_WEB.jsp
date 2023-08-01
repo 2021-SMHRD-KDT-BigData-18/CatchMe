@@ -56,7 +56,7 @@
 				onclick="toggleStream()"><img src="resources/img/video.png" id="record_img" style="float: left;"></a>
 				<a id = "stopSound" onclick="stopNotifySound()" style="visibility: hidden;">알림 종료 / 닫음</a>
 				<!-- <button>end</button> -->
-				<div class="content_up" style=" font: bold 35px 'SUIT-Regular'; margin-top: 40px; margin-left: 120px;">
+				<div class="content_up" style=" font: bold 34px 'SUIT-Regular'; margin-top: 40px; margin-left: 120px;">
                     <span>지금 뭐해 이상행동 감지되었잖아!</span>
                 </div>
 			</div>
@@ -67,10 +67,17 @@
 		</div>
 	</div>
 	
-	<!-- 운행시작 전 알림문구창 -->
+	<!-- 녹화 재생 버튼 시 알림문구창 -->
 	<!-- <div class="start_before">
-		<p>운행을 시작합니다 안전운전하세요:)</p>
-		<p>월요일은 졸음 횟수가 높기 때문에 주의하시기 바랍니다!</p>
+		<span>운행을 시작합니다 안전운전하세요:)</span>
+		<span>월요일은 졸음 횟수가 높기 때문에 주의하시기 바랍니다!</span>
+	</div>
+	 -->
+	 
+	<!-- 녹화 종료 버튼 시 알림문구창 -->
+	<!-- <div class="start_before">
+		<span>녹화를 종료합니다!</span>
+		<span>월요일은 졸음 횟수가 높기 때문에 주의하시기 바랍니다!</span>
 	</div>
 	 -->
 		
@@ -79,18 +86,17 @@
     <div id="nearestRestArea" style="font-size: 30px; width:600px; display: block; visibility: hidden; text-align: center; line-height: 70px; overflow:hidden; padding-top: 80px; padding-left: 60px; padding-right: 60px; padding-bottom:48px;  position: absolute; left: calc(50% - 360px); margin-top:-622px;">
     <!-- <div id="nearestRestArea" style="font-size: 30px; width: 1804px; height:633px; margin-left:-902px; margin-top:-209px;display: block; text-align: center; border-radius: 0 0 35px 35px;">-->
     	<span id = "restarea_info1"></span><br>
-    	<span id = "restarea_info2"></span><br>
-    	<span id = "restarea_info3" style="margin-top: 20px;"></span><br>
+    	<span id = "restarea_info2"></span><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+    	<span id = "restarea_info3"></span><br>
     	<span id = "restarea_info4"></span><br>
     	<button id = "stopSound" onclick="stopNotifySound()" class="alarm_btn" style="width: 300px; height: 70px; background-color: #212A3E; font-size: 20px; font-weight: bold; border: 0; border-radius: 20px; margin-top:65px; color:white" >알림 종료</button>
 
     </div>
-   
     
 
 	<!-- 문자발송완료 알림문구창 -->
 	<div class="notification-container" id="notification-container">
-		<p></p>
+		<p>이상행동이 감지되어 010-1234-5678님에게 문자 발송을 완료했습니다!</p>
 	</div>
 	
 
