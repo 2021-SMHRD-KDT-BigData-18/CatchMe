@@ -364,23 +364,25 @@
         .fail{
             display: none;
             position: relative; 
-            width: 600px;
-            height: 600px;
-            background-color: #d4d4d4ac;
-            font-size: 25px;
+            width: 615px;
+            height: 650px;
+            background-color: #f9f9f9;
+            font-size: 28px;
             font-weight: bold;
             z-index: 3;
+            box-shadow:0 0 15px rgba(57, 57, 57, 0.402);
 
         }
         .success{
             display: none;
             position: relative; 
-            width: 600px;
-            height: 600px;
-            background-color: #d4d4d4ac;
-            font-size: 25px;
+            width: 615px;
+            height: 650px;
+            background-color: #f9f9f9;
+            font-size: 28px;
             font-weight: bold;
             z-index: 3;
+            box-shadow:0 0 15px rgba(57, 57, 57, 0.402);
         }
         .success img{
             width: 260px;
@@ -401,10 +403,10 @@
             margin-left: 1010px; 
         }
         .success span{
-            margin-left: 168px;
+            margin-left: 155px;
         }
         .fail span{
-            margin-left: 168px;
+            margin-left: 155px;
         }
         .success_btn{
             width: 300px;
@@ -502,16 +504,16 @@
     </div>
     <!-- 회원가입 성공/실패 메시지 -->
     <div class="success_check">
-        <div class="success">
+        <div class="success" style="margin-top: -750px;">
             <img src="resources/img/Icon-Reward-unscreen.gif"><br>
             <span>회원가입이 되었습니다!</span>
             <button class="success_btn" type="button" onclick="regiche('succ')">CONTINUE</button>
             
         </div>
-        <div class="fail" style="margin-top: -700px; margin-left: 1010px; ">
+        <div class="fail" style="margin-top: -750px; margin-left: 1010px;">
             <img src="resources/img/Loading-fail-unscreen.gif"><br>
-            <span>회원가입을 실패했습니다.</span><br>
-            <span style="margin-left: 203px;">다시 입력해주세요!</span>
+            <span>회원가입을 실패했습니다.</span><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+            <span style="margin-left: 190px;">다시 입력해주세요!</span>
 
             <!-- <button class="fail_btn" onclick="ondisplay()">TRY AGAIN</button>
             <button class="fail_btn" onclick="offdisplay()">TRY AGAIN</button> -->
