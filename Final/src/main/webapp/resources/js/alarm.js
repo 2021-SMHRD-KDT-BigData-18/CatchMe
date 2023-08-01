@@ -21,7 +21,6 @@ function smsRecord() {
 		data: { username: username },
 		success: function(data) {
 			console.log("smsRecord 아이디 넘김");
-			displaySmsHistory();
 		},
 		error: function() {
 			console.log("smsRecord 아이디 못넘김");

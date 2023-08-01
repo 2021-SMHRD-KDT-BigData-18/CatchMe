@@ -95,7 +95,7 @@
 }
 
 #notification-container.show {
-	transform: translateY(-50px);
+  transform: translateY(-100px);
 }
 /* 졸음쉼터 알림문구창 */
 #nearestRestArea {

@@ -95,8 +95,8 @@
     
 
 	<!-- 문자발송완료 알림문구창 -->
-	<div class="notification-container" id="notification-container">
-		<p>이상행동이 감지되어 010-1234-5678님에게 문자 발송을 완료했습니다!</p>
+	<div class="notification-container" id="notification-container" style="visibility: hidden;">
+		<p></p>
 	</div>
 	
 
@@ -150,21 +150,25 @@
 	function displaySmsHistory() {
 		  var notificationContainer = document.getElementById("notification-container");
 		  var sms_history_show = "<p>이상행동이 감지되어 " + sms_receiver + "님에게 문자 발송을 완료했습니다!</p>";
-
+		  notificationContainer.style.visibility = "visible";
+			
 		  var notificationMessage = document.createElement("div");
 		  notificationMessage.classList.add("notification-message");
 		  notificationMessage.innerHTML = sms_history_show;
 
 		  notificationContainer.appendChild(notificationMessage);
 
-		  notificationMessage.classList.add("show");
+		  // 추가된 부분: div를 화면 하단으로 내리기 위해 translate 사용
+		  notificationContainer.style.transform = "translateY(100px)";
 
 		  setTimeout(() => {
-		    notificationMessage.classList.add("hide");
+		    // 추가된 부분: 애니메이션 클래스 제거
+		    notificationContainer.style.transform = "translateY(0)";
 		    setTimeout(() => {
-		      notificationContainer.removeChild(notificationMessage); 
-		    }, 500); 
-		  }, 3000); 
+		      notificationContainer.removeChild(notificationMessage);
+			  notificationContainer.style.visibility = "hidden";
+		    }, 500);
+		  }, 5000);
 		}
 	    
 	    function content_area(type) {

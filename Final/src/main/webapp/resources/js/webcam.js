@@ -89,18 +89,18 @@ function sendFrameToPython() {
 				callNotifyController(img_path);
 				content_area(1);
 				playNotifySound();
-				
-				if (isSendSmsAllowed) {
-				isSendSmsAllowed = false;
-				sendSms()
-				.then(() => {
-				setTimeout(() => {isSendSmsAllowed = true;}, 30000);
-				})
-				.catch(error => {
-				console.error('sendSms 실행 중 에러:', error);
-				isSendSmsAllowed = true;
-				});
-				}
+				displaySmsHistory();
+//				if (isSendSmsAllowed) {
+//				isSendSmsAllowed = false;
+//				sendSms()
+//				.then(() => {
+//				setTimeout(() => {isSendSmsAllowed = true;}, 30000);
+//				})
+//				.catch(error => {
+//				console.error('sendSms 실행 중 에러:', error);
+//				isSendSmsAllowed = true;
+//				});
+//				}
 				smsRecord();
 			}
 		})
