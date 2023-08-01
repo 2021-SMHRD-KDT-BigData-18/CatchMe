@@ -144,7 +144,7 @@
    background-color: #f9f9f9;
    min-width: 180px;
    /* min-height: 180px; */
-   height: 180px;
+   height: 150px;
    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
    z-index: 1;
    right: 0;
@@ -176,7 +176,7 @@
         
         /* -----------------------------------------------------------------------------------------*/ /* 외관 틀 */
         /* 그래프 툴팁 시 열리는 테이블 틀 잡는 코드 */
-        table,
+        /*table,
         th,
         tr,
         td {
@@ -192,7 +192,7 @@
         td {
           text-align: center;
         }
-        
+        */
         .forgot a {
           white-space: pre;
         }
@@ -307,6 +307,7 @@
           background-color: #f6efcd;
           border-radius: 10px;
           font-weight: bold;
+          margin: calc(0cm - 4.7cm) auto 0 auto;
         }
         
         .btnBlueGreen {
@@ -428,9 +429,9 @@
         
         .joinForm {
           position: absolute;
-          width: 120%;
+          width: 50%;
           height: 120%;
-          max-width: 950px;
+          max-width: 780px;
           max-height: 370px;
           padding: 30px;
           /*  background-color: #f8f6f4;*/
