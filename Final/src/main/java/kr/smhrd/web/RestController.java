@@ -204,6 +204,7 @@ public class RestController {
 
 		if (user != 0) {
 			row = 1;
+			
 		}
 
 		return row;
