@@ -184,19 +184,19 @@
 
 ## 🖥 화면 구성
 
-![image](https://github.com/2021-SMHRD-KDT-BigData-18/CatchMe/assets/130841823/ea9e382d-7d64-4589-b263-f37d7cdbd03f)
-![image](https://github.com/2021-SMHRD-KDT-BigData-18/CatchMe/assets/130841823/aec21c4c-3501-4a43-a582-bbe816ceb2e8)
-![image](https://github.com/2021-SMHRD-KDT-BigData-18/CatchMe/assets/130841823/c12bd4f9-54bf-493f-9863-7754d13a7037)
-![image](https://github.com/2021-SMHRD-KDT-BigData-18/CatchMe/assets/130841823/25fe32cd-6c63-4182-a8e7-e4c5e8c395a7)
+![main1](https://github.com/2021-SMHRD-KDT-BigData-18/CatchMe/assets/95280085/dc79ef99-9a04-45f5-b575-02f88fcc200f)
+![main2](https://github.com/2021-SMHRD-KDT-BigData-18/CatchMe/assets/95280085/18ea6d0a-2774-43b5-ab76-ea1060445705)
+![main3](https://github.com/2021-SMHRD-KDT-BigData-18/CatchMe/assets/95280085/6986ff59-4c16-4061-9669-67b1c716fc33)
+![main4](https://github.com/2021-SMHRD-KDT-BigData-18/CatchMe/assets/95280085/410873ef-d922-4958-aa96-f3f7a5c2fb05)
+![main5](https://github.com/2021-SMHRD-KDT-BigData-18/CatchMe/assets/95280085/17d66b7b-f3be-49c1-9744-894168c6db82)
 
 
 ![image](https://github.com/2021-SMHRD-KDT-BigData-18/CatchMe/assets/130841823/81324b94-abac-4af8-9914-5ef3d7954289)
 ![image](https://github.com/2021-SMHRD-KDT-BigData-18/CatchMe/assets/130841823/dadb0477-1443-4528-9d67-c4ca037006f4)
-![image](https://github.com/2021-SMHRD-KDT-BigData-18/CatchMe/assets/130841823/eb46bad4-e5be-44b2-a69f-e6dce01627e6)
+![record1](https://github.com/2021-SMHRD-KDT-BigData-18/CatchMe/assets/95280085/aa066712-e186-4656-b4fb-72b788d8f6dc)
 ![image](https://github.com/2021-SMHRD-KDT-BigData-18/CatchMe/assets/130841823/da6ee23e-4f97-4985-bcf2-dbb3bfadacaa)
 ![image](https://github.com/2021-SMHRD-KDT-BigData-18/CatchMe/assets/130841823/af3a684b-1f86-410f-b422-93a5d6da68eb)
 ![image](https://github.com/2021-SMHRD-KDT-BigData-18/CatchMe/assets/130841823/bebe02e8-2459-47a7-94d1-c88048a40820)
-![image](https://github.com/2021-SMHRD-KDT-BigData-18/CatchMe/assets/130841823/41a85183-160c-4fce-a908-4fe3ba71bf55)
 
 
 
