@@ -10,7 +10,10 @@
 	      const lat = position.coords.latitude;
 	      const lng = position.coords.longitude;
 	      const nearestRestAreaElement = document.getElementById("nearestRestArea");
-	      const restarea_infoElement = document.getElementById("restarea_info");
+	      const restarea_infoElement1 = document.getElementById("restarea_info1");
+	      const restarea_infoElement2 = document.getElementById("restarea_info2");
+	      const restarea_infoElement3 = document.getElementById("restarea_info3");
+	      const restarea_infoElement4 = document.getElementById("restarea_info4");
 	      nearestRestAreaElement.style.visibility = "visible"; 
 	      
 	      const xhr = new XMLHttpRequest();
@@ -19,12 +22,16 @@
 	      xhr.onreadystatechange = function() {
 	        if (xhr.readyState === 4 && xhr.status === 200) {
 	          const response = JSON.parse(xhr.responseText);
-	          const firstRestArea =
-	            "가까운 쉼터 :  " + response[0].ra_name + "쉼터입니다. 거리 : " + (response[0].distance / 1000).toFixed(1) + "km입니다.&emsp;";
-	          const secondRestArea =
-	            "가까운 쉼터 :  " + response[1].ra_name + "쉼터입니다. 거리 : " + (response[1].distance / 1000).toFixed(1) + "km입니다.";
+	          const firstRestArea ="가까운 쉼터는  " + response[0].ra_name + "쉼터입니다."; 
+	          const firstRestAreaDistance = "거리는 " + (response[0].distance / 1000).toFixed(1) + "km입니다.";
+	          const secondRestArea ="가까운 쉼터는  " + response[1].ra_name + "쉼터입니다.";
+	          const secondRestAreaDistance = "거리는 " + (response[1].distance / 1000).toFixed(1) + "km입니다.";
 
-	          restarea_infoElement.textContent = firstRestArea + "  " + secondRestArea;
+	          restarea_infoElement1.textContent = firstRestArea;
+	          restarea_infoElement2.textContent = firstRestAreaDistance;
+	          restarea_infoElement3.textContent = secondRestArea;
+	          restarea_infoElement4.textContent = secondRestAreaDistance;
+	          
 	          setTimeout(function() {
 	        	    nearestRestAreaElement.textContent = "";}, 30000);
 	        }

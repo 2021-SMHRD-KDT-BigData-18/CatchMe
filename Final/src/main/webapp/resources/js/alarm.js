@@ -12,6 +12,7 @@ function sendSms() {
 		}
 	});
 }
+
 //문자내역 기록 함수
 function smsRecord() {
 	$.ajax({

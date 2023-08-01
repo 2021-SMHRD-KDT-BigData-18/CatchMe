@@ -1,5 +1,3 @@
-let smsInterval;
-
 function successCallback(mediaStream) {
 	video.srcObject = mediaStream;
 	video.play();
@@ -89,8 +87,8 @@ function sendFrameToPython() {
 				callNotifyController(img_path);
 				content_area(1);
 				playNotifySound();
-				smsInterval = setInterval(sendSms, 30000);
-				smsRecord();
+				//sendSms();
+				smsRecord();				
 			}
 		})
 		.catch(error => {
