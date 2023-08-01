@@ -103,6 +103,21 @@ public class RestController {
 	@PostMapping("/join")
 	@ResponseBody
 	public int join(Model model, User dto) {
+		if (dto.getId() == "") {
+			dto.setId(null);
+		}
+        if (dto.getPw() == "") {
+        	dto.setPw(null);
+        }
+        if (dto.getEmail() == "") {
+        	dto.setEmail(null);
+        }
+        if (dto.getPhone() == "") {
+        	dto.setPhone(null);
+        }
+        if (dto.getName() == "") {
+        	dto.setName(null);
+        }
 		int join = mapper.join(dto);
 		int row = 0;
 		if (join > 0) {
