@@ -184,10 +184,10 @@
 
 ## 🖥 화면 구성
 
-![image](https://github.com/2021-SMHRD-KDT-BigData-18/CatchMe/assets/130841823/ea9e382d-7d64-4589-b263-f37d7cdbd03f)
-![image](https://github.com/2021-SMHRD-KDT-BigData-18/CatchMe/assets/130841823/aec21c4c-3501-4a43-a582-bbe816ceb2e8)
-![image](https://github.com/2021-SMHRD-KDT-BigData-18/CatchMe/assets/130841823/c12bd4f9-54bf-493f-9863-7754d13a7037)
-![image](https://github.com/2021-SMHRD-KDT-BigData-18/CatchMe/assets/130841823/25fe32cd-6c63-4182-a8e7-e4c5e8c395a7)
+![main1](https://github.com/2021-SMHRD-KDT-BigData-18/CatchMe/assets/95280085/dc79ef99-9a04-45f5-b575-02f88fcc200f)
+![main2](https://github.com/2021-SMHRD-KDT-BigData-18/CatchMe/assets/95280085/18ea6d0a-2774-43b5-ab76-ea1060445705)
+![main3](https://github.com/2021-SMHRD-KDT-BigData-18/CatchMe/assets/95280085/6986ff59-4c16-4061-9669-67b1c716fc33)
+![main4](https://github.com/2021-SMHRD-KDT-BigData-18/CatchMe/assets/95280085/410873ef-d922-4958-aa96-f3f7a5c2fb05)
 
 
 ![image](https://github.com/2021-SMHRD-KDT-BigData-18/CatchMe/assets/130841823/81324b94-abac-4af8-9914-5ef3d7954289)
