@@ -32,7 +32,7 @@
 					<% if (secheck == null) { %>
 						<a href="movelogin">로그인</a>
 					<% } else { %>
-						<a href="photo">사진</a>
+						<a href="photo">라이브러리</a>
 						<a href="logout">로그아웃</a>
 						<a href="#">회원탈퇴</a>
 					<% } %>
@@ -58,7 +58,7 @@
 				<% } else { %>
 					<a href="chart"><img src="resources/img/bar-chart.png" onmouseover="this.src='resources/img/bar-chart-1--unscreen.gif'" onmouseout="this.src='resources/img/bar-chart.png'"></a>
 				<% } %>
-				<p class="button">주행기록</p>
+				<p class="button" style="text-align: center; margin-left: 95px;">통계</p>
             </div>
             <p style="border-left: 1px solid #eae7e4;"></p>
             <div class="setting_btn" style="border: 0;">
