@@ -66,27 +66,32 @@
 
 /*문자발송완료 알림문구창*/
 .notification-container {
+	visibility : hidden;
 	width: 1000px;
-	height: 200px;
-	background: rgba(255, 255, 255, 0.3);
+	height: 130px;
+	/*background: rgba(255, 255, 255, 0.3);*/
+	background-color: #f9f9f9;
 	/* border-radius: 10px 10px 0 0 ; */
 	border-radius: 0 0 10px 10px;
-	padding: 20px 10px;
+	padding: 15px 20px;
+	margin-left: 23%;
 	position: absolute;
 	/* bottom: -50px; */
-	top: -240px;
+	top: -50px;
 	transition: transform 0.3s ease-in-out;
-	margin-left: 23%;
+	font: bold 25px "malgun gothic";
 	letter-spacing: 2px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	box-shadow: 0 0 15px rgba(57, 57, 57, 0.402);
 }
 
 #notification-container p {
 	/*font-family: "SUIT-Regular";*/
 	font-size: 25px;
-	margin-top: 200px;
+	/*margin-top: 80px;*/
+	margin-top: 60px;
 }
 
 #notification-container.show {
