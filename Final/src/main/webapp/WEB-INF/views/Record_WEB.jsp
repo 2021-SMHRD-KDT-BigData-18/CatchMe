@@ -68,18 +68,14 @@
 	</div>
 	
 	<!-- 녹화 재생 버튼 시 알림문구창 -->
-	<!-- <div class="start_before">
+	<div class="start_before" style="visibility: hidden;" id="startMessage">
 		<span>운행을 시작합니다 안전운전하세요:)</span>
-		<span>월요일은 졸음 횟수가 높기 때문에 주의하시기 바랍니다!</span>
 	</div>
-	 -->
 	 
 	<!-- 녹화 종료 버튼 시 알림문구창 -->
-	<!-- <div class="start_before">
+	<div class="end_before" style="visibility: hidden;" id="endMessage">
 		<span>녹화를 종료합니다!</span>
-		<span>월요일은 졸음 횟수가 높기 때문에 주의하시기 바랍니다!</span>
 	</div>
-	 -->
 		
 	<!-- 졸음감지시 졸음쉼터 알려주는 알림 문구창 -->
     <!-- <div id="nearestRestArea" style="visibility: hidden;">-->
@@ -192,6 +188,34 @@
 	    document.getElementById("homeButton").addEventListener("click", function() {
 	        stopStream();
 	    });
+	    
+		function displayStartHistory() {
+			  var startMessage = document.getElementById("startMessage");
+			  startMessage.style.visibility = "visible";
+				
+			  startMessage.style.transform = "translateY(100px)";
+
+			  setTimeout(() => {
+			    startMessage.style.transform = "translateY(0)";
+			    setTimeout(() => {
+			    	startMessage.style.visibility = "hidden";
+			    }, 500);
+			  }, 3000);
+			}
+		
+		function displayEndHistory() {
+			  var endMessage = document.getElementById("endMessage");
+			  endMessage.style.visibility = "visible";
+				
+			  endMessage.style.transform = "translateY(100px)";
+
+			  setTimeout(() => {
+				  endMessage.style.transform = "translateY(0)";
+			    setTimeout(() => {
+			    	endMessage.style.visibility = "hidden";
+			    }, 500);
+			  }, 3000);
+			}
 	    </script>
 </body>
 </html>

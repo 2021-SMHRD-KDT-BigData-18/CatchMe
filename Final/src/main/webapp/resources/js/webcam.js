@@ -23,6 +23,7 @@ function toggleStream() {
 		document.getElementById("record_img").src = "resources/img/stop-button.png";
 		streaming = true;
 		console.log("toggleStream() 실행됨");
+		displayStartHistory();
 	} else {
 		stopStream();
 	}
@@ -39,7 +40,7 @@ function stopStream() {
 		streaming = false;
 		document.getElementById("record_img").src = "resources/img/video.png";
 		stopNotifySound();
-
+		displayEndHistory();		
 		console.log("stopStream() 실행됨");
 	}
 }
