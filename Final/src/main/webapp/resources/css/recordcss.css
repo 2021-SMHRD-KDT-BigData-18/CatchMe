@@ -67,6 +67,7 @@
 /*문자발송완료 알림문구창*/
 .notification-container {
 	width: 1000px;
+	height: 80px;
 	/*height: 130px;*/
 	background-color: #f9f9f9;
 	border-radius: 0 0 10px 10px;
@@ -87,13 +88,6 @@
 	
 }
 
-#notification-container p {
-	/*font-family: "SUIT-Regular";*/
-	font-size: 25px;
-	/*margin-top: 80px;*/
-	margin-top: 60px;
-}
-
 #notification-container.show {
   transform: translateY(-100px);
 }
@@ -104,23 +98,20 @@
 	font-weight: bold;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
-/*졸음쉼터 알림문구창에 알림종료 버튼 설정*/
-.alarm_btn {
-	
-}
+
 
 /*운행시작 전 알림문구창*/
 .start_before {
 	/*display: none;*/
 	width: 1000px;
-	height: 200px;
+	height: 55px;
 	background-color: #f9f9f9;
 	/* border-radius: 10px 10px 0 0 ; */
 	border-radius: 0 0 10px 10px;
-	padding: 20px 10px;
+	padding: 15px 20px;
 	position: absolute;
 	/* bottom: -50px; */
-	top: 50px;
+	top: -100px;
 	transition: transform 0.3s ease-in-out;
 	margin-left: 23%;
 	letter-spacing: 2px;
@@ -130,13 +121,36 @@
 	box-shadow: 0 0 15px rgba(57, 57, 57, 0.402);
 	font: bold 25px "malgun gothic";
 }
-.start_before p{
-	display:block;
+#startMessage.show {
+  transform: translateY(-100px);
 }
 
-.start_before:active {
+
+/*운행종료 후 알림문구창*/
+.end_before {
+	/*display: none;*/
+	width: 1000px;
+	height: 55px;
+	background-color: #f9f9f9;
+	/* border-radius: 10px 10px 0 0 ; */
+	border-radius: 0 0 10px 10px;
+	padding: 20px 10px;
+	position: absolute;
+	/* bottom: -50px; */
+	top: -100px;
 	transition: transform 0.3s ease-in-out;
+	margin-left: 23%;
+	letter-spacing: 2px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 0 0 15px rgba(57, 57, 57, 0.402);
+	font: bold 25px "malgun gothic";
 }
+#endMessage.show {
+  transform: translateY(-100px);
+}
+
 
 /*녹화 크기 조절*/
 #video{
