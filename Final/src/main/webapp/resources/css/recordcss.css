@@ -33,19 +33,6 @@
 	border: 0;
 }
 
-.record_area { /*녹화 화면*/
-	height: 530px;
-	width: 707px;
-	/* height: 480px;
-            width: 640px; */
-	float: left;
-	margin: 40px auto;
-	margin-right: 0;
-	background-color: rgba(255, 255, 255, 0.979);
-	box-shadow: 0 0 10px rgba(129, 127, 127, 0.548);
-	position: relative;
-}
-
 .content_area { /*이상현상 감지를 나타내는 화면*/
 	height: 42vh;
 	width: 34vw;

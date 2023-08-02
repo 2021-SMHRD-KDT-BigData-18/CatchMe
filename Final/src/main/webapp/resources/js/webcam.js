@@ -4,6 +4,8 @@ function successCallback(mediaStream) {
 	video.srcObject = mediaStream;
 	video.play();
 	startSendingFrames();
+	displayStartHistory();
+	document.getElementById("record_img").src = "resources/img/stop-button.png";
 }
 
 function errorCallback(error) {
@@ -19,11 +21,8 @@ function toggleStream() {
 		navigator.mediaDevices.getUserMedia({ video: true, audio: true })
 			.then(successCallback)
 			.catch(errorCallback);
-
-		document.getElementById("record_img").src = "resources/img/stop-button.png";
 		streaming = true;
 		console.log("toggleStream() 실행됨");
-		displayStartHistory();
 	} else {
 		stopStream();
 	}
