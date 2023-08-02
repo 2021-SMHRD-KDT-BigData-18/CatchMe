@@ -60,7 +60,7 @@
                     <span>지금 뭐해 이상행동 감지되었잖아!</span>
                 </div>
 			</div>
-			<div class="content_area" style="overflow:auto;">
+			<div class="content_area" style="background-image: url('resources/img/action!_content.gif'); background-size: cover; overflow:auto;">
 				<p></p>
 				
 			</div>
