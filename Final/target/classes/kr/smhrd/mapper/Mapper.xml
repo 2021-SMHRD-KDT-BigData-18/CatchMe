@@ -161,4 +161,8 @@ WHERE
 update ccu.user_info set alarm='C:\\Users\\smhrd\\Desktop\\web(Server)\\express\\express\\uploads\\1690159353391-350406887c41a927.wav' where id = #{param1}
 </update>
 
+<select id="sessionUpdate" resultType="kr.smhrd.entity.User">
+select * from ccu.user_info where id = #{param1}
+</select>
+
 </mapper>

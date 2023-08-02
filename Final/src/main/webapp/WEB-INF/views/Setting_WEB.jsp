@@ -694,6 +694,7 @@
    <script src="resources/js/upload.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script>
+    let username = document.getElementById('username').value;
       function chanPw() {
          if (confirm("변경하시겠습니까?")) {
             let userId = $("#userId").val();
@@ -790,6 +791,8 @@
     			  if (data != 0) {
     				  alert("초기화되었습니다.")
     			  }
+    			  sessionUpdate(username);
+    			  console.log("알림음초기화세션업데이트성공")
     		  },
     		  error : function() {
     			  console.log("오류!")
@@ -891,6 +894,7 @@ function resetRecipient() {
                 joinForm3.style.display = "none";
             }
         });
+        
     </script>
 </body>
 </html>
