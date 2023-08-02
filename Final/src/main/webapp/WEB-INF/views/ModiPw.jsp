@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -26,8 +25,8 @@
             width: 100%;
             height: 100%;
             margin: 0;
-            padding-top: 200px;
-            padding-bottom: 40px;
+            /* padding-top: 200px;
+            padding-bottom: 40px; */
             font-family: "Nanum Gothic", arial, helvetica, sans-serif;
             background-repeat: no-repeat;
             background-color: #212A3E;
@@ -162,86 +161,85 @@
         } */
     </style>
 </head>
-
-<div id="center">
-    <div id="header">
-        <div class="dropdown" style="float: left;" id="gomain" onclick="GoMain()">
-            <button class="dropbtn">
-                <img class="homeicon" src="./image/free-icon-home-1828864.png">
-            </button>
-            <!-- <div class="dropdown-content" style="left: 0;">
+<body>
+    <div id="center">
+        <div id="header">
+            <div class="dropdown" style="float: left;" id="gomain" onclick="GoMain()">
+                <button class="dropbtn">
+                    <img class="homeicon" src="./image/free-icon-home-1828864.png">
+                </button>
+                <!-- <div class="dropdown-content" style="left: 0;">
                     <a href="#">링크#1</a>
                 </div> -->
-        </div>
-        <div class="dropdown" style="float: right;">
-            <button class="dropbtn"><img class="myicon" src="./image/free-icon-user-5264565.png"></button>
-            <div class="dropdown-content">
+            </div>
+            <div class="dropdown" style="float: right;">
+                <button class="dropbtn"><img class="myicon" src="./image/free-icon-user-5264565.png"></button>
+                <div class="dropdown-content">
 
-                <a href="#">문자 발송 내역</a>
-                <a href="login">로그인</a>
-                <a href="#">회원탈퇴</a>
+                    <a href="#">문자 발송 내역</a>
+                    <a href="login">로그인</a>
+                    <a href="#">회원탈퇴</a>
+                </div>
             </div>
         </div>
-    </div>
-
-
-    <body cellpadding="0" cellspacing="0" marginleft="0" margintop="0" width="100%" height="100%" align="center">
-
         <div class="card align-middle" style="width:25rem; margin-top: 100px;">
             <div class="card-title" style="margin-top:30px;">
-
-
+    
+    
             </div>
-            <div class="card align-middle" style="width:25rem; margin-top: 100px;">
-                <div class="card-title" style="margin-top:30px;">
-                    <h2 style="font-weight: bold;">비밀번호 변경</h2>
-                    <hr>
-                </div>
-                <div class="card-body">
-                    <form class="form-signin">
-                        <input type="password" name="new_password" id="new_password" class="form-control"
-                            placeholder="새로운 비밀번호" required><br>
-                        <input type="password" name="confirm_password" id="confirm_password" class="form-control"
-                            placeholder="비밀번호 확인" required><br>
-                        <p class="checks" id="checks"></p><br />
-                        <button id="btn-Change" onclick="modify()" class="btn btn-lg btn-primary btn-block" type="button">변경</button>
-                    </form>
-                </div>
+            <!-- <div class="card align-middle" style="width:25rem; margin-top: 100px;"> -->
+            <div class="card-title" style="margin-top:30px;">
+                <h2 style="font-weight: bold;">비밀번호 변경</h2>
+                <hr>
             </div>
+            <div class="card-body">
+                <form class="form-signin">
+                    <input type="password" name="new_password" id="new_password" class="form-control" placeholder="새로운 비밀번호"
+                        required><br>
+                    <input type="password" name="confirm_password" id="confirm_password" class="form-control"
+                        placeholder="비밀번호 확인" required><br>
+                    <p class="checks" id="checks"></p><br />
+                    <button id="btn-Change" onclick="modify()" class="btn btn-lg btn-primary btn-block"
+                        type="button">변경</button>
+                </form>
+            </div>
+            <!--  </div>-->
         </div>
-        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-	<script>
-		function modify() {
-			let modpw = $("#new_password").val();
-			let modpwch = $("#confirm_password").val();
-			let idpara = new URL(location.href).searchParams;
-			let userId = idpara.get('id');
-			console.log(modpw, modpwch, userId)
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        function modify() {
+            let modpw = $("#new_password").val();
+            let modpwch = $("#confirm_password").val();
+            let idpara = new URL(location.href).searchParams;
+            let userId = idpara.get('id');
+            console.log(modpw, modpwch, userId)
 
-			if (modpw == modpwch) {
-				$.ajax({ 
-					url : "ChangePw",
-					method : "post",
-					data : {
-						userId : userId,
-						modpw : modpw
-					},
-					success : function(data) {
-						if (data == 1) {
-							alert("변경하였습니다.")
-							location.href="movelogin"
-						}
-					},
-					error : function() {
-						console.log()
-					}
-				});
-			}
-			else {
-				alert("일치하지 않습니다.")
-			}
-		};
-	</script>
-    </body>
+            if (modpw == modpwch) {
+                $.ajax({
+                    url: "ChangePw",
+                    method: "post",
+                    data: {
+                        userId: userId,
+                        modpw: modpw
+                    },
+                    success: function (data) {
+                        if (data == 1) {
+                            alert("변경하였습니다.")
+                            location.href = "movelogin"
+                        }
+                    },
+                    error: function () {
+                        console.log()
+                    }
+                });
+            }
+            else {
+                alert("일치하지 않습니다.")
+            }
+        };
+    </script>
+</body>
 
 </html>
