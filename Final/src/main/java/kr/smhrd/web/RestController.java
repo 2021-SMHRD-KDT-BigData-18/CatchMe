@@ -242,4 +242,12 @@ public class RestController {
 		int row = mapper.reset_alarm(username);
 		return row;
 	}
+	
+	@PostMapping("/sessionUpdate")
+	public void sessionUpdate(@RequestParam("username") String username, HttpSession session) {
+		session.removeAttribute("user_data");
+		User user_data = mapper.sessionUpdate(username);
+		session.setAttribute("user_data", user_data);
+		System.out.println("userdata"+user_data);
+	}
 }

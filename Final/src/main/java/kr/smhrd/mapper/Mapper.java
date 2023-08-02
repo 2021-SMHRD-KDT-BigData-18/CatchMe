@@ -57,4 +57,6 @@ public interface Mapper {
 
 	int reset_alarm(String username);
 
+	User sessionUpdate(String username);
+
 }

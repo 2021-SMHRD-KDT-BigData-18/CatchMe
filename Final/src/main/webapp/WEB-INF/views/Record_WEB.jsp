@@ -71,7 +71,7 @@
 				<a id = "stopSound" onclick="stopNotifySound()" style="visibility: hidden;">알림 종료 / 닫음</a>
 				<!-- <button>end</button> -->
 				<div class="content_up" style=" font: bold 34px 'SUIT-Regular'; margin-top: 40px; margin-left: 120px;">
-                    <span>지금 뭐해 이상행동 감지되었잖아!</span>
+                    <span>지금 뭐해 이상행동 감지되었잖아👀</span>
                 </div>
 			</div>
 			<div class="content_area" style="overflow:auto;">

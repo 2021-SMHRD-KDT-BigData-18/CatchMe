@@ -77,7 +77,7 @@
 				<a id = "stopSound" onclick="stopNotifySound()" style="visibility: hidden;">알림 종료 / 닫음</a>
 				<!-- <button>end</button> -->
 				<div class="content_up" style=" font: bold 35px 'SUIT-Regular'; margin-top: 40px; margin-left: 120px;">
-                    <span>지금 뭐해 이상행동 감지되었잖아!</span>
+                    <span>지금 뭐해 이상행동 감지되었잖아👀</span>
                 </div>
 			</div>
 			<div class="content_area" style="overflow:auto;">
@@ -164,21 +164,25 @@
 	function displaySmsHistory() {
 		  var notificationContainer = document.getElementById("notification-container");
 		  var sms_history_show = "<p>이상행동이 감지되어 " + sms_receiver + "님에게 문자 발송을 완료했습니다!</p>";
-
+		  notificationContainer.style.visibility = "visible";
+			
 		  var notificationMessage = document.createElement("div");
 		  notificationMessage.classList.add("notification-message");
 		  notificationMessage.innerHTML = sms_history_show;
 
 		  notificationContainer.appendChild(notificationMessage);
 
-		  notificationMessage.classList.add("show");
+		  // 추가된 부분: div를 화면 하단으로 내리기 위해 translate 사용
+		  notificationContainer.style.transform = "translateY(90px)";
 
 		  setTimeout(() => {
-		    notificationMessage.classList.add("hide");
+		    // 추가된 부분: 애니메이션 클래스 제거
+		    notificationContainer.style.transform = "translateY(0)";
 		    setTimeout(() => {
-		      notificationContainer.removeChild(notificationMessage); 
-		    }, 500); 
-		  }, 3000); 
+		      notificationContainer.removeChild(notificationMessage);
+			  notificationContainer.style.visibility = "hidden";
+		    }, 500);
+		  }, 5000);
 		}
 	    
 	    function content_area(type) {
@@ -318,18 +322,18 @@
 	    				callNotifyController(img_path);
 	    				content_area(1);
 	    				playNotifySound();
-	    				
-	    				//if (isSendSmsAllowed) {
-	    				//isSendSmsAllowed = false;
-	    				//sendSms()
-	    				//.then(() => {
-	    				//setTimeout(() => {isSendSmsAllowed = true;}, 30000);
-	    				//})
-	    				//.catch(error => {
-	    				//console.error('sendSms 실행 중 에러:', error);
-	    				//isSendSmsAllowed = true;
-	    				//});
-	    				//}
+	    				displaySmsHistory();
+	    				if (isSendSmsAllowed) {
+	    				isSendSmsAllowed = false;
+	    				sendSms()
+	    				.then(() => {
+	    				setTimeout(() => {isSendSmsAllowed = true;}, 30000);
+	    				})
+	    				.catch(error => {
+	    				console.error('sendSms 실행 중 에러:', error);
+	    				isSendSmsAllowed = true;
+	    				});
+	    				}
 	    				smsRecord();
 	    			}
 	    		})
