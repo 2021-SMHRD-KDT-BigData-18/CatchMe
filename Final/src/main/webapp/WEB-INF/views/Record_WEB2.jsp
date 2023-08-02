@@ -11,7 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="resources/css/navicover.css"/>
 	<link rel="stylesheet" type="text/css" href="resources/css/recordcss.css"/>
 </head>
-<body onload="setSize()">
+<body>
 	<audio id="notifySound" controls style="visibility: hidden;">
 		<%
 		User user_data = (User) session.getAttribute("user_data");
@@ -49,13 +49,15 @@
 	    <br><hr>
 
 		<div id="main_area">
-			<div class="record_area"  style="background-image: url('resources/img/action!.gif'); background-size: cover;"><video id="video" controls style="height: 530px;"></video></div>
+			<div class="record_area"  style="background-image: url('resources/img/action!.gif'); background-size: cover;"><video id="video" controls style="height: 530px;width : 480px;"></video></div>
 			<br>
 			
 			<!-- <div class="record_area" style=" background-size: cover;"><video id="video"></video></div>-->
 			<div class="record_button">
-				<a id="toggleStream" class="start-rec-button"
-				onclick="toggleStream2()"><img src="resources/img/video.png" id="record_img" style="float: left;"></a>
+				<div style="position: relative;">
+				  <input type="file" accept="video/*" id="videoInput" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer;">
+				  <img src="resources/img/video.png" id="record_img" style="float: left;">
+				</div>
 				<a id = "stopSound" onclick="stopNotifySound()" style="visibility: hidden;">알림 종료 / 닫음</a>
 				<!-- <button>end</button> -->
 				<div class="content_up" style=" font: bold 35px 'SUIT-Regular'; margin-top: 40px; margin-left: 120px;">
@@ -67,8 +69,7 @@
 				
 			</div>
 		</div>
-		<input type="file" accept="video/*" id="videoInput">
-			<button onclick="startSendingFrames2()">녹화파일 분석 시작</button>
+
 	</div>
 	
 	<!-- 운행시작 전 알림문구창 -->
@@ -109,23 +110,6 @@
 	let stream, interval;
 	let username = document.getElementById('username').value;
 	let sms_receiver=document.getElementById('sms_receiver').value;
-
-	  function setSize() {
-		    if (window.orientation === 0) {
-		      width = 480;
-		      height = 640;
-		    } else {
-		      width = 480;
-		      height = 640;
-		      /*height = 620;*/
-		      /*height: 530px;
-		      width: 800px;*/
-		    }
-
-		    video = document.getElementById("video");
-		    video.width = width;
-		    video.height = height;
-		  }
 	
 
 	function getCurrentDateTime() {
@@ -187,39 +171,35 @@
 	    
 	    let videoElement;
 
-		function handleVideoUpload(event) {
-		  const file = event.target.files[0];
-		  if (!file) return;
+	    function handleVideoUpload(event) {
+	    	  const file = event.target.files[0];
+	    	  if (!file) return;
 
-		  // Create a URL for the uploaded video file
-		  const videoURL = URL.createObjectURL(file);
+	    	  const videoURL = URL.createObjectURL(file);
 
-		  // Get the video element and set its source to the uploaded video
-		  videoElement = document.getElementById('video');
-		  videoElement.src = videoURL;
-		}
+	    	  videoElement = document.getElementById('video');
+	    	  videoElement.src = videoURL;
+	    	}
 
-		document.getElementById('videoInput').addEventListener('change', handleVideoUpload);
+	    	document.getElementById('videoInput').addEventListener('change', handleVideoUpload);
 
-		// Function to start sending frames from the uploaded video
-		function startSendingFrames() {
-		  // 'videoInput' 엘리먼트에서 동영상 파일을 가져옴
-		  const videoInput = document.getElementById('videoInput');
-		  const file = videoInput.files[0];
+		
+		function startSendingFrames2() {
+			  const videoInput = document.getElementById('videoInput');
+			  const file = videoInput.files[0];
 
-		  // 'videoElement'에 동영상을 재생할 수 있는 소스를 추가
-		  const videoUrl = URL.createObjectURL(file);
-		  videoElement = document.getElementById('video');
-		  videoElement.src = videoUrl;
+			  const videoUrl = URL.createObjectURL(file);
+			  videoElement = document.getElementById('video');
+			  videoElement.src = videoUrl;
 
-		  videoElement.play();
-		  
-		  interval = setInterval(async () => {
+			  videoElement.play();
+			  
+			  interval = setInterval(async () => {
 			    await Promise.all([sendFrameToPython2(), sendFrameToRobo2()]);
 			  }, 1000);
 
-		  console.log('프레임 보내기 시작');
-		}
+			  console.log('프레임 보내기 시작');
+			}
 	    
 	    let isSendSmsAllowed = true;
 
@@ -253,23 +233,23 @@
 
 	    // 녹화종료 함수
 	    function stopStream() {
-	    	if (!video.paused && !video.ended) {
-	    		sendendRecRequest("endRec", "endRec 컨트롤러 실행 성공", "endRec 컨트롤러 실행 실패");
-	    		video.srcObject.getTracks().forEach(track => track.stop());
-	    		video.srcObject = null;
-	    		clearInterval(interval);
-
-	    		streaming = false;
-	    		document.getElementById("record_img").src = "resources/img/video.png";
-	    		stopNotifySound();
-
-	    		console.log("stopStream() 실행됨");
-	    	}
-	    }
+		    if (!video.paused && !video.ended) {
+		      sendendRecRequest("endRec", "endRec 컨트롤러 실행 성공", "endRec 컨트롤러 실행 실패");
+		      video.srcObject.getTracks().forEach(track => track.stop());
+		      video.srcObject = null;
+		      clearInterval(interval);
+		
+		      streaming = false;
+		      imageElement.src = "resources/img/video.png";
+		      stopNotifySound();
+		
+		      console.log("stopStream() 실행됨");
+		    }
+		  }
 
 	    // 플라스크로 프레임보내기
 	    function sendFrameToPython2() {
-	    	if (!video.paused && !video.ended) {
+	    	if (videoElement && !videoElement.paused && !videoElement.ended) {
 
 	    	const canvas = document.createElement('canvas');
 	    	const context = canvas.getContext('2d');
@@ -325,10 +305,11 @@
 	    			console.error('졸음데이터안넘어감:', error);
 	    		});
 	    }
+	    }
 
 	    // robo플라스크로 프레임보내기
 	    function sendFrameToRobo2() {
-	    	if (!video.paused && !video.ended) {
+	    	if (videoElement && !videoElement.paused && !videoElement.ended) {
 
 	    	const canvas = document.createElement('canvas');
 	    	const context = canvas.getContext('2d');
@@ -368,6 +349,7 @@
 	    			console.error('데이터안넘어감:', error);
 	    		});
 	    }
+	    }
 
 
 	    //녹화시작 기록
@@ -399,6 +381,24 @@
 	    		}
 	    	});
 	    }
+	    let isRecording = false; 
+	    const imageElement = document.getElementById('record_img');
+	    imageElement.addEventListener('click', function() {
+	        const fileInput = document.getElementById('videoInput');
+	        fileInput.click(); // 파일 선택(input) 요소를 클릭합니다.
+
+	        // 녹화 상태에 따라 이미지 변경 및 녹화 중지 실행
+	        if (!isRecording) {
+	          sendstartRecRequest("startRec", "startRec 컨트롤러 실행 성공", "startRec 컨트롤러 실행 실패");
+	          imageElement.src = "resources/img/stop-button.png";
+	          isRecording = true;
+	        } else {
+	          stopStream();
+	          isRecording = false;
+	        }
+	      });
+
+	    document.getElementById('videoInput').addEventListener('change', startSendingFrames2);
 	    </script>
 </body>
 </html>
