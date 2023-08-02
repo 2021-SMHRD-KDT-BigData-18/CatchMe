@@ -10,6 +10,20 @@
 <title>Insert title here</title>
 	<link rel="stylesheet" type="text/css" href="resources/css/navicover.css"/>
 	<link rel="stylesheet" type="text/css" href="resources/css/recordcss.css"/>
+	<style type="text/css">
+	.record_area { /*녹화 화면*/
+	height: 530px;
+	width: 707px;
+	/* height: 480px;
+            width: 640px; */
+	float: left;
+	margin: 40px auto;
+	margin-right: 0;
+	background-color: rgba(255, 255, 255, 0.979);
+	box-shadow: 0 0 10px rgba(129, 127, 127, 0.548);
+	position: relative;
+}
+	</style>
 </head>
 <body onload="setSize()">
 	<audio id="notifySound" controls style="visibility: hidden;">
