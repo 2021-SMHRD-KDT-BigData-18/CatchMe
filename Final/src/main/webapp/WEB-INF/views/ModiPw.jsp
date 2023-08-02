@@ -13,10 +13,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <title>비밀번호 변경</title>
     <style>
-        @import url("http://fonts.googleapis.com/earlyaccess/nanumgothic.css");
-
         html {
             height: 100%;
         }
@@ -101,87 +98,27 @@
             box-shadow: 0 0 15px rgba(159, 151, 151, 0.326);
         }
 
-        .homeicon {
-            margin: 28px 0;
-            width: 17%;
-            height: 17%;
-            margin-right: 70%;
-        }
+		.dropdown {
+			margin-left: 40px;
+			margin-top: 21px;
+			filter: brightness(1);
+			transition: 0.5s;
+			filter: drop-shadow(3px 3px 3px #c3c3c3);
+		}
+		
+		img {
+			width: 160px;
+			height: 160px;
+		}
 
-        /*마이 아이콘*/
-        .myicon {
-            width: 20%;
-            height: 20%;
-            margin: 18px 25px;
-            /* margin: 18px 0; */
-            margin-left: 75%;
-
-        }
-
-        /*드롭다운 메뉴바*/
-        .dropbtn {
-            background-color: transparent;
-            border: 0;
-            /* padding: 16px; */
-            /* cursor: pointer; 커서가 손가락 모양으로 바뀜*/
-        }
-
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-            right: 0;
-        }
-
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #f1f1f1;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        /* .dropdown:hover .dropbtn{
-            background-color: #3e8e41;
-        } */
     </style>
 </head>
 <body>
     <div id="center">
-        <div id="header">
-            <div class="dropdown" style="float: left;" id="gomain" onclick="GoMain()">
-                <button class="dropbtn">
-                    <img class="homeicon" src="./image/free-icon-home-1828864.png">
-                </button>
-                <!-- <div class="dropdown-content" style="left: 0;">
-                    <a href="#">링크#1</a>
-                </div> -->
-            </div>
-            <div class="dropdown" style="float: right;">
-                <button class="dropbtn"><img class="myicon" src="./image/free-icon-user-5264565.png"></button>
-                <div class="dropdown-content">
-
-                    <a href="#">문자 발송 내역</a>
-                    <a href="login">로그인</a>
-                    <a href="#">회원탈퇴</a>
-                </div>
-            </div>
+    	<div class="dropdown" style="float: left;" id="gomain">
+        	<a href="/web/movelogin"><img src="resources/img/login_b.png" onmouseover="this.src='resources/img/login_a.png'" onmouseout="this.src='resources/img/login_b.png'"></a>
         </div>
+        
         <div class="card align-middle" style="width:25rem; margin-top: 100px;">
             <div class="card-title" style="margin-top:30px;">
     

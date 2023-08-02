@@ -99,79 +99,30 @@
             box-shadow: 0 0 15px rgba(159, 151, 151, 0.326);
         }
 
-        .homeicon {
-            /*홈 아이콘*/
-            width: 160px;
-            height: 160px;
-            margin-left: -18px;
-            margin-top: 21px;
-            filter: brightness(1);
-            transition: 0.5s;
-            filter: drop-shadow(3px 3px 3px #c3c3c3);
-        }
+		.dropdown {
+			margin-left: 40px;
+			margin-top: 21px;
+			filter: brightness(1);
+			transition: 0.5s;
+			filter: drop-shadow(3px 3px 3px #c3c3c3);
+		}
+		
+		img {
+			width: 160px;
+			height: 160px;
+		}
 
-        /*마이 아이콘*/
-        .myicon {
-            width: 20%;
-            height: 20%;
-            margin: 18px 25px;
-            /* margin: 18px 0; */
-            margin-left: 75%;
-        }
 
-        /*드롭다운 메뉴바*/
-        .dropbtn {
-            background-color: transparent;
-            border: 0;
-            /* padding: 16px; */
-            /* cursor: pointer; 커서가 손가락 모양으로 바뀜*/
-        }
-
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-            right: 0;
-        }
-
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #f1f1f1;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        /* .dropdown:hover .dropbtn{
-            background-color: #3e8e41;
-        } */
     </style>
 </head>
 
 <body>
     <div id="center">
-        <div id="header">
-            <div class="dropdown" style="float: left;" id="gomain" onclick="GoMain()">
-                <button class="dropbtn">
-                    <img class="homeicon" src="./resources/img/login_b.png">
-                </button>
-            </div>
+    	<div class="dropdown" style="float: left;" id="gomain">
+        	<a href="/web/movelogin"><img src="resources/img/login_b.png" onmouseover="this.src='resources/img/login_a.png'" onmouseout="this.src='resources/img/login_b.png'"></a>
         </div>
+        
+        
         <div class="card align-middle" style="width: 25rem; margin-top: 150px;">
             <div class="card-title" style="margin-top: 30px;">
 
@@ -203,9 +154,6 @@
     </div>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script type="text/javascript">
-        function GoMain() {
-            location.href = "/web";
-        }
         function findPW() {
             let finId = $("#member_id").val();
             let finname = $("#name").val();
