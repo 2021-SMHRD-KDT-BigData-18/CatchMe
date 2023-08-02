@@ -69,7 +69,7 @@
 	
 	<!-- 녹화 재생 버튼 시 알림문구창 -->
 	<div class="start_before" style="visibility: hidden;" id="startMessage">
-		<span>운행을 시작합니다 안전운전하세요:)</span>
+		<span>녹화를 시작합니다. 안전운전하세요:D</span>
 	</div>
 	 
 	<!-- 녹화 종료 버튼 시 알림문구창 -->
@@ -79,10 +79,10 @@
 		
 	<!-- 졸음감지시 졸음쉼터 알려주는 알림 문구창 -->
     <!-- <div id="nearestRestArea" style="visibility: hidden;">-->
-    <div id="nearestRestArea" style="font-size: 30px; width:600px; display: block; visibility: hidden; text-align: center; line-height: 70px; overflow:hidden; padding-top: 80px; padding-left: 60px; padding-right: 60px; padding-bottom:48px;  position: absolute; left: calc(50% - 360px); margin-top:-622px;">
+    <div id="nearestRestArea" style="font-size: 30px; width:600px; display: block; visibility: hidden; text-align: center; line-height: 70px; overflow:hidden; padding-top: 80px; padding-left: 60px; padding-right: 60px; padding-bottom:40px;  position: absolute; left: calc(50% - 360px); margin-top:-622px;">
     <!-- <div id="nearestRestArea" style="font-size: 30px; width: 1804px; height:633px; margin-left:-902px; margin-top:-209px;display: block; text-align: center; border-radius: 0 0 35px 35px;">-->
     	<span id = "restarea_info1"></span><br>
-    	<span id = "restarea_info2"></span><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+    	<span id = "restarea_info2"></span><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
     	<span id = "restarea_info3"></span><br>
     	<span id = "restarea_info4"></span><br>
     	<button id = "stopSound" onclick="stopNotifySound()" class="alarm_btn" style="width: 300px; height: 70px; background-color: #212A3E; font-size: 20px; font-weight: bold; border: 0; border-radius: 20px; margin-top:65px; color:white" >알림 종료</button>
@@ -155,7 +155,7 @@
 		  notificationContainer.appendChild(notificationMessage);
 
 		  // 추가된 부분: div를 화면 하단으로 내리기 위해 translate 사용
-		  notificationContainer.style.transform = "translateY(100px)";
+		  notificationContainer.style.transform = "translateY(90px)";
 
 		  setTimeout(() => {
 		    // 추가된 부분: 애니메이션 클래스 제거
