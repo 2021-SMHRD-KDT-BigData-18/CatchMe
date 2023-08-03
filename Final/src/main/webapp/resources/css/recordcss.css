@@ -37,7 +37,6 @@
 	height: 42vh;
 	width: 34vw;
 	margin: 1px auto;
-	background-color: rgba(243, 243, 229, 0.353);
 	/* border-radius: 2%; */
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 	/*font: bold 25px "SUIT-Regular";*/
@@ -47,6 +46,7 @@
 }
 
 .content_area p { /*이상현상 감지 글자*/
+	background-color: rgba(243, 243, 229, 0.353);
 	margin-left: 20px;
 	letter-spacing: 4px;
 }
