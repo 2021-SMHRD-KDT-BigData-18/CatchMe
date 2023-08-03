@@ -59,7 +59,6 @@ function sendFrameToPython() {
 	canvas.width = width;
 	canvas.height = height;
 	context.drawImage(video, 0, 0, width, height);
-	console.log('졸음 a포인트');
 
 	const imageData = context.getImageData(0, 0, width, height);
 	const dataUrl = canvas.toDataURL('image/jpeg');
@@ -74,7 +73,7 @@ function sendFrameToPython() {
 		},
 		body: JSON.stringify({ frame: dataUrl }),
 	};
-	console.log('졸음 b포인트');
+	console.log('졸음 json전달완료');
 
 	fetch(url, options)
 		.then(response => response.json())
@@ -118,7 +117,6 @@ function sendFrameToRobo() {
 	canvas.width = width;
 	canvas.height = height;
 	context.drawImage(video, 0, 0, width, height);
-	console.log('robo a포인트');
 
 	const imageData = context.getImageData(0, 0, width, height);
 	const dataUrl = canvas.toDataURL('image/jpeg');
@@ -133,7 +131,7 @@ function sendFrameToRobo() {
 		},
 		body: JSON.stringify({ frame: dataUrl }),
 	};
-	console.log('robo b포인트');
+	console.log('robo json 전달완료');
 
 	fetch(url, options)
 		.then(response => response.json())
