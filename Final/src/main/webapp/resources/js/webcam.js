@@ -5,6 +5,7 @@ function successCallback(mediaStream) {
 	video.play();
 	startSendingFrames();
 	displayStartHistory();
+	pausegif();
 	document.getElementById("record_img").src = "resources/img/stop-button.png";
 }
 
@@ -39,7 +40,8 @@ function stopStream() {
 		streaming = false;
 		document.getElementById("record_img").src = "resources/img/video.png";
 		stopNotifySound();
-		displayEndHistory();		
+		displayEndHistory();
+		startgif();
 		console.log("stopStream() 실행됨");
 	}
 }
