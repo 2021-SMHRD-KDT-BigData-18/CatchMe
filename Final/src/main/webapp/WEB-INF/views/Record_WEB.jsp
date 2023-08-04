@@ -70,9 +70,9 @@
 				onclick="toggleStream()"><img src="resources/img/video.png" id="record_img" style="float: left;"></a>
 				<a id = "stopSound" onclick="stopNotifySound()" style="visibility: hidden;">알림 종료 / 닫음</a>
 				<!-- <button>end</button> -->
-				<div class="content_up" style=" font: bold 34px 'SUIT-Regular'; margin-top: 40px; margin-left: 120px;">
+				<!-- <div class="content_up" style=" font: bold 34px 'SUIT-Regular'; margin-top: 40px; margin-left: 120px;">
                     <span>지금 뭐해 이상행동 감지되었잖아👀</span>
-                </div>
+                </div>-->
 			</div>
 			<div class="content_area" style="background-image: url('resources/img/action!_content.gif'); background-size: cover; overflow:auto;">
 				<p></p>
