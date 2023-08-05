@@ -5,6 +5,7 @@ function successCallback(mediaStream) {
 	video.play();
 	startSendingFrames();
 	displayStartHistory();
+	pausegif();
 	document.getElementById("record_img").src = "resources/img/stop-button.png";
 }
 
@@ -39,7 +40,8 @@ function stopStream() {
 		streaming = false;
 		document.getElementById("record_img").src = "resources/img/video.png";
 		stopNotifySound();
-		displayEndHistory();		
+		displayEndHistory();
+		startgif();
 		console.log("stopStream() 실행됨");
 	}
 }
@@ -69,7 +71,7 @@ function sendFrameToPython() {
 		headers: {
 			'Content-Type': 'application/json',
 			'API-Key': 'secret',
-			'Access-Control-Allow-Origin': '*'
+			'Access-Control-Allow-Origin': 'http://121.179.7.41:9000/'
 		},
 		body: JSON.stringify({ frame: dataUrl }),
 	};
@@ -85,22 +87,22 @@ function sendFrameToPython() {
 				var img_path = data.img_path;
 				console.log('졸음 img_path', img_path)
 				findNearestRestArea();
-				callNotifyController(img_path);
+				callNotifyController(img_path); // DB저장 이미지의경로 
 				content_area(1);
 				playNotifySound();
 				displaySmsHistory();
-//				if (isSendSmsAllowed) {
-//				isSendSmsAllowed = false;
-//				sendSms()
-//				.then(() => {
-//				setTimeout(() => {isSendSmsAllowed = true;}, 30000);
-//				})
-//				.catch(error => {
-//				console.error('sendSms 실행 중 에러:', error);
-//				isSendSmsAllowed = true;
-//				});
-//				}
-				smsRecord();
+				if (isSendSmsAllowed) {
+				isSendSmsAllowed = false;
+				sendSms()
+				.then(() => {
+				setTimeout(() => {isSendSmsAllowed = true;}, 30000);
+				})
+				.catch(error => {
+				console.error('sendSms 실행 중 에러:', error);
+				isSendSmsAllowed = true;
+				});
+				}
+				smsRecord(); // 문자내역 DB저장
 			}
 		})
 		.catch(error => {
