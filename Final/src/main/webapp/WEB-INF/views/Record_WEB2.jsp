@@ -325,17 +325,17 @@
 	    				content_area(1);
 	    				playNotifySound();
 	    				displaySmsHistory();
-	    				if (isSendSmsAllowed) {
-	    				isSendSmsAllowed = false;
-	    				sendSms()
-	    				.then(() => {
-	    				setTimeout(() => {isSendSmsAllowed = true;}, 30000);
-	    				})
-	    				.catch(error => {
-	    				console.error('sendSms 실행 중 에러:', error);
-	    				isSendSmsAllowed = true;
-	    				});
-	    				}
+	    				//if (isSendSmsAllowed) {
+	    				//isSendSmsAllowed = false;
+	    				//sendSms()
+	    				//.then(() => {
+	    				//setTimeout(() => {isSendSmsAllowed = true;}, 30000);
+	    				//})
+	    				//.catch(error => {
+	    				//console.error('sendSms 실행 중 에러:', error);
+	    				//isSendSmsAllowed = true;
+	    				//});
+	    				//}
 	    				smsRecord();
 	    			}
 	    		})

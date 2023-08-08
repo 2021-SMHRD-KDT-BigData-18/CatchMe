@@ -44,9 +44,9 @@ public class SmsController {
 		String hostNameUrl = "https://sens.apigw.ntruss.com"; // api 기본 주소
 		String requestUrl = "/sms/v2/services/"; // 추가 주소
 		String requestUrlType = "/messages"; // 보내는 종류
-		String accessKey = "N8KbSauZR7HR1T6fDeq5"; // 접근 키
-		String secretKey = "o6Z2Q41sU7Fgb5GJ3v15wQMJ9ExfPuSZm2Ft9x0e"; // 비밀키
-		String serviceId = "ncp:sms:kr:311761740502:f_project"; // api id
+		String accessKey = ""; // 접근 키
+		String secretKey = ""; // 비밀키
+		String serviceId = ""; // api id
 		String method = "POST"; // 문자 보내는 메소드 타입
 		String timestamp = Long.toString(System.currentTimeMillis()); // 시간 기록
 		requestUrl += serviceId + requestUrlType; // 주소에 비밀키 넣기
@@ -64,7 +64,7 @@ public class SmsController {
 		bodyJson.put("type", "sms");
 		bodyJson.put("contentType", "COMM");
 		bodyJson.put("countryCode", "82");
-		bodyJson.put("from", "01092539506"); //보내는사람
+		bodyJson.put("from", "01000000000"); //보내는사람
 		bodyJson.put("content", "07.18test_test");
 		bodyJson.put("messages", toArr);
 
